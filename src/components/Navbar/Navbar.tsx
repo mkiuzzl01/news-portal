@@ -58,7 +58,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white py-2 shadow-lg">
+    <nav className="bg-white py-2 shadow-lg top-0 sticky">
       <div className="lg:w-3/4 m-auto">
         <div className="flex justify-between">
           {/* Mobile menu button */}
