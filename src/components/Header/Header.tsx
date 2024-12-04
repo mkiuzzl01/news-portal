@@ -27,9 +27,9 @@ const topNews = [
 
 const Header = () => {
   return (
-    <section className="hidden lg:block border-b-2  py-4">
+    <section className="hidden lg:block border-b-2 border-[#B99470]  py-4 bg-[#EEEDEB]">
       <div className="lg:w-3/4 mx-auto flex flex-row items-center gap-4">
-        <div className="text-center lg:text-left">
+        <div className="flex-1 text-center lg:text-left">
           <h1 className="text-3xl font-extrabold pb-2">
             Daily Time <span className="text-red-500">24</span>
           </h1>
@@ -38,11 +38,11 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-2">
+        <div className="lg:w-4/5 flex flex-col lg:flex-row gap-2">
           {topNews.map((item) => (
             <div
               key={item.id}
-              className="flex items-center gap-2 border-s-2 p-2 w-full"
+              className="flex items-center gap-2 border-s-2 border-[#B99470] p-2"
             >
               <Image
                 src={item.image}

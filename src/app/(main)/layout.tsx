@@ -10,13 +10,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <header>
           <Header />
           <nav>
-            <Navbar></Navbar>
+            <Navbar />  
           </nav>
         </header>
-        <main className="min-h-[calc(100vh-490px)]">{children}</main>
+        <main className="min-h-[calc(100vh-494px)]">{children}</main>
       </div>
       <footer>
-        <Footer></Footer>
+        <Footer />
       </footer>
     </div>
   );
