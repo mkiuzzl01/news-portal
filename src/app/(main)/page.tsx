@@ -1,4 +1,5 @@
 import Politics from "@/components/Politics/Politics";
+import SaidBar from "@/util/SideBar";
 
 const Page = () => {
   return (
@@ -7,7 +8,7 @@ const Page = () => {
         <Politics />
       </div>
       <div className="lg:w-2/5">
-        <h1>This is Sidebar</h1>
+        <SaidBar />
       </div>
     </div>
   );
