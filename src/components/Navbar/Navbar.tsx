@@ -10,6 +10,7 @@ import {
   UserRound,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const socialLinks = [
@@ -37,6 +38,7 @@ const socialLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleModal = () => {
     alert("Modal on");
@@ -52,14 +54,14 @@ const Navbar = () => {
     { href: "/entertainment", label: "বিনোদন" },
     { href: "/fashion", label: "জীবনযাপন" },
     { href: "/health", label: "স্বাস্থ" },
-    { href: "/economy ", label: "ইকোনোমি" },
-    { href: "/world news", label: "বিশ্ব খবর" },
-    { href: "/local news", label: "স্থানীয় খবর " },
+    { href: "/economy", label: "ইকোনোমি" },
+    { href: "/world-news", label: "বিশ্ব খবর" },
+    { href: "/local-news", label: "স্থানীয় খবর" },
   ];
 
   return (
-    <nav className="bg-[#E0CCBE] py-2 shadow-lg top-0 sticky">
-      <div className="lg:w-3/4 m-auto">
+    <nav className="bg-[#87CBB9] py-2 shadow-lg">
+      <div className="lg:w-4/5 m-auto">
         <div className="flex justify-between">
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
@@ -72,12 +74,14 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-3">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="py-4 px-2 hover:text-blue-500 transition duration-300 flex items-center space-x-2"
+                className={`${
+                  pathname === item?.href ? "border-b-2 border-red-500" : ""
+                } flex justify-between items-center gap-4`}
               >
                 <span>{item.label}</span>
               </Link>
