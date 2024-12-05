@@ -48,15 +48,15 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { href: "/", label: "হোম" },
+    { href: "/", label: "হোম " },
+    { href: "/bangladesh", label: "বাংলাদেশে " },
+    { href: "/international", label: "আন্তর্জাতিক" },
     { href: "/politics", label: "রাজনীতি" },
-    { href: "/sports", label: "খেলা" },
+    { href: "/economy", label: "অর্থনীতি" },
+    { href: "/technology", label: "প্রযুক্তি" },
+    { href: "/sports", label: "খেলাধুলা" },
+    { href: "/environment", label: "পরিবেশ" },
     { href: "/entertainment", label: "বিনোদন" },
-    { href: "/fashion", label: "জীবনযাপন" },
-    { href: "/health", label: "স্বাস্থ" },
-    { href: "/economy", label: "ইকোনোমি" },
-    { href: "/world-news", label: "বিশ্ব খবর" },
-    { href: "/local-news", label: "স্থানীয় খবর" },
   ];
 
   return (
