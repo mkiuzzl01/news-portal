@@ -13,7 +13,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "flex items-center justify-center gap-2  bg-gray-200 dark:bg-neutral-800 p-2 border border-gray-300 dark:border-neutral-700",
+      "flex items-center justify-center gap-4 p-2 border-b border-gray-300",
       className
     )}
     {...props}
@@ -28,12 +28,10 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "px-4 py-2 rounded-md text-sm font-medium transition-colors",
-      "hover:bg-gray-300 dark:hover:bg-neutral-700",
-      "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-neutral-900",
-      "data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900",
-      "data-[state=active]:text-blue-600 dark:data-[state=active]:text-blue-400",
-      "text-gray-600 dark:text-gray-300",
+      "p-2 text-sm font-medium transition-colors border-b-2",
+      "hover:text-blue-500",
+      "data-[state=active]:border-blue-500 data-[state=active]:text-blue-600",
+      "text-gray-600 dark:text-gray-300 border-transparent",
       className
     )}
     {...props}
@@ -47,11 +45,7 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    className={cn(
-      "p-4 rounded-lg  dark:border-neutral-700 bg-white dark:bg-neutral-800",
-      "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-neutral-900",
-      className
-    )}
+    className={cn("p-4 bg-gray-100 rounded-md", className)}
     {...props}
   />
 ));

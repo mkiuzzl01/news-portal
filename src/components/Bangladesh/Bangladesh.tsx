@@ -74,11 +74,14 @@ const Bangladesh = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto">
+      <div className="border-s-4 border-green-500 ">
+        <h1 className="text-3xl font-bold my-4 ps-2">বাংলাদেশ</h1>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Trending News Section */}
         {trendingNews && (
-          <div className="col-span-2  relative bg-gray-200 overflow-hidden">
+          <div className="col-span-2 relative bg-gray-200 overflow-hidden">
             <Image
               src={trendingNews.image}
               alt={trendingNews.title}
@@ -113,7 +116,7 @@ const Bangladesh = () => {
             />
             <div className="p-4">
               <h2 className="text-xl font-bold hover:text-blue-600">
-                <Link href={`view details/${news?.id}`}>{news.title}</Link>
+                <Link href={`view_details/${news?.id}`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news.description}</p>
               <p className="text-xs text-gray-400">{news.published_time}</p>

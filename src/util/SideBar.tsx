@@ -10,8 +10,8 @@ const SideBar = () => {
       className="w-[400px] border-2 rounded-lg"
     >
       <TabsList>
-        <TabsTrigger value="last">সর্বশেষ</TabsTrigger>
-        <TabsTrigger value="important">গুরুত্বপূর্ণ</TabsTrigger>
+        <TabsTrigger value="last" className="font-semibold">সর্বশেষ</TabsTrigger>
+        <TabsTrigger value="important" className="font-semibold">গুরুত্বপূর্ণ</TabsTrigger>
       </TabsList>
       <TabsContent value="last">
         {/* this is last news  */}
