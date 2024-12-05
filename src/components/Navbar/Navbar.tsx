@@ -63,6 +63,7 @@ const Navbar = () => {
     <nav className="bg-[#87CBB9] py-2 shadow-lg">
       <div className="lg:w-4/5 m-auto">
         <div className="flex justify-between">
+          
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
