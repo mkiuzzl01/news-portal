@@ -54,9 +54,9 @@ const politicsData = [
 const Politics = () => {
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
         {politicsData?.map((news, index) => (
-          <div key={index} className="m-2 p-5 bg-gray-500">
+          <div key={index} className="p-5 bg-gray-200">
             <h1>{news?.title}</h1>
             <p>{news?.description}</p>
           </div>

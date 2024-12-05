@@ -48,7 +48,7 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { href: "/", label: "সর্বশেষ" },
+    { href: "/", label: "হোম" },
     { href: "/politics", label: "রাজনীতি" },
     { href: "/sports", label: "খেলা" },
     { href: "/entertainment", label: "বিনোদন" },
