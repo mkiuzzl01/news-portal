@@ -1,5 +1,6 @@
 import Image from "next/image";
 import DateAndTime from "@/lib/dateAndTime";
+import Link from "next/link";
 
 const topNews = [
   {
@@ -53,7 +54,9 @@ const Header = () => {
               />
 
               <div className="flex flex-col justify-center">
-                <h2 className="text-sm">{item.title}</h2>
+                <h2 className="text-sm hover:text-blue-500">
+                  <Link href={item?.id}>{item.title}</Link>
+                </h2>
               </div>
             </div>
           ))}

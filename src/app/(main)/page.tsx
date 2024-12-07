@@ -1,6 +1,7 @@
 import Advertisement from "@/components/Advertisement/Advertisement";
 import Bangladesh from "@/components/Bangladesh/Bangladesh";
 import Economy from "@/components/Economy/Economy";
+import Entertainment from "@/components/Entertainment/Entertainment";
 import Environment from "@/components/Environment/Environment";
 import International from "@/components/International/International";
 import Politics from "@/components/Politics/Politics";
@@ -28,7 +29,10 @@ const Page = () => {
       <Sports />
       {/* this is section gap for others */}
       <Advertisement />
-      <Environment/>
+      <Environment />
+      {/* this is section gap for others */}
+      <Advertisement />
+      <Entertainment />
     </div>
   );
 };
