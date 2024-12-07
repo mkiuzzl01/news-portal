@@ -65,7 +65,7 @@ const economy_news = [
   },
 ];
 
-const EconomyCard = () => {
+const NewsCard = () => {
   const trendingNews = economy_news.find(
     (news) => news.news_type === "trending"
   );
@@ -85,10 +85,8 @@ const EconomyCard = () => {
             <Image
               src={trendingNews.image}
               alt={trendingNews.title}
-              width={600}
-              height={400}
               objectFit="cover"
-              className="w-full h-full"
+              className="w-full h-[400px]"
             />
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-2xl text-white font-semibold hover:text-yellow-500">
@@ -128,4 +126,4 @@ const EconomyCard = () => {
   );
 };
 
-export default EconomyCard;
+export default NewsCard;

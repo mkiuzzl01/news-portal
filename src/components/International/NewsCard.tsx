@@ -106,10 +106,8 @@ const NewsCard = () => {
             <Image
               src={trendingNews.image}
               alt={trendingNews.title}
-              width={900}
-              height={500}
               objectFit="cover"
-              className="w-full h-full"
+              className="w-full h-[400px]"
             />
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
