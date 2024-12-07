@@ -33,7 +33,7 @@ const DateAndTime = () => {
   }, []);
 
   return (
-    <div className="text-center">
+    <div>
       <div>
         <p className="text-sm font-semibold">{currentDate}</p>
       </div>

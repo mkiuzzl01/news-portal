@@ -42,7 +42,7 @@ const Header = () => {
           {topNews.map((item) => (
             <div
               key={item.id}
-              className="flex items-center gap-2 border-s-2 border-[#FFF3CF] p-2"
+              className="flex items-center gap-2 border-s-2 border-gray-300 p-2"
             >
               <Image
                 src={item.image}
