@@ -34,8 +34,7 @@ const technology_news = [
     id: 3,
     category: "Technology",
     title: "বাংলাদেশে প্রযুক্তি খাতে বিনিয়োগ বৃদ্ধি পাচ্ছে",
-    description:
-      "বাংলাদেশের  দেশের ডিজিটাল পরিকাঠামো উন্নত করতে সাহায্য করবে।",
+    description: "বাংলাদেশের  দেশের ডিজিটাল পরিকাঠামো উন্নত করতে সাহায্য করবে।",
     date: "2024-12-01",
     news_type: "normal",
     published_time: "12:15",
@@ -82,12 +81,15 @@ const NewsCard = () => {
         {/* Display Trending News (Spanning two columns) */}
         {trendingNews && (
           <div className="col-span-4 bg-gray-100 relative overflow-hidden">
-            <Image
-              src={trendingNews.image}
-              alt={trendingNews.title}
-              objectFit="cover"
-              className="w-full h-[400px]"
-            />
+            <div className="hover:scale-110 duration-500">
+              <Image
+                src={trendingNews.image}
+                alt={trendingNews.title}
+                placeholder="blur"
+                objectFit="cover"
+                className="w-full h-[400px]"
+              />
+            </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
                 <Link href={`view_details/${trendingNews.id}`}>
@@ -106,6 +108,7 @@ const NewsCard = () => {
               alt={news.title}
               width={400}
               height={300}
+              placeholder="blur"
               objectFit="cover"
               className="w-full h-[200px]"
             />
@@ -113,7 +116,9 @@ const NewsCard = () => {
               <h2 className="text-lg font-bold hover:text-blue-600">
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
-              <p className="text-sm text-gray-600 text-wrap">{news.description}</p>
+              <p className="text-sm text-gray-600 text-wrap">
+                {news.description}
+              </p>
             </div>
           </div>
         ))}

@@ -81,19 +81,22 @@ const NewsCard = () => {
         {/* Display Trending News (Spanning two columns) */}
         {trendingNews && (
           <div className="col-span-4 bg-gray-100 relative overflow-hidden">
-            <Image
-              src={trendingNews.image}
-              alt={trendingNews.title}
-              objectFit="cover"
-              className="w-full h-[400px]"
-            />
+            <div className="hover:scale-110 duration-500">
+              <Image
+                src={trendingNews.image}
+                alt={trendingNews.title}
+                objectFit="cover"
+                placeholder="blur"
+                className="w-full h-[400px]"
+              />
+            </div>
+
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
                 <Link href={`view_details/${trendingNews.id}`}>
                   {trendingNews.title}
                 </Link>
               </h1>
-           
             </div>
           </div>
         )}
@@ -107,6 +110,7 @@ const NewsCard = () => {
               width={400}
               height={300}
               objectFit="cover"
+              placeholder="blur"
               className="w-full h-[200px]"
             />
             <div className="p-4">

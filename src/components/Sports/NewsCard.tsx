@@ -57,8 +57,7 @@ const sports = [
     id: "05",
     category: "খেলাধুলা",
     title: "অলিম্পিকে বাংলাদেশের পদক",
-    description:
-      "বাংলাদেশ দেশের খেলাধুলার ইতিহাসে একটি মাইলফলক।",
+    description: "বাংলাদেশ দেশের খেলাধুলার ইতিহাসে একটি মাইলফলক।",
     date: "২০২৪-১২-০৪",
     news_type: "normal",
     published_time: "18:45",
@@ -80,12 +79,15 @@ const NewsCard = () => {
         {/* Display Trending News (Spanning two columns) */}
         {trendingNews && (
           <div className="col-span-4 bg-gray-100 relative overflow-hidden">
-            <Image
-              src={trendingNews.image}
-              alt={trendingNews.title}
-              objectFit="cover"
-              className="w-full h-[500px]"
-            />
+            <div className="hover:scale-110 duration-500">
+              <Image
+                src={trendingNews.image}
+                alt={trendingNews.title}
+                placeholder="blur"
+                objectFit="cover"
+                className="w-full h-[500px]"
+              />
+            </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
                 <Link href={`view_details/${trendingNews.id}`}>
@@ -104,6 +106,7 @@ const NewsCard = () => {
               alt={news.title}
               width={400}
               height={300}
+              placeholder="blur"
               objectFit="cover"
               className="w-full h-[200px]"
             />
@@ -111,7 +114,9 @@ const NewsCard = () => {
               <h2 className="text-lg font-bold hover:text-blue-600">
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
-              <p className="text-sm text-gray-600 text-ellipsis">{news.description}</p>
+              <p className="text-sm text-gray-600 text-ellipsis">
+                {news.description}
+              </p>
             </div>
           </div>
         ))}

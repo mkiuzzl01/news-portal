@@ -82,12 +82,15 @@ const NewsCard = () => {
         {/* Trending News Section */}
         {trendingNews && (
           <div className="col-span-2 relative bg-gray-200 overflow-hidden">
-            <Image
-              src={trendingNews.image}
-              alt={trendingNews.title}
-              objectFit="cover"
-              className="w-full h-[400px]"
-            />
+            <div className="hover:scale-110 duration-500">
+              <Image
+                src={trendingNews.image}
+                alt={trendingNews.title}
+                placeholder="blur"
+                objectFit="cover"
+                className="w-full h-[400px]"
+              />
+            </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-2xl text-white font-semibold hover:text-yellow-500">
                 <Link href={`view_details/${trendingNews?.id}`}>
@@ -109,6 +112,7 @@ const NewsCard = () => {
               alt={news.title}
               width={400}
               height={300}
+              placeholder="blur"
               objectFit="cover"
               className="w-full h-[200px]"
             />

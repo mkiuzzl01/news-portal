@@ -110,6 +110,7 @@ const NewsCard = () => {
                 alt={news.title}
                 width={150}
                 height={100}
+                placeholder="blur"
                 objectFit="cover"
                 className="w-[150px] h-[100px] object-cover"
               />
@@ -117,7 +118,9 @@ const NewsCard = () => {
                 <h2 className="text-xl font-bold hover:text-blue-600 line-clamp-1">
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
                 </h2>
-                <p className="text-sm text-gray-600 line-clamp-2">{news.description}</p>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  {news.description}
+                </p>
               </div>
             </div>
           ))}
@@ -127,19 +130,21 @@ const NewsCard = () => {
         <div className="col-span-1">
           {trendingNews && (
             <div className="bg-gray-100 relative overflow-hidden">
-              <Image
-                src={trendingNews.image}
-                alt={trendingNews.title}
-                objectFit="cover"
-                className="w-full h-[330px]"
-              />
+              <div className="hover:scale-110 duration-500">
+                <Image
+                  placeholder="blur"
+                  src={trendingNews.image}
+                  alt={trendingNews.title}
+                  objectFit="cover"
+                  className="w-full h-[330px]"
+                />
+              </div>
               <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
                 <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
                   <Link href={`view_details/${trendingNews.id}`}>
                     {trendingNews.title}
                   </Link>
                 </h1>
-               
               </div>
             </div>
           )}
@@ -154,6 +159,7 @@ const NewsCard = () => {
                 alt={news.title}
                 width={150}
                 height={100}
+                placeholder="blur"
                 objectFit="cover"
                 className="w-[150px] h-[100px] object-cover"
               />
@@ -161,7 +167,9 @@ const NewsCard = () => {
                 <h2 className="text-xl font-bold hover:text-blue-600 line-clamp-1">
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
                 </h2>
-                <p className="text-sm text-gray-600 line-clamp-2">{news.description}</p>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  {news.description}
+                </p>
               </div>
             </div>
           ))}

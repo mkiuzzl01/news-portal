@@ -69,7 +69,7 @@ const NewsCard = () => {
   const trendingNews = international_news.find(
     (news) => news.news_type === "trending"
   );
-  
+
   const normalNews = international_news.filter(
     (news) => news.news_type === "normal"
   );
@@ -80,7 +80,6 @@ const NewsCard = () => {
         <h1 className="text-4xl font-bold my-4 ps-2">আন্তর্জাতিক</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
         {normalNews.slice(0, 1).map((news) => (
           <div key={news.id} className="bg-white overflow-hidden">
             <Image
@@ -88,6 +87,7 @@ const NewsCard = () => {
               alt={news.title}
               width={400}
               height={300}
+              placeholder="blur"
               objectFit="cover"
               className="w-full h-[200px]"
             />
@@ -102,12 +102,15 @@ const NewsCard = () => {
 
         {trendingNews && (
           <div className="col-span-2 bg-gray-100 relative overflow-hidden">
-            <Image
-              src={trendingNews.image}
-              alt={trendingNews.title}
-              objectFit="cover"
-              className="w-full h-[400px]"
-            />
+            <div className="hover:scale-110 duration-500">
+              <Image
+                src={trendingNews.image}
+                alt={trendingNews.title}
+                objectFit="cover"
+                placeholder="blur"
+                className="w-full h-[400px]"
+              />
+            </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
                 <Link href={`view_details/${trendingNews.id}`}>
@@ -126,6 +129,7 @@ const NewsCard = () => {
               width={400}
               height={300}
               objectFit="cover"
+              placeholder="blur"
               className="w-full h-[200px]"
             />
             <div className="p-4">

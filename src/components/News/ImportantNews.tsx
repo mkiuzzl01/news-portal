@@ -23,12 +23,47 @@ const importantNews = [
       "পরিবেশ সংরক্ষণে বাংলাদেশ সরকার নতুন বনায়ন প্রকল্প শুরু করেছে।",
     date: "২০২৪-১২-০৩",
   },
+  {
+    id: 4,
+    title: "পরিবেশ রক্ষায় নতুন উদ্যোগ",
+    description:
+      "পরিবেশ সংরক্ষণে বাংলাদেশ সরকার নতুন বনায়ন প্রকল্প শুরু করেছে।",
+    date: "২০২৪-১২-০৩",
+  },
+  {
+    id: 5,
+    title: "পরিবেশ রক্ষায় নতুন উদ্যোগ",
+    description:
+      "পরিবেশ সংরক্ষণে বাংলাদেশ সরকার নতুন বনায়ন প্রকল্প শুরু করেছে।",
+    date: "২০২৪-১২-০৩",
+  },
+  {
+    id: 7,
+    title: "পরিবেশ রক্ষায় নতুন উদ্যোগ",
+    description:
+      "পরিবেশ সংরক্ষণে বাংলাদেশ সরকার নতুন বনায়ন প্রকল্প শুরু করেছে।",
+    date: "২০২৪-১২-০৩",
+  },
+  {
+    id: 8,
+    title: "পরিবেশ রক্ষায় নতুন উদ্যোগ",
+    description:
+      "পরিবেশ সংরক্ষণে বাংলাদেশ সরকার নতুন বনায়ন প্রকল্প শুরু করেছে।",
+    date: "২০২৪-১২-০৩",
+  },
+  {
+    id: 9,
+    title: "পরিবেশ রক্ষায় নতুন উদ্যোগ",
+    description:
+      "পরিবেশ সংরক্ষণে বাংলাদেশ সরকার নতুন বনায়ন প্রকল্প শুরু করেছে।",
+    date: "২০২৪-১২-০৩",
+  },
 ];
 
-const Important = () => {
+const ImportantNews = () => {
   return (
     <div
-      className="p-4 h-[300px] overflow-y-auto  [&::-webkit-scrollbar]:hidden 
+      className="p-4 h-full lg:h-[750px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
         [scrollbar-width:none]"
     >
@@ -49,4 +84,4 @@ const Important = () => {
   );
 };
 
-export default Important;
+export default ImportantNews;

@@ -1,14 +1,11 @@
-import ImportantNews from "@/components/News/ImportantNews";
-import LastNews from "@/components/News/LastNews";
+import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import LastNews from "../News/LastNews";
+import ImportantNews from "../News/ImportantNews";
 
-const SideBar = () => {
+const SaidTabs = () => {
   return (
-    <Tabs
-      defaultValue="last"
-      defaultChecked
-      className="w-[400px] border-2 rounded-lg bg-white"
-    >
+    <Tabs defaultValue="last" defaultChecked className="bg-white">
       <TabsList>
         <TabsTrigger value="last" className="font-semibold">
           সর্বশেষ
@@ -23,10 +20,10 @@ const SideBar = () => {
       </TabsContent>
       <TabsContent value="important">
         {/* this is important news */}
-        <ImportantNews />
+        <ImportantNews  />
       </TabsContent>
     </Tabs>
   );
 };
 
-export default SideBar;
+export default SaidTabs;

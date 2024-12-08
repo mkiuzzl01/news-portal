@@ -35,22 +35,62 @@ const newsData = [
       "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
     date: "২০২৪-১২-০২",
   },
+  {
+    id: 6,
+    title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
+    description:
+      "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
+    date: "২০২৪-১২-০২",
+  },
+  {
+    id: 7,
+    title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
+    description:
+      "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
+    date: "২০২৪-১২-০২",
+  },
+  {
+    id: 8,
+    title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
+    description:
+      "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
+    date: "২০২৪-১২-০২",
+  },
+  {
+    id: 8,
+    title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
+    description:
+      "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
+    date: "২০২৪-১২-০২",
+  },
+  {
+    id: 8,
+    title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
+    description:
+      "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
+    date: "২০২৪-১২-০২",
+  },
 ];
 const LastNews = () => {
   return (
     <div
-      className="p-4 h-[300px] overflow-y-auto scrollbar-hide  [&::-webkit-scrollbar]:hidden 
+      className="p-4 h-full lg:h-[750px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
         [scrollbar-width:none]"
     >
       <ul className="space-y-4">
         {newsData.map((news, index) => (
-          <li key={index} className="border-b last:border-b-0 pb-4 last:pb-0">
-            <Link href={`view_details/${news?.id}`}>
-              <h3 className="text-lg font-semibold hover:text-blue-500">
+          <li
+            key={index}
+            className="border-b last:border-b-0 pb-4 last:pb-0 hover:bg-gray-50 transition"
+          >
+            <Link href={`view_details/${news?.id}`} className="block">
+              <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-500">
                 {news.title}
               </h3>
-              <p className="text-sm text-gray-600">{news.description}</p>
+              <p className="text-sm text-gray-600 line-clamp-2">
+                {news.description}
+              </p>
               <span className="text-xs text-gray-500">{news.date}</span>
             </Link>
           </li>
