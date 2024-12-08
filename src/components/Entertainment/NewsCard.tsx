@@ -118,7 +118,6 @@ const NewsCard = () => {
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 line-clamp-2">{news.description}</p>
-                <p className="text-xs text-gray-400">{news.published_time}</p>
               </div>
             </div>
           ))}
@@ -132,7 +131,7 @@ const NewsCard = () => {
                 src={trendingNews.image}
                 alt={trendingNews.title}
                 objectFit="cover"
-                className="w-full h-[370px]"
+                className="w-full h-[330px]"
               />
               <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
                 <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
@@ -140,9 +139,7 @@ const NewsCard = () => {
                     {trendingNews.title}
                   </Link>
                 </h1>
-                <p className="text-sm text-white">
-                  {trendingNews.published_time}
-                </p>
+               
               </div>
             </div>
           )}
@@ -165,7 +162,6 @@ const NewsCard = () => {
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 line-clamp-2">{news.description}</p>
-                <p className="text-xs text-gray-400">{news.published_time}</p>
               </div>
             </div>
           ))}

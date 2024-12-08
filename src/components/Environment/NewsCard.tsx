@@ -97,7 +97,6 @@ const NewsCard = () => {
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-xs text-gray-400">{news.published_time}</p>
             </div>
           </div>
         ))}
@@ -117,9 +116,6 @@ const NewsCard = () => {
                   {trendingNews.title}
                 </Link>
               </h1>
-              <p className="text-sm text-white">
-                {trendingNews.published_time}
-              </p>
             </div>
           </div>
         )}
@@ -140,7 +136,6 @@ const NewsCard = () => {
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-xs text-gray-400">{news.published_time}</p>
             </div>
           </div>
         ))}

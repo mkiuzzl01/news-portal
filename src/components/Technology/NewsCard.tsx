@@ -13,7 +13,7 @@ const technology_news = [
     category: "Technology",
     title: "বাংলাদেশে প্রযুক্তির অগ্রগতি",
     description:
-      "বাংলাদেশে নতুন প্রযুক্তি উদ্ভাবন এবং ব্যবহারের ক্ষেত্রে উল্লেখযোগ্য অগ্রগতি হয়েছে, যা দেশের উন্নয়নে সাহায্য করছে।",
+      "বাংলাদেশে নতুন প্রযুক্তি উদ্ভাবন এবং ব্যবহারের ক্ষেত্রে উল্লেখযোগ্য অগ্রগতি হয়েছে।",
     date: "2024-12-03",
     news_type: "trending",
     published_time: "08:00",
@@ -35,7 +35,7 @@ const technology_news = [
     category: "Technology",
     title: "বাংলাদেশে প্রযুক্তি খাতে বিনিয়োগ বৃদ্ধি পাচ্ছে",
     description:
-      "বাংলাদেশের প্রযুক্তি খাতে বিদেশি বিনিয়োগ বৃদ্ধি পাচ্ছে, যা দেশের ডিজিটাল পরিকাঠামো উন্নত করতে সাহায্য করবে।",
+      "বাংলাদেশের  দেশের ডিজিটাল পরিকাঠামো উন্নত করতে সাহায্য করবে।",
     date: "2024-12-01",
     news_type: "normal",
     published_time: "12:15",
@@ -46,7 +46,7 @@ const technology_news = [
     category: "Technology",
     title: "বাংলাদেশে নতুন প্রযুক্তিগত শিক্ষা কেন্দ্র প্রতিষ্ঠা",
     description:
-      "বাংলাদেশে নতুন প্রযুক্তিগত শিক্ষা কেন্দ্র প্রতিষ্ঠিত হয়েছে, যা যুবকদের দক্ষতা উন্নয়ন এবং প্রযুক্তিতে কাজের সুযোগ সৃষ্টি করবে।",
+      "বাংলাদেশে নতুন প্রযুক্তিগত শিক্ষা কেন্দ্র প্রতিষ্ঠিত হয়েছে, যা যুবকদের দক্ষতা উন্নয়ন করবে।",
     date: "2024-11-30",
     news_type: "normal",
     published_time: "16:30",
@@ -94,9 +94,6 @@ const NewsCard = () => {
                   {trendingNews.title}
                 </Link>
               </h1>
-              <p className="text-sm text-white">
-                {trendingNews.published_time}
-              </p>
             </div>
           </div>
         )}
@@ -113,11 +110,10 @@ const NewsCard = () => {
               className="w-full h-[200px]"
             />
             <div className="p-4">
-              <h2 className="text-xl font-bold hover:text-blue-600">
+              <h2 className="text-lg font-bold hover:text-blue-600">
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
-              <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-xs text-gray-400">{news.published_time}</p>
+              <p className="text-sm text-gray-600 text-wrap">{news.description}</p>
             </div>
           </div>
         ))}

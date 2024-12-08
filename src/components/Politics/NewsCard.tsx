@@ -13,7 +13,7 @@ const politicsData = [
     category: "রাজনীতি",
     title: "সংসদে নতুন কর সংস্কার বিল পাস",
     description:
-      "সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা কর ব্যবস্থাকে সরলীকরণ ও রাজস্ব বৃদ্ধির প্রতিশ্রুতি দিচ্ছে।",
+      "সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা রাজস্ব বৃদ্ধির প্রতিশ্রুতি দিচ্ছে।",
     date: "২০২৪-১২-০৪",
     news_type: "trending",
     published_time: "09:00",
@@ -22,9 +22,9 @@ const politicsData = [
   {
     id: "02",
     category: "রাজনীতি",
-    title: "বিরোধী দলের নেতা বাজেট বরাদ্দ নিয়ে সমালোচনা করেছেন",
+    title: "বাজেট বরাদ্দ নিয়ে সমালোচনা",
     description:
-      "বিরোধী দলের নেতা সম্প্রতি ঘোষিত বাজেটকে সমালোচনা করেছেন, দাবি করেছেন এটি মধ্যবিত্তের উদ্বেগগুলিকে সমাধান করতে ব্যর্থ হয়েছে।",
+      "বিরোধী দলের নেতা বাজেটকে সমালোচনা করেছেন, দাবি করেছেন এটি মধ্যবিত্তের উদ্বেগগুলিকে সমাধান করতে ব্যর্থ হয়েছে।",
     date: "২০২৪-১২-০৪",
     news_type: "normal",
     published_time: "12:00",
@@ -55,7 +55,7 @@ const politicsData = [
   {
     id: "05",
     category: "রাজনীতি",
-    title: "রাজনৈতিক দলগুলির মধ্যে ঐক্য আলোচনা শুরু",
+    title: "রাজনৈতিক দলগুলির মধ্যে ঐক্য",
     description:
       "রাজনৈতিক দলগুলির মধ্যে ঐক্য আলোচনা শুরু হয়েছে, যা দেশকে সামনে এগিয়ে নিতে সহায়ক হতে পারে বলে আশা করা হচ্ছে।",
     date: "২০২৪-১২-০৪",
@@ -93,9 +93,7 @@ const NewsCard = () => {
                   {trendingNews.title}
                 </Link>
               </h1>
-              <p className="text-sm text-white">
-                {trendingNews.published_time}
-              </p>
+           
             </div>
           </div>
         )}
@@ -116,7 +114,6 @@ const NewsCard = () => {
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-xs text-gray-400">{news.published_time}</p>
             </div>
           </div>
         ))}

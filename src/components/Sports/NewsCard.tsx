@@ -36,7 +36,7 @@ const sports = [
     category: "খেলাধুলা",
     title: "বাংলাদেশ বেসবল টিমের সাফল্য",
     description:
-      "বাংলাদেশ বেসবল টিম আন্তর্জাতিক টুর্নামেন্টে সাফল্য অর্জন করেছে, যা দেশের খেলাধুলা সম্প্রসারণের প্রতি নতুন দৃষ্টিভঙ্গি প্রদান করেছে।",
+      "বাংলাদেশ দেশের খেলাধুলা সম্প্রসারণের প্রতি নতুন দৃষ্টিভঙ্গি প্রদান করেছে।",
     date: "২০২৪-১২-০৪",
     news_type: "normal",
     published_time: "14:30",
@@ -58,7 +58,7 @@ const sports = [
     category: "খেলাধুলা",
     title: "অলিম্পিকে বাংলাদেশের পদক",
     description:
-      "বাংলাদেশ অলিম্পিকে একটি রৌপ্য পদক অর্জন করেছে, যা দেশের খেলাধুলার ইতিহাসে একটি মাইলফলক।",
+      "বাংলাদেশ দেশের খেলাধুলার ইতিহাসে একটি মাইলফলক।",
     date: "২০২৪-১২-০৪",
     news_type: "normal",
     published_time: "18:45",
@@ -92,9 +92,6 @@ const NewsCard = () => {
                   {trendingNews.title}
                 </Link>
               </h1>
-              <p className="text-sm text-white">
-                {trendingNews.published_time}
-              </p>
             </div>
           </div>
         )}
@@ -111,11 +108,10 @@ const NewsCard = () => {
               className="w-full h-[200px]"
             />
             <div className="p-4">
-              <h2 className="text-xl font-bold hover:text-blue-600">
+              <h2 className="text-lg font-bold hover:text-blue-600">
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
-              <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-xs text-gray-400">{news.published_time}</p>
+              <p className="text-sm text-gray-600 text-ellipsis">{news.description}</p>
             </div>
           </div>
         ))}

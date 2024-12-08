@@ -11,7 +11,7 @@ const international_news = [
   {
     id: 1,
     category: "জলবায়ু",
-    title: "আফ্রিকান ইউনিয়নের জলবায়ু সংবেদনশীলতার উপর গুরুত্বারোপ",
+    title: "জলবায়ু সংবেদনশীলতার উপর গুরুত্বারোপ",
     description:
       "জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়।",
     date: "2024-12-06",
@@ -44,7 +44,7 @@ const international_news = [
   {
     id: 4,
     category: "প্রব্রজন",
-    title: "জাতিসংঘের আঞ্চলিক শরণার্থী সহায়তা পরিকল্পনা চালু",
+    title: "জাতিসংঘের আঞ্চলিক শরণার্থী সহায়তা",
     description:
       "ল্যাটিন আমেরিকায় শরণার্থীদের চাকরি এবং নিরাপত্তা সমস্যার সমাধানে জাতিসংঘ $১.৪ বিলিয়ন পরিকল্পনা ঘোষণা করেছে।",
     date: "2024-12-06",
@@ -96,7 +96,6 @@ const NewsCard = () => {
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-xs text-gray-400">{news.published_time}</p>
             </div>
           </div>
         ))}
@@ -115,9 +114,6 @@ const NewsCard = () => {
                   {trendingNews.title}
                 </Link>
               </h1>
-              <p className="text-sm text-white">
-                {trendingNews.published_time}
-              </p>
             </div>
           </div>
         )}
@@ -137,7 +133,6 @@ const NewsCard = () => {
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-xs text-gray-400">{news.published_time}</p>
             </div>
           </div>
         ))}
