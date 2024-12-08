@@ -1,4 +1,3 @@
-import Advertise from "../Bangladesh/Advertise";
 import NewsCard from "./NewsCard";
 
 const International = () => {
@@ -8,8 +7,8 @@ const International = () => {
       <div className="lg:w-4/5">
         <NewsCard />
       </div>
-      <div className="lg:w-1/2 ps-2 mt-[4.5rem]">
-        <Advertise />
+      <div className="lg:w-1/2 ms-2 mb-2 h-[800px] bg-gray-400 ps-2 mt-[4.5rem]">
+       
       </div>
     </div>
   );
