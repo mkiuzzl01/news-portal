@@ -1,68 +1,51 @@
 "use client";
 
 import * as React from "react";
+import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { cn } from "@/lib/utils";
 
-const Table = React.forwardRef<
-  HTMLTableElement,
-  React.TableHTMLAttributes<HTMLTableElement>
->(({ className, ...props }, ref) => (
-  <div className="overflow-auto">
-    <table
-      ref={ref}
-      className={cn("w-full caption-bottom text-sm", className ?? "")} // Handle undefined className
-      {...props}
-    />
-  </div>
-));
-Table.displayName = "Table";
+const Tabs = TabsPrimitive.Root;
 
-const TableHeader = React.forwardRef<
-  HTMLTableSectionElement,
-  React.HTMLAttributes<HTMLTableSectionElement>
->(({ className, ...props }, ref) => (
-  <thead
+const TabsList = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+>(({ className = "", ...props }, ref) => (
+  <TabsPrimitive.List
     ref={ref}
-    className={cn("bg-gray-100", className ?? "")} // Handle undefined className
+    className={cn("flex items-center justify-center gap-4 p-2", className)}
     {...props}
   />
 ));
-TableHeader.displayName = "TableHeader";
+TabsList.displayName = TabsPrimitive.List.displayName;
 
-const TableBody = React.forwardRef<
-  HTMLTableSectionElement,
-  React.HTMLAttributes<HTMLTableSectionElement>
->(({ className, ...props }, ref) => (
-  <tbody
+const TabsTrigger = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+>(({ className = "", ...props }, ref) => (
+  <TabsPrimitive.Trigger
     ref={ref}
-    className={cn("divide-y divide-gray-200", className ?? "")} // Handle undefined className
+    className={cn(
+      " p-2 data-[state=active]:text-blue-500 data-[state=active]:border-b-2 data-[state=active]:border-blue-500",
+      className
+    )}
     {...props}
   />
 ));
-TableBody.displayName = "TableBody";
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
-const TableRow = React.forwardRef<
-  HTMLTableRowElement,
-  React.HTMLAttributes<HTMLTableRowElement>
->(({ className, ...props }, ref) => (
-  <tr
+const TabsContent = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
+>(({ className = "", ...props }, ref) => (
+  <TabsPrimitive.Content
     ref={ref}
-    className={cn("hover:bg-gray-100", className ?? "")} // Handle undefined className
+    className={cn(
+      "p-2  border-t-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className
+    )}
     {...props}
   />
 ));
-TableRow.displayName = "TableRow";
+TabsContent.displayName = TabsPrimitive.Content.displayName;
 
-const TableCell = React.forwardRef<
-  HTMLTableCellElement,
-  React.TdHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, ref) => (
-  <td
-    ref={ref}
-    className={cn("p-4 text-sm text-gray-700", className ?? "")} // Handle undefined className
-    {...props}
-  />
-));
-TableCell.displayName = "TableCell";
-
-export { Table, TableHeader, TableBody, TableRow, TableCell };
+export { Tabs, TabsList, TabsTrigger, TabsContent };

@@ -1,7 +1,6 @@
 import ImportantNews from "@/components/News/ImportantNews";
 import LastNews from "@/components/News/LastNews";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
-
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const SideBar = () => {
   return (
