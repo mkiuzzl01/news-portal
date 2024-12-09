@@ -103,9 +103,9 @@ const NewsCard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="md:col-span-1 space-y-6">
-          {normalNews.slice(0, 3).map((news) => (
+          {normalNews.slice(0, 3).map((news,idx) => (
             <div
-              key={news.id}
+              key={idx}
               className="bg-white  overflow-hidden flex items-stretch"
             >
               <div className="w-1/3 hover:scale-110 duration-700">

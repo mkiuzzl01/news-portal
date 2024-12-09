@@ -105,8 +105,8 @@ const NewsCard = () => {
         )}
 
         {/* Normal News Sections for Economy */}
-        {normalNews.map((news) => (
-          <div key={news.id} className="bg-white overflow-hidden mb-4">
+        {normalNews.map((news, idx) => (
+          <div key={idx} className="bg-white overflow-hidden mb-4">
             <Image
               src={news.image}
               alt={news.title}

@@ -134,8 +134,8 @@ const NewsCard = () => {
 
         {/* Normal News */}
         <div className="grid grid-cols-2 gap-4">
-          {normalNews.map((news) => (
-            <div key={news.id} className="bg-white overflow-hidden flex">
+          {normalNews.map((news, index) => (
+            <div key={index} className="bg-white overflow-hidden flex">
               <div className="w-3/4 p-3">
                 <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
