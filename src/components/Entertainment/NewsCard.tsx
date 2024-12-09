@@ -112,6 +112,7 @@ const NewsCard = () => {
                 <Image
                   src={news.image}
                   alt={news.title}
+                  placeholder="blur"
                   className="object-cover"
                 />
               </div>
@@ -137,6 +138,7 @@ const NewsCard = () => {
                 <Image
                   src={trendingNews.image}
                   alt={trendingNews.title}
+                  placeholder="blur"
                   className="inset-0 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
@@ -172,6 +174,7 @@ const NewsCard = () => {
                 <Image
                   src={news.image}
                   alt={news.title}
+                  placeholder="blur"
                   className="object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>

@@ -4,6 +4,7 @@ import International from "@/components/International/International";
 import Sports from "@/components/Sports/Sports";
 import Trending from "@/components/Trending/Trending";
 import Bangladesh from "@/components/Bangladesh/Bangladesh";
+import AllNews from "@/components/AllNews/AllNews";
 
 const Page = () => {
   return (
@@ -14,6 +15,7 @@ const Page = () => {
       <Bangladesh />
       <International />
       <Entertainment />
+      <AllNews />
     </div>
   );
 };

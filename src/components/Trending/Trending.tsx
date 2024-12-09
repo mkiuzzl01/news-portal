@@ -40,17 +40,6 @@ const technology_news = [
     published_time: "10:30",
     image: industry,
   },
-  {
-    id: 4,
-    category: "Technology",
-    title: "বাংলাদেশে ৫জি প্রযুক্তির উদ্বোধন",
-    description:
-      "বাংলাদেশে ৫জি নেটওয়ার্ক চালু হয়েছে, যা দ্রুত ইন্টারনেট এবং নতুন প্রযুক্তিগত উদ্ভাবনকে সমর্থন করবে।",
-    date: "2024-12-02",
-    news_type: "normal",
-    published_time: "10:30",
-    image: industry,
-  },
 ];
 
 const Trending = () => {
@@ -61,11 +50,7 @@ const Trending = () => {
           {/* Trending News Section */}
           <div>
             <SectionHeader title="সমম্বার" />
-            <div
-              className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
-        [-ms-overflow-style:none] 
-        [scrollbar-width:none]"
-            >
+            <div className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto">
               <TrendingCard data={technology_news} />
             </div>
           </div>
@@ -73,17 +58,13 @@ const Trending = () => {
           {/* Normal News Section */}
           <div>
             <SectionHeader title="গুরুত্বপূর্ণ" />
-            <div
-              className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
-        [-ms-overflow-style:none] 
-        [scrollbar-width:none]"
-            >
+            <div className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto">
               <TrendingCard data={technology_news} />
             </div>
           </div>
         </div>
 
-        {/* this is table section */}
+        {/* Table Section */}
         <div className="lg:w-1/5 w-full">
           <SaidTabs />
         </div>

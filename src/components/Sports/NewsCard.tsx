@@ -5,7 +5,6 @@ import Link from "next/link";
 import cricket from "@public/asset/Sports/crikect.jpg";
 import football from "@public/asset/Sports/football.jpg";
 import hokeei from "@public/asset/Sports/hokei.jpg";
-import sport from "@public/asset/Sports/sports.jpg";
 
 // Sample Sports Data
 const sports = [
@@ -42,27 +41,6 @@ const sports = [
     published_time: "14:30",
     image: hokeei,
   },
-  // {
-  //   id: "04",
-  //   category: "খেলাধুলা",
-  //   title: "টেনিস বিশ্বকাপে শিরোপা জয়",
-  //   description:
-  //     "বিশ্বকাপে একটি নতুন ইতিহাস সৃষ্টি হয়েছে, যেখানে একজন টেনিস খেলোয়াড় প্রথমবার শিরোপা জয়ী হন।",
-  //   date: "২০২৪-১২-০৪",
-  //   news_type: "normal",
-  //   published_time: "16:00",
-  //   image: sport,
-  // },
-  // {
-  //   id: "05",
-  //   category: "খেলাধুলা",
-  //   title: "অলিম্পিকে বাংলাদেশের পদক",
-  //   description: "বাংলাদেশ দেশের খেলাধুলার ইতিহাসে একটি মাইলফলক।",
-  //   date: "২০২৪-১২-০৪",
-  //   news_type: "normal",
-  //   published_time: "18:45",
-  //   image: sport,
-  // },
 ];
 
 const NewsCard = () => {

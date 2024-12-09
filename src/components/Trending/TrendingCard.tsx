@@ -1,14 +1,23 @@
 import React from "react";
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 
-const TrendingCard = ({ data }) => {
+interface News {
+  id: number;
+  category: string;
+  title: string;
+  description: string;
+  date: string;
+  news_type: string;
+  published_time: string;
+  image: StaticImageData;
+}
+
+const TrendingCard = ({ data }: { data: News[] }) => {
   return (
     <div className="grid gap-6">
       {data.map((news) => (
-        <div
-          key={news.id}
-          className="flex flex-row bg-white p-4"
-        >
+        <div key={news.id} className="flex flex-row bg-white p-4">
           <Image
             src={news.image}
             alt={news.title}
