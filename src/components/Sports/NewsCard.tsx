@@ -42,27 +42,27 @@ const sports = [
     published_time: "14:30",
     image: hokeei,
   },
-  {
-    id: "04",
-    category: "খেলাধুলা",
-    title: "টেনিস বিশ্বকাপে শিরোপা জয়",
-    description:
-      "বিশ্বকাপে একটি নতুন ইতিহাস সৃষ্টি হয়েছে, যেখানে একজন টেনিস খেলোয়াড় প্রথমবার শিরোপা জয়ী হন।",
-    date: "২০২৪-১২-০৪",
-    news_type: "normal",
-    published_time: "16:00",
-    image: sport,
-  },
-  {
-    id: "05",
-    category: "খেলাধুলা",
-    title: "অলিম্পিকে বাংলাদেশের পদক",
-    description: "বাংলাদেশ দেশের খেলাধুলার ইতিহাসে একটি মাইলফলক।",
-    date: "২০২৪-১২-০৪",
-    news_type: "normal",
-    published_time: "18:45",
-    image: sport,
-  },
+  // {
+  //   id: "04",
+  //   category: "খেলাধুলা",
+  //   title: "টেনিস বিশ্বকাপে শিরোপা জয়",
+  //   description:
+  //     "বিশ্বকাপে একটি নতুন ইতিহাস সৃষ্টি হয়েছে, যেখানে একজন টেনিস খেলোয়াড় প্রথমবার শিরোপা জয়ী হন।",
+  //   date: "২০২৪-১২-০৪",
+  //   news_type: "normal",
+  //   published_time: "16:00",
+  //   image: sport,
+  // },
+  // {
+  //   id: "05",
+  //   category: "খেলাধুলা",
+  //   title: "অলিম্পিকে বাংলাদেশের পদক",
+  //   description: "বাংলাদেশ দেশের খেলাধুলার ইতিহাসে একটি মাইলফলক।",
+  //   date: "২০২৪-১২-০৪",
+  //   news_type: "normal",
+  //   published_time: "18:45",
+  //   image: sport,
+  // },
 ];
 
 const NewsCard = () => {
@@ -72,20 +72,17 @@ const NewsCard = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="border-l-4 border-blue-500">
-        <h1 className="text-4xl font-bold my-4 pl-2">খেলাধুলা</h1>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
         {/* Display Trending News (Spanning two columns) */}
         {trendingNews && (
-          <div className="col-span-4 bg-gray-100 relative overflow-hidden">
+          <div className="col-span-2 bg-gray-100 relative overflow-hidden">
             <div className="hover:scale-110 duration-500">
               <Image
                 src={trendingNews.image}
                 alt={trendingNews.title}
                 placeholder="blur"
                 objectFit="cover"
-                className="w-full h-[500px]"
+                className="w-full h-[400px]"
               />
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">

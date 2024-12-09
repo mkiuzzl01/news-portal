@@ -55,27 +55,31 @@ const technology_news = [
 
 const Trending = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto border-b-2 py-4">
       <div className="flex flex-col lg:flex-row justify-between gap-4">
         <div className="w-4/5 grid lg:grid-cols-2 gap-8">
           {/* Trending News Section */}
-          <div
-            className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
+          <div>
+            <SectionHeader title="সমম্বার" />
+            <div
+              className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
         [scrollbar-width:none]"
-          >
-            <SectionHeader title="সমম্বার" />
-            <TrendingCard data={technology_news} />
+            >
+              <TrendingCard data={technology_news} />
+            </div>
           </div>
 
           {/* Normal News Section */}
-          <div
-            className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
+          <div>
+            <SectionHeader title="গুরুত্বপূর্ণ" />
+            <div
+              className="flex flex-col gap-6 h-full lg:h-[370px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
         [scrollbar-width:none]"
-          >
-            <SectionHeader title="গুরুত্বপূর্ণ" />
-            <TrendingCard data={technology_news} />
+            >
+              <TrendingCard data={technology_news} />
+            </div>
           </div>
         </div>
 

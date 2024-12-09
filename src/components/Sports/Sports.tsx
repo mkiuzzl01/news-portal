@@ -1,17 +1,27 @@
 import React from "react";
 import NewsCard from "./NewsCard";
+import SaidTabs from "./SaidTabs";
+import SaidBar from "./SaidBar";
 
 const Sports = () => {
   return (
-    <div className="lg:w-4/5 m-auto flex lg:flex-row flex-col justify-between">
-      {/* here add all section for ui */}
-      <div className="lg:w-4/5">
-        <NewsCard />
+    <section className="container m-auto pt-10 border-b-2">
+      <div className="border-s-4 border-green-500 mb-2">
+        <h1 className="text-4xl font-bold my-4 ps-2 ">খেলাধুলা</h1>
       </div>
-      <div className="lg:w-1/2 ms-2 mb-2 h-[800px] bg-gray-400 ps-2 mt-[4.5rem]">
-       
+      <div className="flex lg:flex-row flex-col justify-between gap-3 my-4">
+        <div className="lg:w-1/5 w-full lg:mt-0 mt-4">
+          <SaidTabs />
+        </div>
+        {/* here add all section for ui */}
+        <div className="lg:w-3/5">
+          <NewsCard />
+        </div>
+        <div className="lg:w-1/5">
+          <SaidBar />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

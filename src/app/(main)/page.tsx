@@ -15,6 +15,9 @@ const Page = () => {
       {/* this is section gap for others */}
       <Trending />
 
+      <Sports />
+      {/* this is section gap for others */}
+      
       <International />
       {/* this is section gap for others */}
 
@@ -25,9 +28,6 @@ const Page = () => {
       {/* this is section gap for others */}
 
       <Technology />
-      {/* this is section gap for others */}
-
-      <Sports />
       {/* this is section gap for others */}
 
       <Environment />
