@@ -13,7 +13,7 @@ const international_news = [
     category: "জলবায়ু",
     title: "জলবায়ু সংবেদনশীলতার উপর গুরুত্বারোপ",
     description:
-      "জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়।",
+      "জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়। জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয় ",
     date: "2024-12-06",
     news_type: "trending",
     published_time: "09:00",
@@ -75,71 +75,71 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="container mx-auto">
-      <div className="border-s-4 border-green-500">
-        <h1 className="text-4xl font-bold my-4 ps-2">আন্তর্জাতিক</h1>
+    <div className="container mx-auto p-4">
+      <div className="border-l-4 border-green-500">
+        <h1 className="text-4xl font-bold my-4 pl-2">আন্তর্জাতিক</h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {normalNews.slice(0, 1).map((news) => (
-          <div key={news.id} className="bg-white overflow-hidden">
-            <Image
-              src={news.image}
-              alt={news.title}
-              width={400}
-              height={300}
-              placeholder="blur"
-              objectFit="cover"
-              className="w-full h-[200px]"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-bold hover:text-blue-600">
-                <Link href={`view_details/${news.id}`}>{news.title}</Link>
-              </h2>
-              <p className="text-sm text-gray-600">{news.description}</p>
-            </div>
-          </div>
-        ))}
 
-        {trendingNews && (
-          <div className="col-span-2 bg-gray-100 relative overflow-hidden">
-            <div className="hover:scale-110 duration-500">
-              <Image
-                src={trendingNews.image}
-                alt={trendingNews.title}
-                objectFit="cover"
-                placeholder="blur"
-                className="w-full h-[400px]"
-              />
+      {/* card */}
+      <div className="grid grid-cols-2 gap-4">
+        {/* Trending News */}
+        <div className="bg-white overflow-hidden">
+          {trendingNews && (
+            <div>
+              <div className="overflow-hidden">
+                <Image
+                  src={trendingNews.image}
+                  alt={trendingNews.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-[500px] object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
+                  <Link href={`view_details/${trendingNews.id}`}>
+                    {trendingNews.title}
+                  </Link>
+                </h2>
+                <p className="text-gray-600 mb-3 text-sm">
+                  {trendingNews.description}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {trendingNews.date} • {trendingNews.published_time}
+                </p>
+              </div>
             </div>
-            <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-              <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
-                <Link href={`view_details/${trendingNews.id}`}>
-                  {trendingNews.title}
-                </Link>
-              </h1>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
 
-        {normalNews.slice(1).map((news) => (
-          <div key={news.id} className="bg-white overflow-hidden">
-            <Image
-              src={news.image}
-              alt={news.title}
-              width={400}
-              height={300}
-              objectFit="cover"
-              placeholder="blur"
-              className="w-full h-[200px]"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-bold hover:text-blue-600">
-                <Link href={`view_details/${news.id}`}>{news.title}</Link>
-              </h2>
-              <p className="text-sm text-gray-600">{news.description}</p>
+        {/* Normal News */}
+        <div className="grid grid-cols-2 gap-4">
+          {normalNews.map((news) => (
+            <div
+              key={news.id}
+              className="bg-white overflow-hidden flex flex-col"
+            >
+              <div className="w-full hover:scale-110 duration-700">
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  width={300}
+                  height={200}
+                  className="w-full h-[200px] object-cover"
+                />
+              </div>
+              <div className="pt-4">
+                <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
+                  <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                </h2>
+                <p>{news?.description}</p>
+                <p className="text-xs text-gray-500 mt-auto">
+                  {news.date} • {news.published_time}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

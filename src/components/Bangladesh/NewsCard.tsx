@@ -1,113 +1,161 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import top_news from "@public/asset/bangladesh/bangladesh_top.jpg";
-import economy from "@public/asset/bangladesh/economy.jpg";
-import environment from "@public/asset/bangladesh/environment.jpg";
-import sport from "@public/asset/bangladesh/sport.jpg";
 import Link from "next/link";
+import vote from "@public/asset/politics/vote.jpg";
+import parliament from "@public/asset/politics/perliment.jpg";
+import team from "@public/asset/politics/team.jpg";
 
-const bangladesh_news_data = [
+const politicsData = [
   {
-    id: 1,
-    category: "Politics",
-    title: "বাংলাদেশে আসন্ন নির্বাচন নিয়ে বিতর্ক",
+    id: "01",
+    category: "রাজনীতি",
+    title: "সংসদে নতুন কর সংস্কার বিল পাস",
     description:
-      "বাংলাদেশে আগামী নির্বাচনের উপর বিভিন্ন রাজনৈতিক দলের মধ্যে বিতর্ক চলছে।",
-    date: "2024-12-05",
-    news_type: "lead",
-    published_time: "06:20",
-    image: top_news,
+      "সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা রাজস্ৱ বৃদ্ধির প্রতিশ্রুতি দিচ্ছে।",
+    date: "২০২৪-১২-০৪",
+    news_type: "trending",
+    published_time: "09:00",
+    image: parliament,
   },
   {
-    id: 2,
-    category: "Economy",
-    title: "বাংলাদেশের অর্থনীতি উন্নতির পথে",
+    id: "02",
+    category: "রাজনীতি",
+    title: "বাজেট বরাদ্দ নিয়ে সমালোচনা",
     description:
-      "বাংলাদেশের অর্থনীতি এই বছর আরও শক্তিশালী হয়েছে, এবং এটি আন্তর্জাতিক মুদ্রার বাজারে তার অবস্থান সুদৃঢ় করেছে।",
-    date: "2024-12-04",
+      "বিরোধী দলের নেতা বাজেটকে সমালোচনা করেছেন, দাবি করেছেন এটি মধ্যবিত্তের উদ্বেগগুলিকে সমাধান করতে ব্যর্থ হয়েছে।",
+    date: "২০২৪-১২-০৪",
     news_type: "normal",
-    published_time: "10:30",
-    image: economy,
+    published_time: "12:00",
+    image: team,
   },
   {
-    id: 3,
-    category: "Technology",
-    title: "বাংলাদেশে প্রযুক্তির অগ্রগতি",
+    id: "03",
+    category: "রাজনীতি",
+    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
     description:
-      "বাংলাদেশে নতুন প্রযুক্তি উদ্ভাবন এবং ব্যবহারের ক্ষেত্রে উল্লেখযোগ্য অগ্রগতি হয়েছে, যা দেশের উন্নয়নে সাহায্য করছে।",
-    date: "2024-12-03",
+      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
+    date: "২০২৪-১২-০৪",
     news_type: "normal",
-    published_time: "08:00",
-    image: environment,
+    published_time: "14:30",
+    image: vote,
   },
   {
-    id: 4,
-    category: "Sports",
-    title: "বিশ্বকাপে বাংলাদেশের জয়",
+    id: "03",
+    category: "রাজনীতি",
+    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
     description:
-      "বাংলাদেশের ক্রিকেট দল সম্প্রতি বিশ্বকাপে দুর্দান্ত পারফর্মেন্স প্রদর্শন করেছে এবং একটি ঐতিহাসিক জয় লাভ করেছে।",
-    date: "2024-12-02",
+      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
+    date: "২০২৪-১২-০৪",
     news_type: "normal",
-    published_time: "15:10",
-    image: sport,
+    published_time: "14:30",
+    image: vote,
+  },
+  {
+    id: "03",
+    category: "রাজনীতি",
+    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
+    description:
+      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
+    date: "২০২৪-১২-০৪",
+    news_type: "normal",
+    published_time: "14:30",
+    image: vote,
+  },
+  {
+    id: "03",
+    category: "রাজনীতি",
+    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
+    description:
+      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
+    date: "২০২৪-১২-০৪",
+    news_type: "normal",
+    published_time: "14:30",
+    image: vote,
+  },
+  {
+    id: "03",
+    category: "রাজনীতি",
+    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
+    description:
+      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
+    date: "২০২৪-১২-০৪",
+    news_type: "normal",
+    published_time: "14:30",
+    image: vote,
   },
 ];
 
 const NewsCard = () => {
-  const leadNews = bangladesh_news_data.find(
-    (news) => news.news_type === "lead"
+  const trendingNews = politicsData.find(
+    (news) => news.news_type === "trending"
   );
-  const normalNews = bangladesh_news_data.filter(
-    (news) => news.news_type === "normal"
-  );
+
+  const normalNews = politicsData.filter((news) => news.news_type === "normal");
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {/* Trending News Section */}
-        {leadNews && (
-          <div className="col-span-3 relative bg-gray-200 overflow-hidden">
-            <div className="hover:scale-110 duration-500">
-              <Image
-                src={leadNews?.image}
-                alt={leadNews?.title}
-                width={600}
-                height={200}
-                placeholder="blur"
-                objectFit="cover"
-                className="w-full h-[500px]"
-              />
-            </div>
-            <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-              <h1 className="text-2xl text-white font-semibold hover:text-yellow-500">
-                <Link href={`view details/${leadNews?.id}`}>
-                  {leadNews.title}
-                </Link>
-              </h1>
-            </div>
-          </div>
-        )}
+    <div className="container mx-auto py-6">
+      {/* Header */}
+      <div className="border-l-4 border-green-500 mb-6">
+        <h1 className="text-4xl font-bold pl-4">বাংলাদেশ</h1>
+      </div>
 
-        {/* Normal News Sections */}
-        {normalNews.map((news) => (
-          <div key={news.id} className="bg-white overflow-hidden mb-4">
-            <Image
-              src={news?.image}
-              alt={news?.title}
-              width={300}
-              height={200}
-              objectFit="cover"
-              placeholder="blur"
-              className="w-full h-[200px]"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-bold hover:text-blue-600">
-                <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
-              </h2>
-              <p className="text-sm text-gray-600">{news?.description}</p>
+      {/* card */}
+      <div className="grid grid-cols-2 gap-4">
+        {/* Trending News */}
+        <div className="bg-white overflow-hidden">
+          {trendingNews && (
+            <div>
+              <div className="overflow-hidden">
+                <Image
+                  src={trendingNews.image}
+                  alt={trendingNews.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-[500px] object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
+                  <Link href={`view_details/${trendingNews.id}`}>
+                    {trendingNews.title}
+                  </Link>
+                </h2>
+                <p className="text-gray-600 mb-3 text-sm">
+                  {trendingNews.description}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {trendingNews.date} • {trendingNews.published_time}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          )}
+        </div>
+
+        {/* Normal News */}
+        <div className="grid grid-cols-2 gap-4">
+          {normalNews.map((news) => (
+            <div key={news.id} className="bg-white overflow-hidden flex">
+              <div className="w-3/4 p-3">
+                <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
+                  <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                </h2>
+                <p className="text-xs text-gray-500 mt-auto">
+                  {news.date} • {news.published_time}
+                </p>
+              </div>
+              <div className="w-full hover:scale-110 duration-700">
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  width={300}
+                  height={200}
+                  className="h-[200px] object-cover"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

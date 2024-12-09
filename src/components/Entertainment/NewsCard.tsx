@@ -96,80 +96,84 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="container mx-auto">
-      <div className="border-s-4 border-green-500">
-        <h1 className="text-4xl font-bold my-4 ps-2">বিনোদন</h1>
+    <div className="container mx-auto px-4 py-6">
+      <div className="border-l-4 border-green-500 mb-6">
+        <h1 className="text-3xl md:text-4xl font-bold pl-4">বিনোদন</h1>
       </div>
-      <div className="grid grid-cols-3  gap-4 p-4">
-        {/* First Column - 3 normal news cards */}
-        <div className="col-span-1 space-y-4">
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="md:col-span-1 space-y-6">
           {normalNews.slice(0, 3).map((news) => (
-            <div key={news.id} className="bg-white overflow-hidden flex">
-              <Image
-                src={news.image}
-                alt={news.title}
-                width={150}
-                height={100}
-                placeholder="blur"
-                objectFit="cover"
-                className="w-[150px] h-[100px] object-cover"
-              />
-              <div className="p-4 flex-1 flex flex-col justify-center">
-                <h2 className="text-xl font-bold hover:text-blue-600 line-clamp-1">
+            <div
+              key={news.id}
+              className="bg-white  overflow-hidden flex items-stretch"
+            >
+              <div className="w-1/3 hover:scale-110 duration-700">
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-2/3 ps-4 flex flex-col justify-between">
+                <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
                 </h2>
-                <p className="text-sm text-gray-600 line-clamp-2">
+                <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news.description}
                 </p>
+                <div className="text-xs text-gray-500">
+                  {news.date} • {news.published_time}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Second Column - Centered Trending News */}
-        <div className="col-span-1">
+        <div className="md:col-span-2 relative group">
           {trendingNews && (
-            <div className="bg-gray-100 relative overflow-hidden">
-              <div className="hover:scale-110 duration-500">
+            <div className="bg-gray-100 overflow-hidden">
+              <div className="relative w-full hover:scale-110 duration-700 overflow-hidden">
                 <Image
-                  placeholder="blur"
                   src={trendingNews.image}
                   alt={trendingNews.title}
-                  objectFit="cover"
-                  className="w-full h-[330px]"
+                  className="inset-0 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-                <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                <h2 className="text-white text-xl md:text-2xl font-bold hover:text-yellow-400 transition-colors">
                   <Link href={`view_details/${trendingNews.id}`}>
                     {trendingNews.title}
                   </Link>
-                </h1>
+                </h2>
               </div>
             </div>
           )}
         </div>
 
-        {/* Third Column - Remaining normal news */}
-        <div className="col-span-1 space-y-4">
+        <div className="md:col-span-1 space-y-6">
           {normalNews.slice(3).map((news) => (
-            <div key={news.id} className="bg-white overflow-hidden flex">
-              <Image
-                src={news.image}
-                alt={news.title}
-                width={150}
-                height={100}
-                placeholder="blur"
-                objectFit="cover"
-                className="w-[150px] h-[100px] object-cover"
-              />
-              <div className="p-4 flex-1 flex flex-col justify-center">
-                <h2 className="text-xl font-bold hover:text-blue-600 line-clamp-1">
+            <div
+              key={news.id}
+              className="bg-white overflow-hidden flex items-stretch"
+            >
+              <div className="w-2/3 ps-4 flex flex-col justify-between">
+                <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
                 </h2>
-                <p className="text-sm text-gray-600 line-clamp-2">
+                <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news.description}
                 </p>
+                <div className="text-xs text-gray-500 mt-auto">
+                  {news.date} • {news.published_time}
+                </div>
+              </div>
+              <div className="w-1/3">
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
               </div>
             </div>
           ))}
