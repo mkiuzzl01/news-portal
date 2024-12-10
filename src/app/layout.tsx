@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Baloo_Da_2 } from "next/font/google";
+const baloo_font = Baloo_Da_2({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Daily Times 24",
@@ -13,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={baloo_font.className}>{children}</body>
     </html>
   );
 }

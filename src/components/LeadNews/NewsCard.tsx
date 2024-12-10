@@ -66,20 +66,19 @@ const NewsCard = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Trending News Section */}
         {leadNews && (
-          <div className="col-span-3 relative bg-gray-200 overflow-hidden">
-            <div className="hover:scale-110 duration-500">
+          <div className="col-span-1 lg:col-span-3 relative bg-gray-200 overflow-hidden ">
+            <div className="hover:scale-110 duration-700">
               <Image
                 src={leadNews?.image}
                 alt={leadNews?.title}
-                width={600}
-                height={200}
+                width={1200}
+                height={500}
                 placeholder="blur"
                 objectFit="cover"
-                className="w-full h-[500px]"
               />
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-              <h1 className="text-2xl text-white font-semibold hover:text-yellow-500">
+              <h1 className="lg:text-4xl text-white font-semibold hover:text-yellow-500">
                 <Link href={`view details/${leadNews?.id}`}>
                   {leadNews.title}
                 </Link>
@@ -90,15 +89,15 @@ const NewsCard = () => {
 
         {/* Normal News Sections */}
         {normalNews.map((news) => (
-          <div key={news.id} className="bg-white overflow-hidden mb-4">
+          <div key={news.id} className="overflow-hidden">
             <Image
               src={news?.image}
               alt={news?.title}
-              width={300}
-              height={200}
+              width={1000}
+              height={600}
               objectFit="cover"
               placeholder="blur"
-              className="w-full h-[200px]"
+              className="w-full"
             />
             <div className="p-4">
               <h2 className="text-xl font-bold hover:text-blue-600">

@@ -1,4 +1,4 @@
-import React from "react";
+"use client"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import LastNews from "../News/LastNews";
 import ImportantNews from "../News/ImportantNews";

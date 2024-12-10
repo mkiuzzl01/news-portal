@@ -50,6 +50,13 @@ const newsData = [
     date: "২০২৪-১২-০২",
   },
   {
+    id: 8,
+    title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
+    description:
+      "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
+    date: "২০২৪-১২-০২",
+  },
+  {
     id: 9,
     title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
     description:
@@ -63,35 +70,36 @@ const newsData = [
       "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
     date: "২০২৪-১২-০২",
   },
-  {
-    id: 11,
-    title: "ডিজিটাল বাংলাদেশ প্রকল্পের উন্নতি",
-    description:
-      "ডিজিটাল বাংলাদেশ প্রকল্পে প্রযুক্তিগত অগ্রগতির ফলে ইন্টারনেট সেবা সারা দেশে পৌঁছেছে।",
-    date: "২০২৪-১২-০২",
-  },
 ];
+
 const LastNews = () => {
   return (
     <div
-      className="p-4 h-full lg:h-[750px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
-        [-ms-overflow-style:none] 
-        [scrollbar-width:none]"
+      className="w-full max-h-[400px] lg:max-h-[1100px] px-2 md:px-4 overflow-y-auto 
+        [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
-      <ul className="space-y-4">
-        {newsData.map((news, index) => (
+      <ul className="divide-y divide-gray-200">
+        {newsData?.map((news) => (
           <li
-            key={index}
-            className="border-b last:border-b-0 pb-4 last:pb-0 hover:bg-gray-50 transition"
+            key={news.id}
+            className="py-3 md:py-4 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
           >
-            <Link href={`view_details/${news?.id}`} className="block">
-              <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-500">
-                {news.title}
+            <Link href={`/view-details/${news?.id}`} className="block space-y-1">
+              <h3
+                className="text-sm md:text-base lg:text-lg font-semibold text-gray-800 
+              line-clamp-1 hover:text-blue-600 transition-colors"
+              >
+                {news?.title}
               </h3>
-              <p className="text-sm text-gray-600 line-clamp-2">
-                {news.description}
+              <p className="text-xs md:text-sm text-gray-600 line-clamp-2">
+                {news?.description}
               </p>
-              <span className="text-xs text-gray-500">{news.date}</span>
+              <div className="flex justify-between items-center text-xs md:text-sm text-gray-500">
+                <span>{news?.date}</span>
+                <span className="text-blue-500 hover:text-blue-700">
+                  আরও পড়ুন
+                </span>
+              </div>
             </Link>
           </li>
         ))}
