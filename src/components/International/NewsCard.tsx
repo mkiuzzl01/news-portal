@@ -13,7 +13,7 @@ const international_news = [
     category: "জলবায়ু",
     title: "জলবায়ু সংবেদনশীলতার উপর গুরুত্বারোপ",
     description:
-      "জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়। জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয় ",
+      "জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়।",
     date: "2024-12-06",
     news_type: "trending",
     published_time: "09:00",
@@ -80,60 +80,60 @@ const NewsCard = () => {
         <h1 className="text-4xl font-bold my-4 pl-2">আন্তর্জাতিক</h1>
       </div>
 
-      {/* card */}
-      <div className="grid grid-cols-2 gap-4">
+      {/* Main News Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Trending News */}
-        <div className="bg-white overflow-hidden">
-          {trendingNews && (
-            <div>
-              <div className="overflow-hidden">
-                <Image
-                  src={trendingNews.image}
-                  alt={trendingNews.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-[500px] object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <div className="p-4">
-                <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${trendingNews.id}`}>
-                    {trendingNews.title}
-                  </Link>
-                </h2>
-                <p className="text-gray-600 mb-3 text-sm">
-                  {trendingNews.description}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {trendingNews.date} • {trendingNews.published_time}
-                </p>
-              </div>
+        {trendingNews && (
+          <div className="bg-white overflow-hidden">
+            <div className="h-64 lg:h-96 overflow-hidden">
+              <Image
+                src={trendingNews.image}
+                alt={trendingNews.title}
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
             </div>
-          )}
-        </div>
+            <div className="pt-4">
+              <h2 className="text-2xl font-bold mb-3 hover:text-blue-600">
+                <Link href={`view_details/${trendingNews.id}`}>
+                  {trendingNews.title}
+                </Link>
+              </h2>
+              <p className="text-sm text-gray-600 mb-4">
+                {trendingNews.description.slice(0, 150)}...
+              </p>
+              <p className="text-xs text-gray-500">
+                {trendingNews.date} • {trendingNews.published_time}
+              </p>
+            </div>
+          </div>
+        )}
 
-        {/* Normal News */}
-        <div className="grid grid-cols-2 gap-4">
+        {/* Normal News Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {normalNews.map((news) => (
             <div
               key={news.id}
               className="bg-white overflow-hidden flex flex-col"
             >
-              <div className="w-full hover:scale-110 duration-700">
+              <div className="h-40 lg:h-48 overflow-hidden">
                 <Image
                   src={news.image}
                   alt={news.title}
-                  width={300}
-                  height={200}
-                  className="w-full h-[200px] object-cover"
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
-              <div className="pt-4">
-                <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
+              <div className="pt-4 flex flex-col justify-between">
+                <h3 className="text-lg font-semibold mb-2 hover:text-blue-600">
                   <Link href={`view_details/${news.id}`}>{news.title}</Link>
-                </h2>
-                <p>{news?.description}</p>
-                <p className="text-xs text-gray-500 mt-auto">
+                </h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  {news.description.slice(0, 100)}...
+                </p>
+                <p className="text-xs text-gray-500">
                   {news.date} • {news.published_time}
                 </p>
               </div>

@@ -66,7 +66,7 @@ const Technology = () => {
   return (
     <div>
       <div className="border-t-2">
-        <h1 className="text-3xl font-semibold py-2">প্রযুক্তি</h1>
+        <h1 className="text-4xl font-bold py-2">প্রযুক্তি</h1>
       </div>
       <div className="space-y-4">
         {technology_news?.map((news, index) => (
@@ -78,7 +78,7 @@ const Technology = () => {
                 className="w-full"
               />
             )}
-            <h1 className="text-xl font-semibold py-2 border-b-2">
+            <h1 className="text-xl font-medium py-2 border-b-2 hover:text-blue-500">
               <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
             </h1>
           </div>

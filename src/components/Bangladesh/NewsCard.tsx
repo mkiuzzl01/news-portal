@@ -101,7 +101,7 @@ const NewsCard = () => {
       </div>
 
       {/* card */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Trending News */}
         <div className="bg-white overflow-hidden">
           {trendingNews && (
@@ -133,7 +133,7 @@ const NewsCard = () => {
         </div>
 
         {/* Normal News */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {normalNews.map((news, index) => (
             <div key={index} className="bg-white overflow-hidden flex">
               <div className="w-3/4 p-3">

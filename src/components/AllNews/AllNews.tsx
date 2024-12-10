@@ -6,7 +6,7 @@ import Technology from "../News/Technology";
 const AllNews = () => {
   return (
     <div className="container m-auto">
-      <div className="grid grid-cols-3 gap-4 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
         <Education></Education>
         <Jobs />
         <Technology />
