@@ -39,7 +39,7 @@ const sports = [
     image: hokeei,
   },
   {
-    id: "04",
+    id: "05",
     category: "খেলাধুলা",
     title: "টেনিস বিশ্বকাপে শিরোপা জয়",
     description:
@@ -50,7 +50,7 @@ const sports = [
     image: sport,
   },
   {
-    id: "04",
+    id: "06",
     category: "খেলাধুলা",
     title: "টেনিস বিশ্বকাপে শিরোপা জয়",
     description:
@@ -61,7 +61,7 @@ const sports = [
     image: sport,
   },
   {
-    id: "04",
+    id: "07",
     category: "খেলাধুলা",
     title: "টেনিস বিশ্বকাপে শিরোপা জয়",
     description:
@@ -72,7 +72,18 @@ const sports = [
     image: sport,
   },
   {
-    id: "04",
+    id: "08",
+    category: "খেলাধুলা",
+    title: "টেনিস বিশ্বকাপে শিরোপা জয়",
+    description:
+      "বিশ্বকাপে একটি নতুন ইতিহাস সৃষ্টি হয়েছে, যেখানে একজন টেনিস খেলোয়াড় প্রথমবার শিরোপা জয়ী হন।",
+    date: "২০২৪-১২-০৪",
+    news_type: "normal",
+    published_time: "16:00",
+    image: sport,
+  },
+  {
+    id: "09",
     category: "খেলাধুলা",
     title: "টেনিস বিশ্বকাপে শিরোপা জয়",
     description:
@@ -87,7 +98,7 @@ const sports = [
 const SaidBar = () => {
   return (
     <div
-      className="p-4 h-full lg:h-[700px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
+      className="p-4 max-h-[400px] lg:max-h-[900px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
         [scrollbar-width:none]"
     >
@@ -99,9 +110,10 @@ const SaidBar = () => {
               <h1 className="text-lg font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
                 {news?.title}
               </h1>
+              <p>{news?.date}</p>
             </div>
             {/* Image Section */}
-            <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-md hover:scale-105 duration-300">
+            <div className="w-1/2 h-full flex-shrink-0 overflow-hidden  hover:scale-105 duration-300">
               <Image
                 src={news?.image}
                 alt={news?.title}

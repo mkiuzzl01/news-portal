@@ -75,7 +75,7 @@ const newsData = [
 const ReadNews = () => {
   return (
     <div
-      className="p-4 h-full lg:h-[650px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
+      className="p-4 max-h-[400px] lg:max-h-[800px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
         [scrollbar-width:none]"
     >

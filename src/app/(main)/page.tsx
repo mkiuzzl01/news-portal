@@ -11,10 +11,10 @@ const Page = () => {
     <div className="container mx-auto px-4">
       <LeadSection />
       <Trending />
+      <Entertainment />
       <Sports />
       <Bangladesh />
       <International />
-      <Entertainment />
       <AllNews />
     </div>
   );

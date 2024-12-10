@@ -110,9 +110,9 @@ const NewsCard = () => {
                 <Image
                   src={trendingNews.image}
                   alt={trendingNews.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-[500px] object-cover transition-transform duration-300 hover:scale-105"
+                  width={1200}
+                  height={600}
+                  className="w-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
               <div className="p-4">
@@ -149,8 +149,8 @@ const NewsCard = () => {
                   src={news.image}
                   alt={news.title}
                   width={300}
-                  height={200}
-                  className="h-[200px] object-cover"
+                  height={300}
+                  className="object-cover"
                 />
               </div>
             </div>

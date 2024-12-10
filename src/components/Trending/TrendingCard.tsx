@@ -17,7 +17,7 @@ const TrendingCard = ({ data }: { data: News[] }) => {
   return (
     <div className="grid gap-6">
       {data.map((news) => (
-        <div key={news.id} className="flex flex-row bg-white p-4">
+        <div key={news.id} className="flex flex-row bg-white pt-4">
           <Image
             src={news.image}
             alt={news.title}

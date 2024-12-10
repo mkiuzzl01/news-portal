@@ -50,7 +50,10 @@ const Trending = () => {
           {/* Trending News Section */}
           <div>
             <SectionHeader title="সম্বার" />
-            <div className="flex flex-col gap-6">
+            <div
+              className="flex flex-col gap-6 w-full max-h-[400px]   overflow-y-auto 
+        [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            >
               <TrendingCard data={technology_news} />
             </div>
           </div>
@@ -58,7 +61,10 @@ const Trending = () => {
           {/* Normal News Section */}
           <div>
             <SectionHeader title="গুরুত্বপূর্ণ" />
-            <div className="flex flex-col gap-6">
+            <div
+              className="flex flex-col gap-6 w-full max-h-[400px] overflow-y-auto 
+        [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            >
               <TrendingCard data={technology_news} />
             </div>
           </div>

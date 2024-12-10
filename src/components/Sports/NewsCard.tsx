@@ -6,7 +6,6 @@ import cricket from "@public/asset/Sports/crikect.jpg";
 import football from "@public/asset/Sports/football.jpg";
 import hokeei from "@public/asset/Sports/hokei.jpg";
 
-// Sample Sports Data
 const sports = [
   {
     id: "01",
@@ -49,21 +48,20 @@ const NewsCard = () => {
   const normalNews = sports.filter((news) => news.news_type === "normal");
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-        {/* Display Trending News (Spanning two columns) */}
+        {/* Display Trending News */}
         {trendingNews && (
-          <div className="col-span-2 bg-gray-100 relative overflow-hidden">
-            <div className="hover:scale-110 duration-500">
+          <div className="col-span-1 sm:col-span-2 bg-gray-100 relative overflow-hidden">
+            <div className="hover:scale-105 transform duration-500">
               <Image
                 src={trendingNews.image}
                 alt={trendingNews.title}
-                placeholder="blur"
-                objectFit="cover"
-                className="w-full h-[400px]"
+                width={1200}
+                height={600}
               />
             </div>
-            <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
+            <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full rounded-b-lg">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
                 <Link href={`view_details/${trendingNews.id}`}>
                   {trendingNews.title}
@@ -73,25 +71,27 @@ const NewsCard = () => {
           </div>
         )}
 
-        {/* Display Remaining Normal News */}
+        {/* Display Normal News */}
         {normalNews.map((news) => (
           <div key={news.id} className="bg-white overflow-hidden">
-            <Image
-              src={news.image}
-              alt={news.title}
-              width={400}
-              height={300}
-              placeholder="blur"
-              objectFit="cover"
-              className="w-full h-[200px]"
-            />
+            <div className="hover:scale-110 duration-700">
+              <Image
+                src={news.image}
+                alt={news.title}
+                width={300}
+                height={200}
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "200px",
+                }}
+              />
+            </div>
             <div className="p-4">
               <h2 className="text-lg font-bold hover:text-blue-600">
                 <Link href={`view_details/${news.id}`}>{news.title}</Link>
               </h2>
-              <p className="text-sm text-gray-600 text-ellipsis">
-                {news.description}
-              </p>
+              <p className="text-sm text-gray-600 mt-2">{news.description}</p>
             </div>
           </div>
         ))}
