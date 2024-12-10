@@ -8,7 +8,7 @@ import AllNews from "@/components/AllNews/AllNews";
 
 const Page = () => {
   return (
-    <div lang="lg:mx-4">
+    <div className="container mx-auto px-4">
       <LeadSection />
       <Trending />
       <Sports />

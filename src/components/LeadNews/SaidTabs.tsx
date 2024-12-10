@@ -2,6 +2,7 @@ import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import LastNews from "../News/LastNews";
 import ImportantNews from "../News/ImportantNews";
+import DailyIslam from "../News/DailyIslam";
 
 const SaidTabs = () => {
   return (
@@ -13,6 +14,9 @@ const SaidTabs = () => {
         <TabsTrigger value="important" className="font-semibold">
           গুরুত্বপূর্ণ
         </TabsTrigger>
+        <TabsTrigger value="dailyIslam" className="font-semibold">
+          দৈনন্দিন ইসলাম
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="last">
         {/* this is last news  */}
@@ -20,7 +24,11 @@ const SaidTabs = () => {
       </TabsContent>
       <TabsContent value="important">
         {/* this is important news */}
-        <ImportantNews  />
+        <ImportantNews />
+      </TabsContent>
+      <TabsContent value="dailyIslam">
+        {/* this is important news */}
+        <DailyIslam />
       </TabsContent>
     </Tabs>
   );

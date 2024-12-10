@@ -29,7 +29,7 @@ const topNews = [
 const Header = () => {
   return (
     <section className="hidden lg:block border-b-2 border-[#B99470]  py-4 bg-gray-200">
-      <div className="container mx-auto flex flex-row items-center gap-4">
+      <div className="container mx-auto px-4 flex flex-row items-center gap-4">
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-3xl font-extrabold pb-2">
             Daily Time <span className="text-red-500">24</span>

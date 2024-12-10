@@ -96,14 +96,14 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="py-6">
       <div className="border-l-4 border-green-500 mb-6">
         <h1 className="text-3xl md:text-4xl font-bold pl-4">বিনোদন</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="md:col-span-1 space-y-6">
-          {normalNews.slice(0, 3).map((news,idx) => (
+          {normalNews.slice(0, 3).map((news, idx) => (
             <div
               key={idx}
               className="bg-white  overflow-hidden flex items-stretch"
