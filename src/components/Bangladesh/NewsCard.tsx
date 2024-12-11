@@ -5,6 +5,7 @@ import Link from "next/link";
 import vote from "@public/asset/politics/vote.jpg";
 import parliament from "@public/asset/politics/perliment.jpg";
 import team from "@public/asset/politics/team.jpg";
+import { ChevronsRight } from "lucide-react";
 
 const politicsData = [
   {
@@ -41,7 +42,7 @@ const politicsData = [
     image: vote,
   },
   {
-    id: "03",
+    id: "04",
     category: "রাজনীতি",
     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
     description:
@@ -52,7 +53,7 @@ const politicsData = [
     image: vote,
   },
   {
-    id: "03",
+    id: "05",
     category: "রাজনীতি",
     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
     description:
@@ -63,7 +64,7 @@ const politicsData = [
     image: vote,
   },
   {
-    id: "03",
+    id: "06",
     category: "রাজনীতি",
     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
     description:
@@ -74,7 +75,7 @@ const politicsData = [
     image: vote,
   },
   {
-    id: "03",
+    id: "07",
     category: "রাজনীতি",
     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
     description:
@@ -94,10 +95,19 @@ const NewsCard = () => {
   const normalNews = politicsData.filter((news) => news.news_type === "normal");
 
   return (
-    <div className="container mx-auto py-6">
+    <div className="py-4">
       {/* Header */}
-      <div className="border-l-4 border-blue-500 mb-6">
+      <div className="border-l-4 border-blue-500 mb-6 flex justify-between items-center">
         <h1 className="text-4xl font-bold ps-4">বাংলাদেশ</h1>
+        <Link href="/bangladesh">
+          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+            আরো দেখুন{" "}
+            <span>
+              {" "}
+              <ChevronsRight size={30} />{" "}
+            </span>
+          </p>
+        </Link>
       </div>
 
       {/* card */}
@@ -117,7 +127,10 @@ const NewsCard = () => {
               </div>
               <div className="p-4">
                 <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${trendingNews.id}`} className="text-2xl lg:text-4xl">
+                  <Link
+                    href={`view_details/${trendingNews.id}`}
+                    className="text-2xl lg:text-4xl"
+                  >
                     {trendingNews.title}
                   </Link>
                 </h2>
@@ -133,24 +146,32 @@ const NewsCard = () => {
         </div>
 
         {/* Normal News */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[400px] overflow-auto p-4">
           {normalNews.map((news, index) => (
-            <div key={index} className="bg-white overflow-hidden flex">
-              <div className="w-3/4 p-3">
+            <div
+              key={index}
+              className="bg-white shadow-sm rounded-md overflow-hidden flex"
+            >
+              <div className="w-3/4 p-3 flex flex-col justify-between">
                 <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
-                  <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                  <Link
+                    href={`view_details/${news.id}`}
+                    aria-label={news.title}
+                  >
+                    {news.title}
+                  </Link>
                 </h2>
-                <p className="text-xs text-gray-500 mt-auto">
+                <p className="text-xs text-gray-500">
                   {news.date} • {news.published_time}
                 </p>
               </div>
-              <div className="w-full hover:scale-110 duration-700">
+              <div className="w-1/4">
                 <Image
                   src={news.image}
                   alt={news.title}
-                  width={300}
-                  height={300}
-                  className="object-cover"
+                  width={100}
+                  height={100}
+                  className="object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>

@@ -6,6 +6,7 @@ import cyclone from "@public/asset/international/cyclone.jpg";
 import entertainment from "@public/asset/international/entertainment.jpg";
 import help from "@public/asset/international/help.jpg";
 import unity from "@public/asset/international/unity.jpg";
+import { ChevronsRight } from "lucide-react";
 
 const international_news = [
   {
@@ -76,8 +77,19 @@ const NewsCard = () => {
 
   return (
     <div className="container mx-auto p-4 py-4">
-      <div className="border-t-2 ">
-        <h1 className="text-4xl font-bold my-4 border-s-4 ps-2 border-blue-500">আন্তর্জাতিক</h1>
+      <div className="border-t-2 flex justify-between items-center">
+        <h1 className="text-4xl font-bold my-4 border-s-4 ps-2 border-blue-500 ">
+          আন্তর্জাতিক
+        </h1>
+        <Link href="/allNews">
+          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+            আরো দেখুন{" "}
+            <span>
+              {" "}
+              <ChevronsRight size={30} />{" "}
+            </span>
+          </p>
+        </Link>
       </div>
 
       {/* Main News Section */}

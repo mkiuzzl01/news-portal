@@ -6,6 +6,7 @@ import Image2 from "@public/asset/Entertainment/concert-1.jpg";
 import Image3 from "@public/asset/Entertainment/concert-2.jpg";
 import Image4 from "@public/asset/Entertainment/concert-3.jpg";
 import Image1 from "@public/asset/Entertainment/concert-4.jpg";
+import { ChevronsRight } from "lucide-react";
 
 const news = [
   {
@@ -55,35 +56,24 @@ const news = [
   {
     id: 5,
     category: "Entertainment",
-    title: "বিনোদনমূলক শিল্পে সৃজনশীলতা বৃদ্ধি",
+    title: "মঞ্চ নাটক এবং থিয়েটারের উন্নতি",
     description:
-      "বাংলাদেশের বিনোদনমূলক শিল্পে সৃজনশীলতার নতুন ধারার প্রবর্তন হচ্ছে।",
-    date: "2024-12-02",
+      "বাংলাদেশের মঞ্চ নাটক এবং থিয়েটারের শিল্পে দ্রুত উন্নতি ঘটছে, আন্তর্জাতিক দৃষ্টি আকর্ষণ করছে।",
+    date: "2024-12-03",
     news_type: "normal",
-    published_time: "18:00",
-    image: Image2,
+    published_time: "16:30",
+    image: Image4,
   },
   {
     id: 6,
     category: "Entertainment",
-    title: "বিনোদনমূলক শিল্পে সৃজনশীলতা বৃদ্ধি",
+    title: "মঞ্চ নাটক এবং থিয়েটারের উন্নতি",
     description:
-      "বাংলাদেশের বিনোদনমূলক শিল্পে সৃজনশীলতার নতুন ধারার প্রবর্তন হচ্ছে।",
-    date: "2024-12-02",
+      "বাংলাদেশের মঞ্চ নাটক এবং থিয়েটারের শিল্পে দ্রুত উন্নতি ঘটছে, আন্তর্জাতিক দৃষ্টি আকর্ষণ করছে।",
+    date: "2024-12-03",
     news_type: "normal",
-    published_time: "18:00",
-    image: Image2,
-  },
-  {
-    id: 7,
-    category: "Entertainment",
-    title: "বিনোদনমূলক শিল্পে সৃজনশীলতা বৃদ্ধি",
-    description:
-      "বাংলাদেশের বিনোদনমূলক শিল্পে সৃজনশীলতার নতুন ধারার প্রবর্তন হচ্ছে।",
-    date: "2024-12-02",
-    news_type: "normal",
-    published_time: "18:00",
-    image: Image2,
+    published_time: "16:30",
+    image: Image4,
   },
 ];
 
@@ -95,16 +85,50 @@ const NewsCard = () => {
 
   return (
     <div className="py-6 border-t-2">
-      <div className="border-blue-500 border-s-4 mb-6">
-        <h1 className="text-3xl md:text-4xl font-bold pl-4">বিনোদন</h1>
+      <div className="border-blue-500 border-s-4 my-4 flex justify-between items-center">
+        <h1 className="text-4xl font-bold my-4 ps-2">বিনোদন</h1>
+        <Link href="/entrainment">
+          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+            আরো দেখুন{" "}
+            <span>
+              {" "}
+              <ChevronsRight size={30} />{" "}
+            </span>
+          </p>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-1 space-y-6">
+        {" "}
+        {trendingNews && (
+          <div className="relative group order-1 lg:order-2 lg:col-span-2">
+            <div className="bg-gray-100 overflow-hidden">
+              <div className="relative w-full hover:scale-110 duration-700 overflow-hidden">
+                <Image
+                  src={trendingNews.image}
+                  alt={trendingNews.title}
+                  placeholder="blur"
+                  className="inset-0 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
+                  <Link
+                    href={`view_details/${trendingNews.id}`}
+                    className="text-2xl lg:text-4xl"
+                  >
+                    {trendingNews.title}
+                  </Link>
+                </h2>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="space-y-6 order-2 lg:order-1 lg:col-span-1">
           {normalNews.slice(0, 3).map((news, idx) => (
             <div
               key={idx}
-              className="bg-white  overflow-hidden flex items-stretch"
+              className="bg-white overflow-hidden flex items-stretch"
             >
               <div className="w-1/3 hover:scale-110 duration-700">
                 <Image
@@ -128,31 +152,8 @@ const NewsCard = () => {
             </div>
           ))}
         </div>
-
-        <div className="lg:col-span-2 col-span-1 relative group">
-          {trendingNews && (
-            <div className="bg-gray-100 overflow-hidden">
-              <div className="relative w-full hover:scale-110 duration-700 overflow-hidden">
-                <Image
-                  src={trendingNews.image}
-                  alt={trendingNews.title}
-                  placeholder="blur"
-                  className="inset-0 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
-                  <Link href={`view_details/${trendingNews.id}`} className="text-2xl lg:text-4xl">
-                    {trendingNews.title}
-                  </Link>
-                </h2>
-              </div>
-            </div>
-          )}
-        </div>
-
-        <div className="lg:col-span-1 space-y-6">
-          {normalNews.slice(3).map((news) => (
+        <div className="hidden md:block space-y-6 order-3 lg:order-3 lg:col-span-1">
+          {normalNews.slice(2).map((news) => (
             <div
               key={news.id}
               className="bg-white overflow-hidden flex items-stretch"

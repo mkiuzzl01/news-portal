@@ -44,7 +44,7 @@ const technology_news = [
 
 const Trending = () => {
   return (
-    <div className="py-4">
+    <div className="pt-4">
       <div className="flex flex-col lg:flex-row justify-between gap-4">
         <div className="w-full lg:w-4/5 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Trending News Section */}
