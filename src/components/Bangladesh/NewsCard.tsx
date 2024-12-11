@@ -95,10 +95,10 @@ const NewsCard = () => {
   const normalNews = politicsData.filter((news) => news.news_type === "normal");
 
   return (
-    <div className="py-4">
+    <div className="">
       {/* Header */}
-      <div className="border-l-4 border-blue-500 mb-6 flex justify-between items-center">
-        <h1 className="text-4xl font-bold ps-4">বাংলাদেশ</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">বাংলাদেশ</h1>
         <Link href="/bangladesh">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             আরো দেখুন{" "}
@@ -161,9 +161,7 @@ const NewsCard = () => {
                     {news.title}
                   </Link>
                 </h2>
-                <p className="text-xs text-gray-500">
-                  {news.date} • {news.published_time}
-                </p>
+                <p className="text-sm overflow-hidden">{news?.description}</p>
               </div>
               <div className="w-1/4">
                 <Image

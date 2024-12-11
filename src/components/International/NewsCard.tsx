@@ -76,8 +76,8 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="container mx-auto p-4 py-4">
-      <div className="border-t-2 flex justify-between items-center">
+    <div>
+      <div className="flex justify-between items-center">
         <h1 className="text-4xl font-bold my-4 border-s-4 ps-2 border-blue-500 ">
           আন্তর্জাতিক
         </h1>

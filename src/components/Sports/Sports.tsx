@@ -7,28 +7,36 @@ import { ChevronsRight } from "lucide-react";
 
 const Sports = () => {
   return (
-    <section className="container m-auto border-b-2">
-      <div className="border-s-4 border-blue-500 my-2 flex justify-between items-center">
-        <h1 className="text-4xl font-bold my-4 ps-2 ">খেলাধুলা</h1>
+    <section className="border-t-2 my-4">
+      {/* Header Section */}
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl border-blue-500 border-s-4 font-bold my-4 ps-2">
+          খেলাধুলা
+        </h1>
         <Link href="/sports">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             আরো দেখুন{" "}
             <span>
-              {" "}
-              <ChevronsRight size={30} />{" "}
+              <ChevronsRight size={30} />
             </span>
           </p>
         </Link>
       </div>
-      <div className="flex lg:flex-row flex-col justify-between gap-3 my-4">
-        <div className="lg:w-1/5 w-full lg:mt-0 mt-4">
+
+      {/* Main Content */}
+      <div className="flex flex-col lg:flex-row justify-between gap-3 my-4">
+        {/* Trending News Section */}
+        <div className="lg:order-1 order-3 lg:w-1/5 w-full lg:mt-0 mt-4">
           <SaidTabs />
         </div>
-        {/* here add all section for ui */}
-        <div className="lg:w-3/5">
+
+        {/* Normal News Section */}
+        <div className="lg:order-2 order-1 lg:w-3/5 w-full">
           <NewsCard />
         </div>
-        <div className="lg:w-1/5">
+
+        {/* Sidebar Section */}
+        <div className="lg:order-3 order-2 lg:w-1/5 w-full">
           <SaidBar />
         </div>
       </div>

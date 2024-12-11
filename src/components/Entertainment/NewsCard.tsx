@@ -84,9 +84,9 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="py-6 border-t-2">
-      <div className="border-blue-500 border-s-4 my-4 flex justify-between items-center">
-        <h1 className="text-4xl font-bold my-4 ps-2">বিনোদন</h1>
+    <div>
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl font-bold my-4 ps-2 border-blue-500 border-s-4">বিনোদন</h1>
         <Link href="/entrainment">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             আরো দেখুন{" "}

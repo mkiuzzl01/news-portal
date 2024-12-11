@@ -3,7 +3,7 @@ import NewsCard from "./NewsCard";
 
 const Bangladesh = () => {
   return (
-    <div className="container m-auto">
+    <div className="border-t-2 my-4">
       <NewsCard />
     </div>
   );
