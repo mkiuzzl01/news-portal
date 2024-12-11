@@ -37,6 +37,8 @@ const Header = () => {
             {" "}
             <Image
               src={logo?.src}
+              placeholder="blur"
+              blurDataURL={logo?.src}
               alt="daily times 24"
               width={150}
               height={100}

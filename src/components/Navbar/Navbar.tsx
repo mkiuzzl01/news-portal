@@ -9,9 +9,11 @@ import {
   Search,
   UserRound,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import logo from "@public/asset/dailyTimes24.png";
 
 const socialLinks = [
   {
@@ -71,6 +73,17 @@ const Navbar = () => {
             >
               {isOpen ? <X /> : <Menu />}
             </button>
+            {/* logo */}
+            <div className="lg:hidden block">
+              <Image
+                src={logo?.src}
+                alt="dailyTimes24"
+                width={100}
+                height={100}
+                placeholder="blur"
+                blurDataURL={logo?.src}
+              />
+            </div>
           </div>
 
           {/* Desktop Nav */}
@@ -80,16 +93,15 @@ const Navbar = () => {
                 key={item.href}
                 href={item.href}
                 className={`${
-                  pathname === item?.href ? "border-b-2 border-red-400" : ""
+                  pathname === item?.href ? "border-b-2 border-b-black" : ""
                 } flex justify-between items-center gap-4`}
               >
                 <span className="text-white">{item.label}</span>
               </Link>
             ))}
           </div>
-
-          {/* icons */}
-          <div className="flex justify-center items-center gap-4">
+          {/* Icons */}
+          <div className="hidden lg:flex justify-center items-center gap-4">
             {socialLinks?.map((link) => (
               <div key={link?.id} className="bg-blue-100 p-2 rounded-full">
                 <Link href={link?.link}>
@@ -98,6 +110,8 @@ const Navbar = () => {
               </div>
             ))}
           </div>
+
+          {/* Search and User Buttons */}
           <div className="flex justify-between items-center gap-2 border-s-2 p-4">
             <button onClick={handleModal} className="text-white">
               <Search />
