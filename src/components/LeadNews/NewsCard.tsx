@@ -1,4 +1,4 @@
-import React from "react";
+"use client"
 import Image from "next/image";
 import top_news from "@public/asset/bangladesh/bangladesh_top.jpg";
 import economy from "@public/asset/bangladesh/economy.jpg";
@@ -62,7 +62,7 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="container mx-auto">
+    <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Trending News Section */}
         {leadNews && (

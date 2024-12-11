@@ -1,4 +1,3 @@
-import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Opinion from "../News/Opinion";
 import MeetUp from "../News/MeetUp";

@@ -60,10 +60,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#87CBB9] py-2 shadow-lg">
+    <nav className="bg-blue-500 py-2 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between">
-          
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
@@ -81,10 +80,10 @@ const Navbar = () => {
                 key={item.href}
                 href={item.href}
                 className={`${
-                  pathname === item?.href ? "border-b-2 border-red-500" : ""
+                  pathname === item?.href ? "border-b-2 border-red-400" : ""
                 } flex justify-between items-center gap-4`}
               >
-                <span>{item.label}</span>
+                <span className="text-white">{item.label}</span>
               </Link>
             ))}
           </div>
@@ -92,18 +91,18 @@ const Navbar = () => {
           {/* icons */}
           <div className="flex justify-center items-center gap-4">
             {socialLinks?.map((link) => (
-              <div key={link?.id} className="bg-gray-200 p-2 rounded-full">
+              <div key={link?.id} className="bg-blue-100 p-2 rounded-full">
                 <Link href={link?.link}>
-                  <div>{link?.icon}</div>
+                  <div className="text-blue-900">{link?.icon}</div>
                 </Link>
               </div>
             ))}
           </div>
           <div className="flex justify-between items-center gap-2 border-s-2 p-4">
-            <button onClick={handleModal}>
+            <button onClick={handleModal} className="text-white">
               <Search />
             </button>
-            <button onClick={handleModal}>
+            <button onClick={handleModal} className="text-white">
               <UserRound />
             </button>
           </div>
@@ -117,9 +116,11 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-500 hover:bg-blue-50 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium flex items-center space-x-2"
+                  className={`${
+                    pathname === item?.href ? "border-b-2 border-red-400" : ""
+                  } flex justify-between items-center gap-4`}
                 >
-                  <span>{item.label}</span>
+                  <span className="text-white">{item.label}</span>
                 </Link>
               ))}
             </div>

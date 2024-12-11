@@ -2,12 +2,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import entertainmentImage1 from "@public/asset/Entertainment/concert-1.jpg";
-import entertainmentImage2 from "@public/asset/Entertainment/concert-2.jpg";
-import entertainmentImage3 from "@public/asset/Entertainment/concert-3.jpg";
-import entertainmentImage4 from "@public/asset/Entertainment/concert-4.jpg";
+import Image2 from "@public/asset/Entertainment/concert-1.jpg";
+import Image3 from "@public/asset/Entertainment/concert-2.jpg";
+import Image4 from "@public/asset/Entertainment/concert-3.jpg";
+import Image1 from "@public/asset/Entertainment/concert-4.jpg";
 
-const entertainment_news = [
+const news = [
   {
     id: 1,
     category: "Entertainment",
@@ -17,7 +17,7 @@ const entertainment_news = [
     date: "2024-12-06",
     news_type: "trending",
     published_time: "10:00",
-    image: entertainmentImage1,
+    image: Image1,
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const entertainment_news = [
     date: "2024-12-05",
     news_type: "normal",
     published_time: "12:00",
-    image: entertainmentImage2,
+    image: Image2,
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const entertainment_news = [
     date: "2024-12-04",
     news_type: "normal",
     published_time: "14:00",
-    image: entertainmentImage3,
+    image: Image3,
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const entertainment_news = [
     date: "2024-12-03",
     news_type: "normal",
     published_time: "16:30",
-    image: entertainmentImage4,
+    image: Image4,
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const entertainment_news = [
     date: "2024-12-02",
     news_type: "normal",
     published_time: "18:00",
-    image: entertainmentImage2,
+    image: Image2,
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const entertainment_news = [
     date: "2024-12-02",
     news_type: "normal",
     published_time: "18:00",
-    image: entertainmentImage2,
+    image: Image2,
   },
   {
     id: 7,
@@ -83,15 +83,13 @@ const entertainment_news = [
     date: "2024-12-02",
     news_type: "normal",
     published_time: "18:00",
-    image: entertainmentImage2,
+    image: Image2,
   },
 ];
 
 const NewsCard = () => {
-  const trendingNews = entertainment_news.find(
-    (news) => news.news_type === "trending"
-  );
-  const normalNews = entertainment_news.filter(
+  const trendingNews = news.find((news) => news.news_type === "trending");
+  const normalNews = news.filter(
     (news) => news.news_type === "normal" && news.category === "Entertainment"
   );
 

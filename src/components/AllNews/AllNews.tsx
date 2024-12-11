@@ -1,4 +1,3 @@
-import React from "react";
 import Education from "../News/Education";
 import Jobs from "../News/Jobs";
 import Technology from "../News/Technology";

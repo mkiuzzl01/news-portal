@@ -1,3 +1,4 @@
+"use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ReadNews from "../News/ReadNews";
 import Discussed from "../News/Discussed";

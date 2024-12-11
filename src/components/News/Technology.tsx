@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import coding from "@public/asset/Technology/coding.jpg";
 import industry from "@public/asset/Technology/industry.jpg";
 import monitoring from "@public/asset/Technology/monitoring.jpg";
 import programming from "@public/asset/Technology/programming.jpg";
+import { ChevronRight } from "lucide-react";
 
 const technology_news = [
   {
@@ -66,17 +68,18 @@ const Technology = () => {
   return (
     <div>
       <div className="border-t-2">
-        <h1 className="text-4xl font-bold py-2">প্রযুক্তি</h1>
+        <h1 className="text-4xl font-bold py-2 flex items-center">
+          প্রযুক্তি{" "}
+          <span>
+            <ChevronRight size={50} color="red" />
+          </span>
+        </h1>
       </div>
       <div className="space-y-4">
         {technology_news?.map((news, index) => (
           <div key={index}>
             {news?.news_type === "trending" && (
-              <Image
-                src={news?.image}
-                alt={news?.title}
-                className="w-full"
-              />
+              <Image src={news?.image} alt={news?.title} className="w-full" />
             )}
             <h1 className="text-xl font-medium py-2 border-b-2 hover:text-blue-500">
               <Link href={`view_details/${news?.id}`}>{news?.title}</Link>

@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import Marquee from "react-fast-marquee";
 
 const BreakingNews = () => {
@@ -11,10 +11,11 @@ const BreakingNews = () => {
   ];
 
   return (
-    <div className="flex" style={{ background: "#333", color: "#fff", padding: "10px 0" }}>
-      <h2 style={{ textAlign: "center",  }}>
-        ব্রেকিং নিউজ
-      </h2>
+    <div
+      className="flex"
+      style={{ background: "#333", color: "#fff", padding: "10px 0" }}
+    >
+      <h2 style={{ textAlign: "center" }}>ব্রেকিং নিউজ</h2>
       <Marquee>
         {newsData.map((news, index) => (
           <div key={index} style={{ marginRight: "50px", fontSize: "16px" }}>

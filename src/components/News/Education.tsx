@@ -1,6 +1,8 @@
+"use client";
 import education from "@public/asset/education/education.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 const educationNews = [
   {
@@ -64,7 +66,12 @@ const Education = () => {
   return (
     <div className="border-t-2">
       <div>
-        <h1 className="text-4xl font-semibold py-2">শিক্ষা</h1>
+        <h1 className="text-4xl font-semibold py-2 flex items-center">
+          শিক্ষা{" "}
+          <span>
+            <ChevronRight size={50} color="red" />
+          </span>
+        </h1>
       </div>
       <div className="space-y-4">
         {educationNews?.map((news, index) => (

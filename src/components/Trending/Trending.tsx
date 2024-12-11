@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import TrendingCard from "./TrendingCard";
 import coding from "@public/asset/Technology/coding.jpg";
 import industry from "@public/asset/Technology/industry.jpg";

@@ -1,5 +1,3 @@
-import React from "react";
-
 const SectionHeader = ({ title }: { title: string }) => {
   return (
     <div className="bg-blue-100 p-4 text-center">

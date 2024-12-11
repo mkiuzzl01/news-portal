@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import DateAndTime from "@/lib/dateAndTime";
 import Link from "next/link";
+import logo from "@public/asset/dailyTimes24.png";
 
 const topNews = [
   {
@@ -28,12 +30,18 @@ const topNews = [
 
 const Header = () => {
   return (
-    <section className="hidden lg:block border-b-2 border-[#B99470]  py-4 bg-gray-200">
-      <div className="container mx-auto px-4 flex flex-row items-center gap-4">
-        <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-3xl font-extrabold pb-2">
-            Daily Time <span className="text-red-500">24</span>
-          </h1>
+    <section className="hidden lg:block border-b-2 border-[#B99470] py-2 bg-blue-100">
+      <div className="container mx-auto px-4 flex flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Link href="/">
+            {" "}
+            <Image
+              src={logo?.src}
+              alt="daily times 24"
+              width={150}
+              height={100}
+            />
+          </Link>
           <div>
             <DateAndTime />
           </div>

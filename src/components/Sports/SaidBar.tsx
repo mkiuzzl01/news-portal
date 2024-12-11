@@ -1,3 +1,4 @@
+"use client";
 import cricket from "@public/asset/Sports/crikect.jpg";
 import football from "@public/asset/Sports/football.jpg";
 import hokeei from "@public/asset/Sports/hokei.jpg";
