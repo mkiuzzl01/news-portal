@@ -94,13 +94,13 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="py-6">
-      <div className="border-l-4 border-green-500 mb-6">
+    <div className="py-6 border-t-2">
+      <div className="border-blue-500 border-s-4 mb-6">
         <h1 className="text-3xl md:text-4xl font-bold pl-4">বিনোদন</h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="md:col-span-1 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="lg:col-span-1 space-y-6">
           {normalNews.slice(0, 3).map((news, idx) => (
             <div
               key={idx}
@@ -129,7 +129,7 @@ const NewsCard = () => {
           ))}
         </div>
 
-        <div className="md:col-span-2 relative group">
+        <div className="lg:col-span-2 col-span-1 relative group">
           {trendingNews && (
             <div className="bg-gray-100 overflow-hidden">
               <div className="relative w-full hover:scale-110 duration-700 overflow-hidden">
@@ -151,7 +151,7 @@ const NewsCard = () => {
           )}
         </div>
 
-        <div className="md:col-span-1 space-y-6">
+        <div className="lg:col-span-1 space-y-6">
           {normalNews.slice(3).map((news) => (
             <div
               key={news.id}

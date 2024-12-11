@@ -24,7 +24,8 @@ const topNews = [
   },
   // {
   //   id: "03",
-  //   title: "বিশ্বকাপ ক্রিকেটে বাংলাদেশের জয় ঢাকায় বড় পরিসরে শুরু হয়েছে বইমেলা",
+  //   title:
+  //     "বিশ্বকাপ ক্রিকেটে বাংলাদেশের জয় ঢাকায় বড় পরিসরে শুরু হয়েছে বইমেলা",
   //   image: "/asset/topnews/image-1 (1).jpg",
   //   description:
   //     "বিশ্বকাপ ক্রিকেটে পাকিস্তানকে ৫ উইকেটে হারিয়ে বাংলাদেশ দলের দুর্দান্ত পারফরম্যান্স।",
@@ -53,23 +54,33 @@ const Header = () => {
         </div>
 
         <div className="flex col-span-1 flex-col lg:flex-row  gap-2">
-          <Image src={banner} alt="banner" className="w-full" />
+          <Image
+            src={banner}
+            alt="banner"
+            className="w-full"
+            placeholder="blur"
+          />
         </div>
 
         <div className="col-span-2 flex">
           {topNews.map((item) => (
-            <div key={item.id} className="gap-2 border-s-2 border-gray-300 p-2 flex">
+            <div
+              key={item.id}
+              className="gap-2 border-s-2 border-gray-300 px-2 flex"
+            >
               <div>
                 <Image
                   src={item.image}
                   alt={item.title}
                   className=" object-cover"
+                  placeholder="blur"
+                  blurDataURL={item?.title}
                   width={100}
-                  height={40}
+                  height={50}
                 />
               </div>
 
-              <div className="col-span-1">
+              <div className="col-span-1 flex-1">
                 <h2 className="text-sm font-semibold hover:text-blue-500">
                   <Link href={item?.id}>{item.title}</Link>
                 </h2>

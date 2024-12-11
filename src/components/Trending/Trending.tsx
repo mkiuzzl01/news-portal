@@ -44,14 +44,14 @@ const technology_news = [
 
 const Trending = () => {
   return (
-    <div className="border-b-2 py-4">
+    <div className="py-4">
       <div className="flex flex-col lg:flex-row justify-between gap-4">
         <div className="w-full lg:w-4/5 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Trending News Section */}
           <div>
             <SectionHeader title="সম্বার" />
             <div
-              className="flex flex-col gap-6 w-full max-h-[400px]   overflow-y-auto 
+              className="flex flex-col gap-6 w-full max-h-[300px]   lg:max-h-[400px]   overflow-y-auto 
         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >
               <TrendingCard data={technology_news} />
@@ -62,7 +62,7 @@ const Trending = () => {
           <div>
             <SectionHeader title="গুরুত্বপূর্ণ" />
             <div
-              className="flex flex-col gap-6 w-full max-h-[400px] overflow-y-auto 
+              className="flex flex-col gap-6 w-full  max-h-[300px]  lg:max-h-[400px] overflow-y-auto 
         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >
               <TrendingCard data={technology_news} />

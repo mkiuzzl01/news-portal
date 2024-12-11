@@ -96,8 +96,8 @@ const NewsCard = () => {
   return (
     <div className="container mx-auto py-6">
       {/* Header */}
-      <div className="border-l-4 border-green-500 mb-6">
-        <h1 className="text-4xl font-bold pl-4">বাংলাদেশ</h1>
+      <div className="border-l-4 border-blue-500 mb-6">
+        <h1 className="text-4xl font-bold ps-4">বাংলাদেশ</h1>
       </div>
 
       {/* card */}

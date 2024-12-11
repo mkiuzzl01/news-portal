@@ -75,9 +75,9 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="border-l-4 border-green-500">
-        <h1 className="text-4xl font-bold my-4 pl-2">আন্তর্জাতিক</h1>
+    <div className="container mx-auto p-4 py-4">
+      <div className="border-t-2 ">
+        <h1 className="text-4xl font-bold my-4 border-s-4 ps-2 border-blue-500">আন্তর্জাতিক</h1>
       </div>
 
       {/* Main News Section */}

@@ -5,8 +5,8 @@ import SaidBar from "./SaidBar";
 
 const Sports = () => {
   return (
-    <section className="container m-auto pt-10 border-b-2">
-      <div className="border-s-4 border-green-500 mb-2">
+    <section className="container m-auto border-b-2">
+      <div className="border-s-4 border-blue-500 mb-2">
         <h1 className="text-4xl font-bold my-4 ps-2 ">খেলাধুলা</h1>
       </div>
       <div className="flex lg:flex-row flex-col justify-between gap-3 my-4">
