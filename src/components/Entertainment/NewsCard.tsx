@@ -141,8 +141,8 @@ const NewsCard = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                <h2 className="text-white text-xl md:text-2xl font-bold hover:text-yellow-400 transition-colors">
-                  <Link href={`view_details/${trendingNews.id}`}>
+                <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
+                  <Link href={`view_details/${trendingNews.id}`} className="text-2xl lg:text-4xl">
                     {trendingNews.title}
                   </Link>
                 </h2>

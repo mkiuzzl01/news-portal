@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import top_news from "@public/asset/bangladesh/bangladesh_top.jpg";
 import economy from "@public/asset/bangladesh/economy.jpg";
@@ -66,7 +66,7 @@ const NewsCard = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Trending News Section */}
         {leadNews && (
-          <div className="col-span-1 lg:col-span-3 relative bg-gray-200 overflow-hidden ">
+          <div className="col-span-1 lg:col-span-3 relative bg-gray-200 overflow-hidden  border-red-500">
             <div className="hover:scale-110 duration-700">
               <Image
                 src={leadNews?.image}

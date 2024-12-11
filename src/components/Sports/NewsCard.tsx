@@ -63,7 +63,10 @@ const NewsCard = () => {
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full rounded-b-lg">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
-                <Link href={`view_details/${trendingNews.id}`}>
+                <Link
+                  href={`view_details/${trendingNews.id}`}
+                  className="text-2xl lg:text-4xl"
+                >
                   {trendingNews.title}
                 </Link>
               </h1>

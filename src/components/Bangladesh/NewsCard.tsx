@@ -117,7 +117,7 @@ const NewsCard = () => {
               </div>
               <div className="p-4">
                 <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${trendingNews.id}`}>
+                  <Link href={`view_details/${trendingNews.id}`} className="text-2xl lg:text-4xl">
                     {trendingNews.title}
                   </Link>
                 </h2>
