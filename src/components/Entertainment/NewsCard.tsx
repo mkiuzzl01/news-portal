@@ -2,11 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Image2 from "@public/asset/Entertainment/concert-1.jpg";
-import Image3 from "@public/asset/Entertainment/concert-2.jpg";
-import Image4 from "@public/asset/Entertainment/concert-3.jpg";
-import Image1 from "@public/asset/Entertainment/concert-4.jpg";
 import { ChevronsRight } from "lucide-react";
+import Image2 from "@public/asset/entertainment/concert-1.jpg";
+import Image3 from "@public/asset/entertainment/concert-2.jpg";
+import Image4 from "@public/asset/entertainment/concert-3.jpg";
+import Image1 from "@public/asset/entertainment/concert-4.jpg";
 
 const news = [
   {
@@ -86,7 +86,9 @@ const NewsCard = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold my-4 ps-2 border-blue-500 border-s-4">বিনোদন</h1>
+        <h1 className="text-4xl font-bold my-4 ps-2 border-blue-500 border-s-4">
+          বিনোদন
+        </h1>
         <Link href="/entrainment">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             আরো দেখুন{" "}
@@ -105,8 +107,8 @@ const NewsCard = () => {
             <div className="bg-gray-100 overflow-hidden">
               <div className="relative w-full hover:scale-110 duration-700 overflow-hidden">
                 <Image
-                  src={trendingNews.image}
-                  alt={trendingNews.title}
+                  src={trendingNews?.image}
+                  alt={trendingNews?.title}
                   placeholder="blur"
                   className="inset-0 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
@@ -114,10 +116,10 @@ const NewsCard = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                 <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
                   <Link
-                    href={`view_details/${trendingNews.id}`}
+                    href={`view_details/${trendingNews?.id}`}
                     className="text-2xl lg:text-4xl"
                   >
-                    {trendingNews.title}
+                    {trendingNews?.title}
                   </Link>
                 </h2>
               </div>
@@ -132,21 +134,21 @@ const NewsCard = () => {
             >
               <div className="w-1/3 hover:scale-110 duration-700">
                 <Image
-                  src={news.image}
-                  alt={news.title}
+                  src={news?.image}
+                  alt={news?.title}
                   placeholder="blur"
                   className="object-cover"
                 />
               </div>
               <div className="w-2/3 ps-4 flex flex-col justify-between">
                 <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                  <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
-                  {news.description}
+                  {news?.description}
                 </p>
                 <div className="text-xs text-gray-500">
-                  {news.date} • {news.published_time}
+                  {news?.date} • {news?.published_time}
                 </div>
               </div>
             </div>
@@ -160,19 +162,19 @@ const NewsCard = () => {
             >
               <div className="w-2/3 ps-4 flex flex-col justify-between">
                 <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                  <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
-                  {news.description}
+                  {news?.description}
                 </p>
                 <div className="text-xs text-gray-500 mt-auto">
-                  {news.date} • {news.published_time}
+                  {news?.date} • {news?.published_time}
                 </div>
               </div>
               <div className="w-1/3">
                 <Image
-                  src={news.image}
-                  alt={news.title}
+                  src={news?.image}
+                  alt={news?.title}
                   placeholder="blur"
                   className="object-cover hover:scale-110 transition-transform duration-300"
                 />
