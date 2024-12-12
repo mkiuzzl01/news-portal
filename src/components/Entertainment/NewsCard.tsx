@@ -140,7 +140,7 @@ const NewsCard = () => {
                   className="object-cover"
                 />
               </div>
-              <div className="w-2/3 ps-4 flex flex-col justify-between">
+              <div className="flex-1 ps-4 flex flex-col justify-between">
                 <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
                   <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
                 </h2>
@@ -160,7 +160,7 @@ const NewsCard = () => {
               key={news.id}
               className="bg-white overflow-hidden flex items-stretch"
             >
-              <div className="w-2/3 ps-4 flex flex-col justify-between">
+              <div className="flex-1 ps-4 flex flex-col justify-between">
                 <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
                   <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
                 </h2>

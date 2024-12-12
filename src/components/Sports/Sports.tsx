@@ -30,12 +30,12 @@ const Sports = () => {
           <SaidTabs />
         </div>
 
-        {/* Normal News Section */}
+        {/* news card */}
         <div className="lg:order-2 order-1 lg:w-3/5 w-full">
           <NewsCard />
         </div>
 
-        {/* Sidebar Section */}
+        {/* Sidebar */}
         <div className="lg:order-3 order-2 lg:w-1/5 w-full">
           <SaidBar />
         </div>
