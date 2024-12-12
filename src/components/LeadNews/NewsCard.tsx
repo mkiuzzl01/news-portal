@@ -62,11 +62,11 @@ const NewsCard = () => {
   );
 
   return (
-    <div>
+    <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Trending News Section */}
         {leadNews && (
-          <div className="col-span-1 lg:col-span-3 relative bg-gray-200 overflow-hidden  border-red-500">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative bg-gray-200 overflow-hidden border-red-500">
             <div className="hover:scale-110 duration-700">
               <Image
                 src={leadNews?.image}
@@ -79,7 +79,7 @@ const NewsCard = () => {
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="lg:text-4xl text-white font-semibold hover:text-yellow-500">
-                <Link href={`view details/${leadNews?.id}`}>
+                <Link href={`view_details/${leadNews?.id}`}>
                   {leadNews.title}
                 </Link>
               </h1>
@@ -89,17 +89,21 @@ const NewsCard = () => {
 
         {/* Normal News Sections */}
         {normalNews.map((news) => (
-          <div key={news.id} className="overflow-hidden">
-            <Image
-              src={news?.image}
-              alt={news?.title}
-              width={1000}
-              height={600}
-              objectFit="cover"
-              placeholder="blur"
-              className="w-full"
-            />
-            <div className="p-4">
+          <div
+            key={news.id}
+            className="flex lg:flex-col flex-row overflow-hidden">
+            <div className="w-full">
+              <Image
+                src={news?.image}
+                alt={news?.title}
+                width={1000}
+                height={600}
+                objectFit="cover"
+                placeholder="blur"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="w-full sm:w-2/3 p-4">
               <h2 className="text-xl font-bold hover:text-blue-600">
                 <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
               </h2>

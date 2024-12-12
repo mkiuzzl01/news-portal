@@ -7,6 +7,7 @@ import Bangladesh from "@/components/Bangladesh/Bangladesh";
 import AllNews from "@/components/AllNews/AllNews";
 import AllCountry from "@/components/AllCountry/AllCountry";
 import PhotoGallery from "@/components/Gallery/PhotoGallery";
+import VideoGallery from "@/components/Gallery/VideoGellary";
 
 const Page = () => {
   return (
@@ -19,6 +20,7 @@ const Page = () => {
       <Bangladesh />
       <International />
       <PhotoGallery />
+      <VideoGallery />
       <AllNews />
     </div>
   );

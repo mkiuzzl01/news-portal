@@ -63,28 +63,6 @@ const politicsData = [
     published_time: "14:30",
     image: vote,
   },
-  {
-    id: "06",
-    category: "রাজনীতি",
-    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-    description:
-      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-    date: "২০২৪-১২-০৪",
-    news_type: "normal",
-    published_time: "14:30",
-    image: vote,
-  },
-  {
-    id: "07",
-    category: "রাজনীতি",
-    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-    description:
-      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-    date: "২০২৪-১২-০৪",
-    news_type: "normal",
-    published_time: "14:30",
-    image: vote,
-  },
 ];
 
 const NewsCard = () => {
@@ -151,7 +129,7 @@ const NewsCard = () => {
           {normalNews.map((news, index) => (
             <div
               key={index}
-              className="bg-white overflow-hidden flex"
+              className="bg-white overflow-hidden flex justify-between"
             >
               <div className="flex-1 p-3 flex flex-col justify-between">
                 <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
@@ -164,11 +142,11 @@ const NewsCard = () => {
                 </h2>
                 <p className="text-sm overflow-hidden">{news?.description}</p>
               </div>
-              <div className="w-1/4">
+              <div>
                 <Image
                   src={news.image}
                   alt={news.title}
-                  width={100}
+                  width={200}
                   height={100}
                   className="object-cover hover:scale-110 transition-transform duration-300"
                 />

@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronsRight } from "lucide-react";
 import Link from "next/link";
 
-// News Data Object (with Bangla text)
 const newsData = [
   {
     id: 1,
@@ -58,14 +57,11 @@ const newsData = [
 ];
 
 const NewsSlider: React.FC = () => {
-  // State for carousel
   const [currentCarouselIndex, setCurrentCarouselIndex] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
-  // Ref for interval to allow clearing
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Carousel navigation functions
   const goToPrevious = useCallback((): void => {
     setCurrentCarouselIndex((prevIndex) =>
       prevIndex === 0 ? newsData.length - 1 : prevIndex - 1
@@ -78,14 +74,13 @@ const NewsSlider: React.FC = () => {
     );
   }, [newsData.length]);
 
-  // Auto-sliding effect with pause functionality
   useEffect(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
 
     if (!isPaused) {
-      intervalRef.current = setInterval(goToNext, 2000); // Change slide every 2 seconds
+      intervalRef.current = setInterval(goToNext, 2000);
     }
 
     return () => {
@@ -95,95 +90,104 @@ const NewsSlider: React.FC = () => {
     };
   }, [goToNext, isPaused]);
 
-  // Function to handle side image click
   const handleSideImageClick = (index: number): void => {
     setCurrentCarouselIndex(index);
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row gap-6">
-        {/* Main Carousel Section */}
-        <div
-          className="w-full md:w-2/3 relative"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Carousel Image */}
-          <div className="relative overflow-hidden">
-            <Image
-              src={newsData[currentCarouselIndex].src}
-              alt={newsData[currentCarouselIndex].alt}
-              width={1200}
-              height={600}
-              className="object-cover"
-              priority={currentCarouselIndex === 0}
-            />
-
-            {/* News Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-gray-300">
-                  {newsData[currentCarouselIndex].date}
-                </span>
-              </div>
-              <Link
-                href={`view_details/${currentCarouselIndex}`}
-                className="hover:text-blue-500"
-              >
-                <h2 className="text-2xl font-bold mb-2">
-                  {newsData[currentCarouselIndex].title}
-                </h2>
-                <p className="text-sm text-gray-200">
-                  {newsData[currentCarouselIndex].description}
-                </p>
-              </Link>
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="absolute top-3 right-3 space-x-2">
-              <button
-                onClick={goToPrevious}
-                aria-label="Previous News"
-                className=" bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
-              >
-                <ChevronLeft size={32} />
-              </button>
-              <button
-                onClick={goToNext}
-                aria-label="Next News"
-                className=" bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
-              >
-                <ChevronRight size={32} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Side News Grid */}
-        <div className="w-full flex-1 grid grid-cols-3 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          {newsData.map((newsItem, index) => (
-            <div
-              key={newsItem.id}
-              onClick={() => handleSideImageClick(index)}
-              className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
-            >
+    <div className="container mx-auto">
+      <div className="border-t-2 py-2 flex justify-between">
+        <h1 className="text-4xl font-semibold border-s-4 border-blue-500 ps-2">
+          ছবি
+        </h1>
+        <Link href="/allNews">
+          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+            আরো দেখুন{" "}
+            <span>
+              {" "}
+              <ChevronsRight size={30} />{" "}
+            </span>
+          </p>
+        </Link>
+      </div>
+      <div>
+        <div className="flex flex-col md:flex-row gap-6">
+          <div
+            className="w-full md:w-2/3 relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {" "}
+            <div className="relative overflow-hidden">
               <Image
-                src={newsItem.src}
-                alt={newsItem.alt}
+                src={newsData[currentCarouselIndex].src}
+                alt={newsData[currentCarouselIndex].alt}
                 width={1200}
                 height={600}
                 className="object-cover"
+                priority={currentCarouselIndex === 0}
               />
-              <div className="pt-2">
-                <p className="font-semibold hover:text-blue-500">
-                  <Link href={`view_details/${newsItem?.id}`}>
-                    {newsItem?.title}
-                  </Link>
-                </p>
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-300">
+                    {newsData[currentCarouselIndex].date}
+                  </span>
+                </div>
+                <Link
+                  href={`view_details/${currentCarouselIndex}`}
+                  className="hover:text-blue-500"
+                >
+                  <h2 className="text-2xl font-bold mb-2">
+                    {newsData[currentCarouselIndex].title}
+                  </h2>
+                  <p className="text-sm text-gray-200">
+                    {newsData[currentCarouselIndex].description}
+                  </p>
+                </Link>
+              </div>
+              <div className="absolute top-3 right-3 space-x-2">
+                <button
+                  onClick={goToPrevious}
+                  aria-label="Previous News"
+                  className=" bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
+                >
+                  <ChevronLeft size={32} />
+                </button>
+                <button
+                  onClick={goToNext}
+                  aria-label="Next News"
+                  className=" bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
+                >
+                  <ChevronRight size={32} />
+                </button>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="w-full flex-1 grid grid-cols-3 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            {newsData.map((newsItem, index) => (
+              <div
+                key={newsItem.id}
+                onClick={() => handleSideImageClick(index)}
+                className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
+              >
+                <Image
+                  src={newsItem.src}
+                  alt={newsItem.alt}
+                  width={1200}
+                  height={600}
+                  className="object-cover"
+                />
+                <div className="pt-2">
+                  <p className="font-semibold hover:text-blue-500">
+                    <Link href={`view_details/${newsItem?.id}`}>
+                      {newsItem?.title}
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

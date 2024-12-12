@@ -35,7 +35,7 @@ const Footer = () => {
             {/* Logo */}
             <div>
               <h1 className="text-3xl font-extrabold text-white">
-                Daily Time <span className="text-red-500">24</span>
+                Daily Times <span className="text-red-500">24</span>
               </h1>
             </div>
 

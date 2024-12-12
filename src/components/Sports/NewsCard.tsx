@@ -76,7 +76,7 @@ const NewsCard = () => {
 
         {/* Display Normal News */}
         {normalNews.map((news) => (
-          <div key={news.id} className="bg-white overflow-hidden">
+          <div key={news.id} className="bg-white overflow-hidden hidden lg:block">
             <div className="hover:scale-110 duration-700">
               <Image
                 src={news.image}

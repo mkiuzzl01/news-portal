@@ -63,7 +63,7 @@ const meetsUp = [
 const MeetUp = () => {
   return (
     <div
-      className="max-h-[400px] p-4 overflow-y-auto [&::-webkit-scrollbar]:hidden 
+      className="max-h-[200px] lg:max-h-[400px] p-4 overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
         [scrollbar-width:none]"
     >
