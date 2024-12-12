@@ -36,6 +36,7 @@ const Header = () => {
   return (
     <section className="hidden lg:block border-b-2 border-[#B99470] py-2 bg-blue-100">
       <div className="container mx-auto px-4 grid grid-cols-4 items-center justify-between gap-4">
+        
         <div className="flex items-center grid-cols-1 gap-4">
           <Link href="/">
             {" "}

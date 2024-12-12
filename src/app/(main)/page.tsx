@@ -6,6 +6,7 @@ import Trending from "@/components/Trending/Trending";
 import Bangladesh from "@/components/Bangladesh/Bangladesh";
 import AllNews from "@/components/AllNews/AllNews";
 import AllCountry from "@/components/AllCountry/AllCountry";
+import PhotoGallery from "@/components/Gallery/PhotoGallery";
 
 const Page = () => {
   return (
@@ -14,9 +15,10 @@ const Page = () => {
       <Trending />
       <Entertainment />
       <Sports />
-      <AllCountry/>
+      <AllCountry />
       <Bangladesh />
       <International />
+      <PhotoGallery />
       <AllNews />
     </div>
   );

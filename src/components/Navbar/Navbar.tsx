@@ -45,20 +45,21 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { href: "/", label: "হোম" },
-  { href: "/bangladesh", label: "বাংলাদেশে" },
-  { href: "/international", label: "আন্তর্জাতিক" },
+  { href: "/national", label: "জাতীয়" },
   { href: "/politics", label: "রাজনীতি" },
-  { href: "/economy", label: "অর্থনীতি" },
-  { href: "/technology", label: "প্রযুক্তি" },
+  { href: "/international", label: "আন্তর্জাতিক" },
   { href: "/sports", label: "খেলাধুলা" },
   { href: "/entertainment", label: "বিনোদন" },
+  { href: "/economy", label: "অর্থনীতি" },
+  { href: "/technology", label: "প্রযুক্তি" },
+  { href: "/tourism", label: "পর্যটন" },
   {
     href: "/misc",
     label: "বিবিধ",
     nested: [
-      { href: "/misc/health", label: "স্বাস্থ্য" },
-      { href: "/misc/education", label: "শিক্ষা" },
-      { href: "/misc/religion", label: "ধর্ম" },
+      { href: "/health", label: "স্বাস্থ্য" },
+      { href: "/education", label: "শিক্ষা" },
+      { href: "/religion", label: "ধর্ম" },
     ],
   },
 ];

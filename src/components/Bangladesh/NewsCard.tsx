@@ -88,6 +88,7 @@ const politicsData = [
 ];
 
 const NewsCard = () => {
+  
   const trendingNews = politicsData.find(
     (news) => news.news_type === "trending"
   );
@@ -150,7 +151,7 @@ const NewsCard = () => {
           {normalNews.map((news, index) => (
             <div
               key={index}
-              className="bg-white  overflow-hidden flex"
+              className="bg-white overflow-hidden flex"
             >
               <div className="flex-1 p-3 flex flex-col justify-between">
                 <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
