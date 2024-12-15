@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import top_news from "@public/asset/bangladesh/bangladesh_top.jpg";
+import top_news from "@public/asset/bangladesh/bangladesh-top.jpg";
 import economy from "@public/asset/bangladesh/economy.jpg";
 import environment from "@public/asset/bangladesh/environment.jpg";
 import sport from "@public/asset/bangladesh/sport.jpg";
@@ -67,13 +67,11 @@ const NewsCard = () => {
         {/* Trending News Section */}
         {leadNews && (
           <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative bg-gray-200 overflow-hidden border-red-500">
-            <div className="hover:scale-110 duration-700">
+            <div className="w-full h-auto lg:h-[600] hover:scale-110 duration-700">
               <Image
                 src={leadNews?.image}
                 alt={leadNews?.title}
-                width={1000}
-                height={600}
-                layout="responsive"
+                className="w-full h-full object-fill"
                 placeholder="blur"
                 objectFit="cover"
               />

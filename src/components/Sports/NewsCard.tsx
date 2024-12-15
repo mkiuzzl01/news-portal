@@ -53,12 +53,13 @@ const NewsCard = () => {
         {/* Display Trending News */}
         {trendingNews && (
           <div className="col-span-1 sm:col-span-2 bg-gray-100 relative overflow-hidden">
-            <div className="hover:scale-105 transform duration-500">
+            <div className="w-full h-auto lg:h-[600] hover:scale-105 transform duration-500">
               <Image
                 src={trendingNews.image}
                 alt={trendingNews.title}
-                width={1200}
-                height={600}
+                className="w-full h-full object-fill"
+                placeholder="blur"
+                objectFit="cover"
               />
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full rounded-b-lg">
@@ -76,7 +77,10 @@ const NewsCard = () => {
 
         {/* Display Normal News */}
         {normalNews.map((news) => (
-          <div key={news.id} className="bg-white overflow-hidden hidden lg:block">
+          <div
+            key={news.id}
+            className="bg-white overflow-hidden hidden lg:block"
+          >
             <div className="hover:scale-110 duration-700">
               <Image
                 src={news.image}
