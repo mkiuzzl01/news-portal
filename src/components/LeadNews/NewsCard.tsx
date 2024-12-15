@@ -62,7 +62,7 @@ const NewsCard = () => {
   );
 
   return (
-    <div className="container mx-auto px-4">
+    <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Trending News Section */}
         {leadNews && (
@@ -71,8 +71,9 @@ const NewsCard = () => {
               <Image
                 src={leadNews?.image}
                 alt={leadNews?.title}
-                width={1200}
-                height={500}
+                width={1000}
+                height={600}
+                layout="responsive"  // Make the image responsive
                 placeholder="blur"
                 objectFit="cover"
               />
@@ -91,19 +92,21 @@ const NewsCard = () => {
         {normalNews.map((news) => (
           <div
             key={news.id}
-            className="flex lg:flex-col flex-row overflow-hidden">
+            className="flex lg:flex-col flex-row overflow-hidden"
+          >
             <div className="w-full">
               <Image
                 src={news?.image}
                 alt={news?.title}
                 width={1000}
                 height={600}
+                layout="responsive"
                 objectFit="cover"
                 placeholder="blur"
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="w-full sm:w-2/3 p-4">
+            <div className="w-full ps-2 lg:pt-2">
               <h2 className="text-xl font-bold hover:text-blue-600">
                 <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
               </h2>
@@ -112,7 +115,7 @@ const NewsCard = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

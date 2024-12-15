@@ -95,7 +95,7 @@ const NewsSlider: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="py-8">
       <div className="border-t-2 py-2 flex justify-between">
         <h1 className="text-4xl font-semibold border-s-4 border-blue-500 ps-2">
           ছবি

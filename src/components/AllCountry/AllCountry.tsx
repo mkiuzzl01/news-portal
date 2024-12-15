@@ -14,7 +14,7 @@ const AllCountry = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-5 gap-4 bg-blue-200 py-6 px-2">
       <div className="flex items-center justify-center">
-        <h1 className="text-2xl font-bold text-center text-blue-900">সারা দেশ</h1>
+        <h1 className="text-2xl font-bold text-center text-blue-900">এলাকা নির্বাচন করুন</h1>
       </div>
 
       <div className="flex justify-center">

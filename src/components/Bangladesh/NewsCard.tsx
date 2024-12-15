@@ -77,7 +77,7 @@ const NewsCard = () => {
     <div className="">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">বাংলাদেশ</h1>
+        <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">সমগ্র জনপথ </h1>
         <Link href="/bangladesh">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             আরো দেখুন{" "}
