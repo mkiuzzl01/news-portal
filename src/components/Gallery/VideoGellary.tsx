@@ -81,13 +81,13 @@ const NewsSlider: React.FC = () => {
     setCurrentCarouselIndex((prevIndex) =>
       prevIndex === 0 ? newsData.length - 1 : prevIndex - 1
     );
-  }, [newsData.length]);
+  }, []);
 
   const goToNext = useCallback((): void => {
     setCurrentCarouselIndex((prevIndex) =>
       prevIndex === newsData.length - 1 ? 0 : prevIndex + 1
     );
-  }, [newsData.length]);
+  }, []);
 
   useEffect(() => {
     if (intervalRef.current) {

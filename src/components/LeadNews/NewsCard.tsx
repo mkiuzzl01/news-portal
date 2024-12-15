@@ -73,7 +73,7 @@ const NewsCard = () => {
                 alt={leadNews?.title}
                 width={1000}
                 height={600}
-                layout="responsive"  // Make the image responsive
+                layout="responsive"
                 placeholder="blur"
                 objectFit="cover"
               />
