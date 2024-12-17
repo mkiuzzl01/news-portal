@@ -1,7 +1,6 @@
 import Advertisement from "@/util/Advertisement";
 import OtherNews from "@/util/OtherNews";
 import TopNews from "@/util/TopNews";
-import { Search } from "lucide-react";
 import cyclone from "@public/asset/international/cyclone.jpg";
 import entertainment from "@public/asset/international/entertainment.jpg";
 import help from "@public/asset/international/help.jpg";

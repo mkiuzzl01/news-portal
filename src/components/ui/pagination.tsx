@@ -43,7 +43,7 @@ type PaginationLinkProps = {
   React.ComponentProps<"a">;
 
 const PaginationLink = ({
-  className,
+  className = "",
   isActive,
   size = "icon",
   ...props
