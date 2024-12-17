@@ -1,87 +1,23 @@
-
-//   {
-//     id: "01",
-//     category: "রাজনীতি",
-//     title: "সংসদে নতুন কর সংস্কার বিল পাস",
-//     description:
-//       "সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা রাজস্ৱ বৃদ্ধির প্রতিশ্রুতি দিচ্ছে।",
-//     date: "২০২৪-১২-০৪",
-//     news_type: "trending",
-//     published_time: "09:00",
-//     image: parliament,
-//   },
-//   {
-//     id: "02",
-//     category: "রাজনীতি",
-//     title: "বাজেট বরাদ্দ নিয়ে সমালোচনা",
-//     description:
-//       "বিরোধী দলের নেতা বাজেটকে সমালোচনা করেছেন, দাবি করেছেন এটি মধ্যবিত্তের উদ্বেগগুলিকে সমাধান করতে ব্যর্থ হয়েছে।",
-//     date: "২০২৪-১২-০৪",
-//     news_type: "normal",
-//     published_time: "12:00",
-//     image: team,
-//   },
-//   {
-//     id: "03",
-//     category: "রাজনীতি",
-//     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-//     description:
-//       "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-//     date: "২০২৪-১২-০৪",
-//     news_type: "normal",
-//     published_time: "14:30",
-//     image: vote,
-//   },
-//   {
-//     id: "04",
-//     category: "রাজনীতি",
-//     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-//     description:
-//       "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-//     date: "২০২৪-১২-০৪",
-//     news_type: "normal",
-//     published_time: "14:30",
-//     image: vote,
-//   },
-//   {
-//     id: "05",
-//     category: "রাজনীতি",
-//     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-//     description:
-//       "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-//     date: "২০২৪-১২-০৪",
-//     news_type: "normal",
-//     published_time: "14:30",
-//     image: vote,
-//   },
-//   {
-//     id: "06",
-//     category: "রাজনীতি",
-//     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-//     description:
-//       "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-//     date: "২০২৪-১২-০৪",
-//     news_type: "normal",
-//     published_time: "14:30",
-//     image: vote,
-//   },
-//   {
-//     id: "07",
-//     category: "রাজনীতি",
-//     title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-//     description:
-//       "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-//     date: "২০২৪-১২-০৪",
-//     news_type: "normal",
-//     published_time: "14:30",
-//     image: vote,
-//   },
-// ];
+import React from "react";
+import SideTabs from "@/util/SideTabs";
+import NewsCard from "./__components/TopNews";
+import OtherNews from "./__components/OtherNews";
+import Advertisement from "@/util/Advertisement";
 
 const Page = () => {
   return (
-    <div className="container  m-auto">
-      <div></div>
+    <div className="container mx-auto p-2">
+      <div className="flex lg:flex-row flex-col gap-4">
+        {/* Main Content - Scrollable */}
+        <div className="w-full lg:w-3/4 lg:pr-4">
+          <NewsCard />
+          <Advertisement />
+          <OtherNews />
+        </div>
+        <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start">
+          <SideTabs />
+        </div>
+      </div>
     </div>
   );
 };
