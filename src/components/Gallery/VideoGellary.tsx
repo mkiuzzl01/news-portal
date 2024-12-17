@@ -126,9 +126,9 @@ const NewsSlider: React.FC = () => {
         </Link>
       </div>
       <div>
-        <div className="flex flex-col md:flex-row-reverse gap-6">
+        <div className="flex flex-col lg:flex-row-reverse gap-6">
           <div
-            className="w-full md:w-2/3 relative"
+            className="w-full lg:w-2/3 relative"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -151,9 +151,9 @@ const NewsSlider: React.FC = () => {
                   </div>
                 </Link>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4">
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-1 lg:p-4">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm text-gray-300">
+                  <span className="text-sm text-gray-300 hidden lg:block">
                     {newsData[currentCarouselIndex].date}
                   </span>
                 </div>
@@ -161,10 +161,10 @@ const NewsSlider: React.FC = () => {
                   href={`view_details/${currentCarouselIndex}`}
                   className="hover:text-blue-500"
                 >
-                  <h2 className="text-2xl font-bold mb-2">
+                  <h2 className="text-xl lg:text-2xl font-bold mb-2 text-ellipsis">
                     {newsData[currentCarouselIndex].title}
                   </h2>
-                  <p className="text-sm text-gray-200">
+                  <p className="text-sm text-gray-200 hidden lg:block">
                     {newsData[currentCarouselIndex].description}
                   </p>
                 </Link>

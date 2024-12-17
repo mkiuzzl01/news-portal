@@ -79,7 +79,7 @@ const NewsCard = () => {
         {normalNews.map((news) => (
           <div
             key={news.id}
-            className="bg-white overflow-hidden hidden lg:block"
+            className="bg-white overflow-hidden hidden md:block"
           >
             <div className="hover:scale-110 duration-700">
               <Image

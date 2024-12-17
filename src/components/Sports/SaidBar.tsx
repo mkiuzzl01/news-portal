@@ -111,6 +111,7 @@ const SaidBar = () => {
               <h1 className="text-lg font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
                 {news?.title}
               </h1>
+              <p className="hidden md:block mb-2">{news?.description}</p>
               <p>{news?.date}</p>
             </div>
             {/* Image Section */}

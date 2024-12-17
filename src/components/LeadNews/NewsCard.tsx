@@ -67,7 +67,7 @@ const NewsCard = () => {
         {/* Trending News Section */}
         {leadNews && (
           <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative bg-gray-200 overflow-hidden border-red-500">
-            <div className="w-full h-auto lg:h-[600] hover:scale-110 duration-700">
+            <div className="w-full h-full lg:h-[600px] hover:scale-110 duration-700">
               <Image
                 src={leadNews?.image}
                 alt={leadNews?.title}
@@ -77,7 +77,7 @@ const NewsCard = () => {
               />
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-              <h1 className="lg:text-4xl text-white font-semibold hover:text-yellow-500">
+              <h1 className="text-2xl lg:text-4xl text-white font-semibold hover:text-yellow-500">
                 <Link href={`view_details/${leadNews?.id}`}>
                   {leadNews.title}
                 </Link>
