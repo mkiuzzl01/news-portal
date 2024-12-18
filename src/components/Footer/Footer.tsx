@@ -29,18 +29,17 @@ const Footer = () => {
   return (
     <footer>
       <div className="bg-[#141E46] text-gray-100 py-8">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          {/* Top Section: Logo and Social Links */}
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-            {/* Logo */}
-            <div>
+        <div className="px-2">
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+            <div className="lg:col-span-3">
               <h1 className="text-3xl font-extrabold text-white">
                 Daily Times <span className="text-red-500">24</span>
               </h1>
             </div>
 
-            {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="lg:col-span-1 flex gap-4">
               {socialLinks.map((link) => (
                 <Link
                   key={link.id}
@@ -54,8 +53,6 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
-          {/* Middle Section: Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             <div>
               <ul className="space-y-2">
