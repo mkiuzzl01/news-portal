@@ -1,21 +1,19 @@
-import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import PaginationPages from "./PaginationPages";
-
-interface NewsDataType {
-  id: string;
-  category: string;
-  title: string;
-  description: string;
-  date: string;
-  image: string | StaticImageData;
-}
+import Image, { StaticImageData } from "next/image";
 
 interface newsData {
-  data: NewsDataType[];
+  relatedNews: {
+    id: number;
+    category: string;
+    title: string;
+    description: string;
+    date: string;
+    image: StaticImageData;
+  }[];
 }
 
-const OtherNews = ({ relatedNews }: newsData) => {
+const OtherNews = ({ relatedNews }:newsData) => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -30,9 +28,7 @@ const OtherNews = ({ relatedNews }: newsData) => {
                   <Image
                     src={news.image}
                     alt={news.title}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
               </Link>
@@ -52,7 +48,7 @@ const OtherNews = ({ relatedNews }: newsData) => {
           </div>
         ))}
       </div>
-      <div className="py-5">
+      <div>
         <PaginationPages />
       </div>
     </div>

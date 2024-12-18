@@ -7,7 +7,7 @@ import Bangladesh from "@/components/Bangladesh/Bangladesh";
 import AllNews from "@/components/AllNews/AllNews";
 import AllCountry from "@/components/AllCountry/AllCountry";
 import PhotoGallery from "@/components/Gallery/PhotoGallery";
-import VideoGallery from "@/components/Gallery/VideoGellary";
+import VideoGallery from "@/components/Gallery/VideoGallery"
 
 const Page = () => {
   return (
@@ -26,4 +26,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Page; 

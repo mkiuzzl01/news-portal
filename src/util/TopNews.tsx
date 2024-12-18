@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface NewsDataType {
-  id: string;
+  id: number | string;
   category: string;
   title: string;
   description: string;

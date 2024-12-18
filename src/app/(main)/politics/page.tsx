@@ -7,7 +7,7 @@ import team from "@public/asset/politics/team.jpg";
 import banner from "@public/asset/banner.jpg";
 import TopNews from "@/util/TopNews";
 import OtherNews from "@/util/OtherNews";
-
+import image from "@public/asset/bangladesh/environment.jpg";
 
 const politics = [
   {
@@ -67,6 +67,59 @@ const politics = [
   },
 ];
 
+const othersNews = [
+  {
+    id: 1,
+    category: "Bangladesh",
+    title: "বাংলাদেশে নতুন মেট্রোরেল উদ্বোধন",
+    description: "ঢাকা শহরে প্রথমবারের মতো মেট্রোরেল সেবা চালু করা হয়েছে।",
+    date: "2024-12-05",
+    image: image,
+  },
+  {
+    id: 2,
+    category: "International",
+    title: "জাতিসংঘে শান্তি রক্ষায় বাংলাদেশের প্রশংসা",
+    description: "জাতিসংঘ মিশনে বাংলাদেশি শান্তিরক্ষীদের প্রশংসা করেছে।",
+    date: "2024-12-04",
+    image: image,
+  },
+  {
+    id: 3,
+    category: "Politics",
+    title: "জাতীয় নির্বাচনের সময়সূচি প্রকাশ",
+    description:
+      "২০২৫ সালের জাতীয় নির্বাচন নিয়ে আনুষ্ঠানিক ঘোষণা দেওয়া হয়েছে।",
+    date: "2024-12-03",
+    image: image,
+  },
+  {
+    id: 4,
+    category: "Economy",
+    title: "রেমিটেন্স প্রবাহে নতুন রেকর্ড",
+    description:
+      "বাংলাদেশে প্রবাসীদের পাঠানো রেমিটেন্সে নতুন উচ্চতা অর্জিত হয়েছে।",
+    date: "2024-12-02",
+    image: image,
+  },
+  {
+    id: 5,
+    category: "Technology",
+    title: "৫জি ইন্টারনেট সেবা চালু",
+    description: "বাংলাদেশে প্রথমবারের মতো ৫জি ইন্টারনেট সেবা চালু হয়েছে।",
+    date: "2024-12-01",
+    image: image,
+  },
+  {
+    id: 6,
+    category: "Sports",
+    title: "বিশ্বকাপে বাংলাদেশের ঐতিহাসিক জয়",
+    description:
+      "ক্রিকেট বিশ্বকাপে শক্তিশালী দলের বিরুদ্ধে বাংলাদেশের চমকপ্রদ জয়।",
+    date: "2024-11-30",
+    image: image,
+  },
+];
 const Page = () => {
   return (
     <div className="container mx-auto p-2">
@@ -75,7 +128,7 @@ const Page = () => {
         <div className="w-full lg:w-3/4 lg:pr-4">
           <TopNews data={politics} />
           <Advertisement banner={banner} />
-          <OtherNews relatedNews={politics} />
+          <OtherNews relatedNews={othersNews} />
         </div>
         <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start">
           <SideTabs />
