@@ -85,7 +85,7 @@ const Education = () => {
               />
             )}
             <h1 className="text-xl font-medium py-2 border-b-2 hover:text-blue-500">
-              <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
+              <Link href={`view_details`}>{news?.title}</Link>
             </h1>
           </div>
         ))}

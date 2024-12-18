@@ -71,7 +71,7 @@ const Opinion = () => {
       <ul className="space-y-4">
         {opinions.map((news) => (
           <li key={news.id} className="border-b pb-4">
-            <Link href={`/view_details/${news?.id}`}>
+            <Link href={`/view_details`}>
               <h3 className="text-lg font-semibold hover:text-blue-500">
                 {news.title}
               </h3>

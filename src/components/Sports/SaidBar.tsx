@@ -106,14 +106,12 @@ const SaidBar = () => {
       <div className="grid grid-cols-1 gap-4">
         {sports?.map((news, index) => (
           <div key={index} className="flex gap-4 items-start border-b pb-4">
-            {/* Content Section */}
             <div className="flex-1">
               <h1 className="text-lg font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
                 {news?.title}
               </h1>
               <p>{news?.date}</p>
             </div>
-            {/* Image Section */}
             <div className="w-1/2  flex-shrink-0 overflow-hidden  hover:scale-105 duration-300">
               <Image
                 src={news?.image}

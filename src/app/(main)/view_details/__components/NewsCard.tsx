@@ -20,7 +20,7 @@ interface NewsCardProps {
 
 const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   return (
-    <article className="w-full lg:w-3/4 mx-auto p-4 bg-white transition-transform duration-300">
+    <article className="w-full lg:w-3/4 mx-auto pt-2 bg-white">
       <div className="relative w-full h-96 overflow-hidden">
         <Image
           src={news?.image}

@@ -60,7 +60,7 @@ const relatedNews = [
 
 const Page = () => {
   return (
-    <div>
+    <div className="container m-auto">
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="w-full lg:w-3/4">
           <NewsCard news={newsData} />

@@ -20,12 +20,12 @@ interface RelatedNewsProps {
 const RelatedNews = ({ data }: RelatedNewsProps) => {
   return (
     <div className="w-full lg:w-3/4 m-auto">
-      <h1 className="text-2xl font-bold">Related News</h1>
+      <h1 className="text-2xl font-bold">সম্পর্কিত খবর</h1>
       <div className="grid grid-cols-2">
         {data.map((newsItem) => (
           <div
             key={newsItem.id}
-            className="flex items-start gap-4 border-b pb-4 last:border-none"
+            className="flex items-start gap-4"
           >
             <Image
               src={newsItem?.image}
@@ -38,9 +38,6 @@ const RelatedNews = ({ data }: RelatedNewsProps) => {
               <p className="text-xs text-gray-500">
                 {newsItem.date} {newsItem.time ? `| ${newsItem.time}` : ""}
               </p>
-              {newsItem.author && (
-                <p className="text-xs text-gray-400">By: {newsItem.author}</p>
-              )}
             </div>
           </div>
         ))}
