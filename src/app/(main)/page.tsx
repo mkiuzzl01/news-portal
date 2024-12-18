@@ -7,7 +7,9 @@ import Bangladesh from "@/components/Bangladesh/Bangladesh";
 import AllNews from "@/components/AllNews/AllNews";
 import AllCountry from "@/components/AllCountry/AllCountry";
 import PhotoGallery from "@/components/Gallery/PhotoGallery";
-import VideoGallery from "@/components/Gallery/VideoGallery"
+import VideoGallery from "@/components/Gallery/VideoGallery";
+import Advertisement from "@/util/Advertisement";
+import banner from "@public/asset/banner.jpg";
 
 const Page = () => {
   return (
@@ -16,6 +18,7 @@ const Page = () => {
       <Trending />
       <Entertainment />
       <Sports />
+      <Advertisement banner={banner} />
       <AllCountry />
       <Bangladesh />
       <International />
@@ -26,4 +29,4 @@ const Page = () => {
   );
 };
 
-export default Page; 
+export default Page;

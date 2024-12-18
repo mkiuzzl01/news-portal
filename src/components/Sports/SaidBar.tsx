@@ -111,11 +111,10 @@ const SaidBar = () => {
               <h1 className="text-lg font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
                 {news?.title}
               </h1>
-              <p className="hidden md:block mb-2">{news?.description}</p>
               <p>{news?.date}</p>
             </div>
             {/* Image Section */}
-            <div className="w-1/2 h-full flex-shrink-0 overflow-hidden  hover:scale-105 duration-300">
+            <div className="w-1/2  flex-shrink-0 overflow-hidden  hover:scale-105 duration-300">
               <Image
                 src={news?.image}
                 alt={news?.title}

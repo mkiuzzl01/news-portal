@@ -1,17 +1,18 @@
 import Image, { StaticImageData } from "next/image";
+
 interface AdvertisementProps {
   banner: StaticImageData;
 }
 
 const Advertisement = ({ banner }: AdvertisementProps) => {
   return (
-    <div className="bg-gray-400 my-4 max-h-[200px]">
+    <div className="bg-gray-400 w-full">
       <Image
-        src={banner.src}
+        src={banner?.src}
         alt="banner"
         width={1200}
-        height={600}
-        className="w-full h-auto"
+        height={200}
+        className="object-cover w-full h-full"
       />
     </div>
   );
