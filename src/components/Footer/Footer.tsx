@@ -65,13 +65,18 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/national" className="hover:text-red-500">
+                    জাতীয়
+                  </Link>
+                </li>
+                <li>
                   <Link href="/politics" className="hover:text-red-500">
                     রাজনীতি
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sport" className="hover:text-red-500">
-                    খেলা
+                  <Link href="/international" className="hover:text-red-500">
+                    আন্তর্জাতিক
                   </Link>
                 </li>
               </ul>
@@ -79,18 +84,23 @@ const Footer = () => {
             <div>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/life" className="hover:text-red-500">
-                    জীবনযাপন
+                  <Link href="/technology" className="hover:text-red-500">
+                    প্রযুক্তি
                   </Link>
                 </li>
                 <li>
                   <Link href="/health" className="hover:text-red-500">
-                    স্বাস্থ
+                    স্বাস্থ্য
                   </Link>
                 </li>
                 <li>
                   <Link href="/economy" className="hover:text-red-500">
-                    ইকোনোমি
+                    অর্থনীতি
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tourism" className="hover:text-red-500">
+                    পর্যটন
                   </Link>
                 </li>
               </ul>
@@ -98,21 +108,31 @@ const Footer = () => {
             <div>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/world" className="hover:text-red-500">
-                    বিশ্ব খবর
+                  <Link href="/education" className="hover:text-red-500">
+                    শিক্ষা
                   </Link>
                 </li>
                 <li>
-                  <Link href="/local" className="hover:text-red-500">
-                    স্থানীয় খবর
+                  <Link href="/sport" className="hover:text-red-500">
+                    খেলাধুলা
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/entertainment" className="hover:text-red-500">
+                    বিনোদন
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/religion" className="hover:text-red-500">
+                    ধর্ম
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
               <ul className="space-y-2">
-                <li>ফোন: 0123456789</li>
                 <li>ই-মেইল: demo@gmail.com</li>
+                <li>ফোন: 0123456789</li>
                 <li>ঠিকানা: ব্লক এ, বসুন্ধরা আবাসিক, </li>
                 <li>ভাটারা,ঢাকা-১২১২</li>
               </ul>
