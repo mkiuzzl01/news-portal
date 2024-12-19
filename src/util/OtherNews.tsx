@@ -23,7 +23,7 @@ const OtherNews = ({ relatedNews }:newsData) => {
             className="flex items-start space-x-3 bg-white rounded-lg p-3"
           >
             <div className="w-1/3 shrink-0">
-              <Link href={`view_details/${news.id}`}>
+              <Link href={`view_details`}>
                 <div className="relative w-full aspect-square overflow-hidden">
                   <Image
                     src={news.image}
@@ -35,7 +35,7 @@ const OtherNews = ({ relatedNews }:newsData) => {
             </div>
 
             <div className="w-2/3 space-y-2">
-              <Link href={`view_details/${news.id}`}>
+              <Link href={`view_details`}>
                 <h2 className="text-base font-semibold text-gray-800 line-clamp-2 hover:text-blue-600 transition-colors">
                   {news.title}
                 </h2>

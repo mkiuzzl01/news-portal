@@ -19,9 +19,9 @@ interface RelatedNewsProps {
 
 const RelatedNews = ({ data }: RelatedNewsProps) => {
   return (
-    <div className="w-full lg:w-3/4 m-auto pt-10">
+    <div className="w-full lg:w-3/4 m-auto p-2">
       <h1 className="text-2xl font-bold">সম্পর্কিত খবর</h1>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {data.map((newsItem) => (
           <div
             key={newsItem.id}

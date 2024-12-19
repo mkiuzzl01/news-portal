@@ -39,7 +39,7 @@ const TopNews = ({ data }: newsData) => {
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-2xl lg:text-4xl text-white font-semibold hover:text-yellow-500">
-                <Link href={`view_details/${trendingNews.id}`}>
+                <Link href={`view_details`}>
                   {trendingNews.title}
                 </Link>
               </h1>
@@ -56,7 +56,7 @@ const TopNews = ({ data }: newsData) => {
             </div>
             <div className="pt-4">
               <h2 className="text-lg lg:text-xl font-bold hover:text-blue-600">
-                <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                <Link href={`view_details`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news.description}</p>
               <p className="text-sm text-gray-400">{news.published_time}</p>
