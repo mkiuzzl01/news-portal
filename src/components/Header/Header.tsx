@@ -83,7 +83,7 @@ const Header = () => {
 
               <div className="col-span-1 flex-1">
                 <h2 className="text-sm font-semibold hover:text-blue-500">
-                  <Link href={item?.id}>{item.title}</Link>
+                  <Link href={`view_details`}>{item.title}</Link>
                 </h2>
               </div>
             </div>

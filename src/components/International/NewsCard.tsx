@@ -14,7 +14,7 @@ const international_news = [
     category: "জলবায়ু",
     title: "জলবায়ু সংবেদনশীলতার উপর গুরুত্বারোপ",
     description:
-      "জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়।",
+      "জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়। জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়। জাতিসংঘের আন্তর্জাতিক আদালতে আফ্রিকান দেশগুলো প্রধান জলবায়ু ক্ষতির জন্য দেশগুলোকে আইনীভাবে দায়বদ্ধ করার উপর গুরুত্ব দেয়।",
     date: "2024-12-06",
     news_type: "trending",
     published_time: "09:00",
@@ -91,10 +91,7 @@ const NewsCard = () => {
           </p>
         </Link>
       </div>
-
-      {/* Main News Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Trending News */}
         {trendingNews && (
           <div className="bg-white overflow-hidden">
             <div className="h-64 lg:h-96 overflow-hidden">
@@ -108,12 +105,10 @@ const NewsCard = () => {
             </div>
             <div className="pt-4">
               <h2 className="text-2xl font-bold mb-3 hover:text-blue-600">
-                <Link href={`view_details/${trendingNews.id}`}>
-                  {trendingNews.title}
-                </Link>
+                <Link href={`/view_details`}>{trendingNews.title}</Link>
               </h2>
               <p className="text-sm text-gray-600 mb-4">
-                {trendingNews.description.slice(0, 150)}...
+                {trendingNews.description}
               </p>
               <p className="text-xs text-gray-500">
                 {trendingNews.date} • {trendingNews.published_time}
@@ -140,7 +135,7 @@ const NewsCard = () => {
               </div>
               <div className="pt-4 flex flex-col justify-between">
                 <h3 className="text-lg font-semibold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                  <Link href={`/view_details`}>{news.title}</Link>
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
                   {news.description.slice(0, 100)}...

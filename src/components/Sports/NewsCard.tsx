@@ -65,7 +65,7 @@ const NewsCard = () => {
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full rounded-b-lg">
               <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
                 <Link
-                  href={`view_details/${trendingNews.id}`}
+                  href={`view_details`}
                   className="text-2xl lg:text-4xl"
                 >
                   {trendingNews.title}
@@ -96,7 +96,7 @@ const NewsCard = () => {
             </div>
             <div className="p-4">
               <h2 className="text-lg font-bold hover:text-blue-600">
-                <Link href={`view_details/${news.id}`}>{news.title}</Link>
+                <Link href={`view_details`}>{news.title}</Link>
               </h2>
               <p className="text-sm text-gray-600 mt-2">{news.description}</p>
             </div>

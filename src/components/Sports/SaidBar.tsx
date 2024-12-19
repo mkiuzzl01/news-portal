@@ -4,6 +4,7 @@ import football from "@public/asset/Sports/football.jpg";
 import hokeei from "@public/asset/Sports/hokei.jpg";
 import sport from "@public/asset/Sports/sports.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 const sports = [
   {
@@ -108,7 +109,7 @@ const SaidBar = () => {
           <div key={index} className="flex gap-4 items-start border-b pb-4">
             <div className="flex-1">
               <h1 className="text-lg font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
-                {news?.title}
+                <Link href={`/view_details`}>{news?.title}</Link>
               </h1>
               <p>{news?.date}</p>
             </div>

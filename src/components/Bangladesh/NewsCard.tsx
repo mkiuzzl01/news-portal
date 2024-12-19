@@ -66,7 +66,6 @@ const politicsData = [
 ];
 
 const NewsCard = () => {
-  
   const trendingNews = politicsData.find(
     (news) => news.news_type === "trending"
   );
@@ -77,7 +76,9 @@ const NewsCard = () => {
     <div className="">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">সমগ্র জনপথ </h1>
+        <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">
+          সমগ্র জনপথ{" "}
+        </h1>
         <Link href="/bangladesh">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             আরো দেখুন{" "}
@@ -106,10 +107,7 @@ const NewsCard = () => {
               </div>
               <div className="p-4">
                 <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
-                  <Link
-                    href={`view_details/${trendingNews.id}`}
-                    className="text-2xl lg:text-4xl"
-                  >
+                  <Link href={`view_details`} className="text-2xl lg:text-4xl">
                     {trendingNews.title}
                   </Link>
                 </h2>
@@ -131,24 +129,22 @@ const NewsCard = () => {
               key={index}
               className="bg-white overflow-hidden flex justify-between"
             >
-              <div className="flex-1 p-3 flex flex-col justify-between">
-                <h2 className="text-md font-bold hover:text-blue-600 leading-snug mb-2">
-                  <Link
-                    href={`view_details/${news.id}`}
-                    aria-label={news.title}
-                  >
+              <div className="flex-1 pe-1">
+                <h2 className="text-md font-bold hover:text-blue-600">
+                  <Link href={`view_details`} aria-label={news.title}>
                     {news.title}
                   </Link>
                 </h2>
                 <p className="text-sm overflow-hidden">{news?.description}</p>
+                <p className="text-blue-700 text-sm pt-2">
+                  <Link href="/view_details">আরো পড়ুন </Link>
+                </p>
               </div>
-              <div>
+              <div className="w-1/2 h-full">
                 <Image
                   src={news.image}
                   alt={news.title}
-                  width={200}
-                  height={100}
-                  className="object-cover hover:scale-110 transition-transform duration-300"
+                  className="object-cover w-full h-full hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>

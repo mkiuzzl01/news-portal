@@ -12,8 +12,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <nav className="sticky top-0 z-50">
         <Navbar />
       </nav>
-      <main className="flex-grow">{children}</main>
-      <footer className="mt-auto">
+      <main>{children}</main>
+      <footer>
         <Footer />
       </footer>
     </div>

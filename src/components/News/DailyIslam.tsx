@@ -86,7 +86,7 @@ const DailyIslam = () => {
             key={news?.id}
             className="py-3 md:py-4 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
           >
-            <Link href={`/view-details/${news?.id}`} className="block space-y-1">
+            <Link href={`/view_details`} className="block space-y-1">
               <h3
                 className="text-sm md:text-base lg:text-lg font-semibold text-gray-800 
               line-clamp-1 hover:text-blue-600 transition-colors"

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface News {
   id: number;
@@ -26,8 +27,8 @@ const TrendingCard = ({ data }: { data: News[] }) => {
             height={100}
           />
           <div className="ms-4">
-            <h3 className="text-lg font-semibold text-gray-800">
-              {news.title}
+            <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-500">
+              <Link href="/view_details">{news.title}</Link>
             </h3>
             <p className="text-sm text-gray-600 mt-2">{news.description}</p>
           </div>

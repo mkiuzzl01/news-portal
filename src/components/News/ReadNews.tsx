@@ -107,7 +107,7 @@ const ReadNews = () => {
             key={index}
             className="border-b last:border-b-0 pb-4 last:pb-0 hover:bg-gray-50 transition"
           >
-            <Link href={`view_details/${news?.id}`} className="block">
+            <Link href={`view_details`} className="block">
               <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-500">
                 {news.title}
               </h3>

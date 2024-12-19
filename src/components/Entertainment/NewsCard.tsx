@@ -116,7 +116,7 @@ const NewsCard = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                 <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
                   <Link
-                    href={`view_details/${trendingNews?.id}`}
+                    href={`view_details`}
                     className="text-2xl lg:text-4xl"
                   >
                     {trendingNews?.title}
@@ -142,7 +142,7 @@ const NewsCard = () => {
               </div>
               <div className="flex-1 ps-4 flex flex-col justify-between">
                 <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
+                  <Link href={`view_details`}>{news?.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news?.description}
@@ -162,7 +162,7 @@ const NewsCard = () => {
             >
               <div className="flex-1 ps-4 flex flex-col justify-between">
                 <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details/${news?.id}`}>{news?.title}</Link>
+                  <Link href={`view_details`}>{news?.title}</Link>
                 </h2>
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news?.description}

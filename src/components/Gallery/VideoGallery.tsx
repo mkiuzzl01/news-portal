@@ -158,7 +158,7 @@ const VideoGallery: React.FC = () => {
                   </span>
                 </div>
                 <Link
-                  href={`view_details/${currentCarouselIndex}`}
+                  href={`view_details`}
                   className="hover:text-blue-500"
                 >
                   <h2 className="text-xl lg:text-2xl font-bold mb-2 text-ellipsis">
@@ -206,7 +206,7 @@ const VideoGallery: React.FC = () => {
                 </div>
                 <div className="mt-2">
                   <p className="font-semibold hover:text-blue-500">
-                    <Link href={`view_details/${newsItem.id}`}>
+                    <Link href={`/view_details`}>
                       {newsItem.title}
                     </Link>
                   </p>

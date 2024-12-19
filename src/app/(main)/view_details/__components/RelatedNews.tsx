@@ -19,7 +19,7 @@ interface RelatedNewsProps {
 
 const RelatedNews = ({ data }: RelatedNewsProps) => {
   return (
-    <div className="w-full lg:w-3/4 m-auto">
+    <div className="w-full lg:w-3/4 m-auto pt-10">
       <h1 className="text-2xl font-bold">সম্পর্কিত খবর</h1>
       <div className="grid grid-cols-2">
         {data.map((newsItem) => (
