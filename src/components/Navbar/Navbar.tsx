@@ -44,7 +44,7 @@ const socialLinks: SocialLink[] = [
 
 const navItems: NavItem[] = [
   { href: "/", label: "হোম" },
-  { href: "/national", label: "জাতীয়" },
+  { href: "/national", label: "জাতীয়" },
   { href: "/politics", label: "রাজনীতি" },
   { href: "/international", label: "আন্তর্জাতিক" },
   { href: "/sports", label: "খেলাধুলা" },
@@ -65,120 +65,193 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const navRef = React.useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  React.useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
-    <nav className="bg-blue-600 py-4 shadow-lg">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="w-full items-center space-x-4 flex lg:hidden">
-          <Image src={logo} alt="Daily Times 24" width={120} height={50} />
+    <div
+      ref={navRef}
+      className="bg-gradient-to-r from-blue-700 to-blue-600 lg:bg-blue-600"
+    >
+      {/* Mobile Top Bar */}
+      <div className="lg:hidden container mx-auto px-4">
+        <div className="flex justify-between items-center py-2 border-b border-blue-400">
+          <div className="flex items-center space-x-4">
+            <Image
+              src={logo}
+              alt="Daily Times 24"
+              width={120}
+              height={50}
+              className="w-28"
+            />
+          </div>
           <button
-            onClick={toggleMenu}
-            className="lg:hidden text-white focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-6">
-          <NavigationMenu>
-            <NavigationMenuList className="space-x-4">
-              {navItems.map((item) =>
-                item.nested ? (
-                  <NavigationMenuItem key={item.href}>
-                    <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid gap-2 p-4 md:w-[300px]">
-                        {item.nested.map((nestedItem) => (
-                          <ListItem
-                            key={nestedItem.href}
-                            title={nestedItem.label}
-                            href={nestedItem.href}
-                          />
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ) : (
-                  <NavigationMenuItem key={item.href}>
-                    <NavigationMenuLink asChild>
+      {/* Desktop Navigation */}
+      <div className="hidden lg:block container mx-auto px-4 py-4">
+        <div className="flex justify-between items-center">
+          {/* Logo Area */}
+          <div className="lg:hidden flex items-center space-x-4">
+            <Image src={logo} alt="Daily Times 24" width={120} height={50} />
+          </div>
+
+          {/* Navigation Menu */}
+          <div>
+            <NavigationMenu>
+              <NavigationMenuList>
+                {navItems.map((item) =>
+                  item.nested ? (
+                    <NavigationMenuItem key={item.href}>
+                      <NavigationMenuTrigger className="px-3 py-2 text-white hover:text-blue-100 ">
+                        {item.label}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid grid-cols-2 gap-4 w-[500px] p-4">
+                          {item.nested.map((nestedItem) => (
+                            <ListItem
+                              key={nestedItem.href}
+                              title={nestedItem.label}
+                              href={nestedItem.href}
+                            />
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  ) : (
+                    <NavigationMenuItem key={item.href}>
                       <Link
                         href={item.href}
-                        className={`text-white hover:text-gray-300",
-                          ${
-                            pathname === item.href && "border-b-2 border-white"
-                          }`}
+                        className={`px-3 py-2 text-white hover:text-blue-100 ${
+                          pathname === item.href
+                            ? "border-b-2 border-white"
+                            : ""
+                        }`}
                       >
                         {item.label}
                       </Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                )
-              )}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-
-        {/* Social Links and Search */}
-        <div className="hidden lg:flex items-center space-x-4">
-          <div className="relative">
-            <input
-              type="text"
-              className="bg-white rounded-full pl-4 pr-10 py-2 text-gray-700 shadow focus:ring-2 focus:ring-blue-300"
-              placeholder="Search..."
-            />
-            <button
-              onClick={() => alert("Search clicked")}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-600 hover:text-blue-800"
-            >
-              <Search size={20} />
-            </button>
+                    </NavigationMenuItem>
+                  )
+                )}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
-          {socialLinks.map((link) => (
-            <Link key={link.id} href={link.link}>
-              <div className="bg-white p-2 rounded-full shadow text-blue-600 hover:text-blue-800">
-                {link.icon}
-              </div>
-            </Link>
-          ))}
-          <button onClick={() => alert("User clicked")} className="text-white">
-            <UserRound size={20} />
-          </button>
+
+          {/* Search and Social */}
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <input
+                type="text"
+                className="w-48 bg-white rounded-full outline-none pl-4 pr-10 py-2 text-gray-700 focus:w-64 transition-all duration-300"
+                placeholder="Search..."
+              />
+              <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-600">
+                <Search size={20} />
+              </button>
+            </div>
+            {socialLinks.map((link) => (
+              <Link key={link.id} href={link.link}>
+                <div className="bg-white p-2 rounded-full text-blue-600 hover:bg-blue-50 transition-colors">
+                  {link.icon}
+                </div>
+              </Link>
+            ))}
+            <div className="border-s-2 px-2">
+              <button className="text-white hover:text-blue-100">
+                <UserRound size={25} />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-blue-700 text-white mt-2 rounded-lg shadow-lg">
-          <ul className="space-y-2 py-4 px-6">
-            {navItems.map((item) =>
-              item.nested ? (
-                <li key={item.href}>
-                  <p className="font-bold">{item.label}</p>
-                  <ul className="ml-4 space-y-1">
-                    {item.nested.map((nestedItem) => (
-                      <li key={nestedItem.href}>
-                        <Link href={nestedItem.href} className="text-gray-200">
-                          {nestedItem.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li key={item.href}>
-                  <Link href={item.href} className="block hover:underline">
-                    {item.label}
+        <div className="lg:hidden bg-white absolute top-[80px] left-0 right-0 z-50">
+          <div className="p-4">
+            <div className="relative mb-4">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <Search
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                size={18}
+              />
+            </div>
+            <div className="space-y-2">
+              {navItems.map((item) => (
+                <div key={item.href}>
+                  {item.nested ? (
+                    <div className="space-y-2">
+                      <div className="font-medium text-gray-800">
+                        {item.label}
+                      </div>
+                      <div className="pl-4 space-y-2">
+                        {item.nested.map((nestedItem) => (
+                          <Link
+                            key={nestedItem.href}
+                            href={nestedItem.href}
+                            className="block py-2 text-gray-600 hover:text-blue-600"
+                          >
+                            {nestedItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`block px-2 py-2 rounded ${
+                        pathname === item.href
+                          ? "text-blue-600 font-medium"
+                          : "text-gray-700 hover:text-blue-600"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="flex justify-center space-x-4">
+                {socialLinks.map((link) => (
+                  <Link key={link.id} href={link.link}>
+                    <div className="rounded-full bg-gray-500 p-2 text-white hover:bg-red-500 transition-colors">
+                      {link.icon}
+                    </div>
                   </Link>
-                </li>
-              )
-            )}
-          </ul>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       )}
-    </nav>
+    </div>
   );
 };
 
@@ -193,7 +266,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
       <NavigationMenuLink asChild>
         <a
           ref={ref}
-          className="block p-2 text-gray-800 hover:bg-blue-100 rounded"
+          className="block p-2 text-gray-800 hover:bg-blue-50 rounded transition-colors"
           href={href}
           {...props}
         >
