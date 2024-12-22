@@ -67,7 +67,7 @@ const NewsCard = () => {
         {/* Trending News Section */}
         {leadNews && (
           <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative bg-gray-200 overflow-hidden border-red-500">
-            <div className="w-full h-full lg:h-[600px] hover:scale-110 duration-700">
+            <div className="w-full h-full lg:h-[600px] hover:scale-105 duration-700">
               <Image
                 src={leadNews?.image}
                 alt={leadNews?.title}

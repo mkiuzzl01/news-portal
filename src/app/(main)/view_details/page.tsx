@@ -18,6 +18,26 @@ const newsData = {
   date: "2024-12-10",
   time: "10:00 AM",
   image: image1,
+  tagLine: [
+    {
+      tag_id: "01",
+      image: related_news,
+      title:
+        "বাংলাদেশে জলবায়ু পরিবর্তন মোকাবেলা করার জন্য নতুন পরিকল্পনা ঘোষণা করা হয়েছে",
+    },
+    {
+      tag_id: "02",
+      image: related_news,
+      title:
+        "বাংলাদেশে জলবায়ু পরিবর্তন মোকাবেলা করার জন্য নতুন পরিকল্পনা ঘোষণা করা হয়েছে",
+    },
+    {
+      tag_id: "03",
+      image: related_news,
+      title:
+        "বাংলাদেশে জলবায়ু পরিবর্তন মোকাবেলা করার জন্য নতুন পরিকল্পনা ঘোষণা করা হয়েছে",
+    },
+  ],
 };
 
 const relatedNews = [
@@ -61,15 +81,18 @@ const relatedNews = [
 
 const Page = () => {
   return (
-    <div className="container m-auto px-2">
-      <div className="flex flex-col lg:flex-row gap-4">
-        <div className="w-full lg:w-3/4">
+    <div className="max-w-7xl m-auto px-2">
+      <div className="flex flex-col lg:flex-row gap-6 h-screen">
+        <div
+          className="w-full lg:w-3/4 overflow-auto overflow-y-auto [&::-webkit-scrollbar]:hidden 
+        [-ms-overflow-style:none] 
+        [scrollbar-width:none]"
+        >
           <NewsCard news={newsData} />
           <Feedback />
           <RelatedNews data={relatedNews} />
           <PaginationPages />
         </div>
-
         <aside className="w-full lg:w-1/4">
           <SaidBar />
         </aside>

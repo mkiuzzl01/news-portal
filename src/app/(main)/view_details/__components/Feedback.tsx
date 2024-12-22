@@ -48,7 +48,7 @@ const Feedback = () => {
   };
 
   return (
-    <div className="w-full lg:w-3/4 m-auto my-8">
+    <div className="m-auto my-8">
       {/* Social Media Section */}
       <div className="space-y-4 my-4">
         <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ const Feedback = () => {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`transition-colors duration-300 ${social.color}`}
+              className={`transition-colors duration-300 ${social.color} border-2 rounded-lg p-2 border-blue-300`}
               aria-label={social.name}
             >
               {social.icon}
@@ -83,7 +83,7 @@ const Feedback = () => {
             />
             <button
               type="submit"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!comment.trim()}
             >
               <Send className="w-4 h-4" />
