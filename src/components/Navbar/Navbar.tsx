@@ -65,7 +65,6 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const navRef = React.useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 

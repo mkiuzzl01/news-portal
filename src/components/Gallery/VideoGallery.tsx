@@ -19,8 +19,7 @@ const newsData = [
     date: "১২ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image-3.jpg",
     alt: "Breaking News 1",
-    videoUrl:
-      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1", 
+    videoUrl: "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
   {
     id: 2,
@@ -30,8 +29,7 @@ const newsData = [
     date: "১১ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image-4.jpg",
     alt: "Breaking News 2",
-    videoUrl:
-      "https://www.youtube.com/embed/BumD3DxlxeM?autoplay=1",
+    videoUrl: "https://www.youtube.com/embed/BumD3DxlxeM?autoplay=1",
   },
   {
     id: 3,
@@ -40,8 +38,7 @@ const newsData = [
     date: "১০ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image-5.jpg",
     alt: "Breaking News 3",
-    videoUrl:
-      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
+    videoUrl: "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
   {
     id: 4,
@@ -50,8 +47,7 @@ const newsData = [
     date: "১০ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image02.jpg",
     alt: "Breaking News 3",
-    videoUrl:
-      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
+    videoUrl: "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
   {
     id: 5,
@@ -60,17 +56,15 @@ const newsData = [
     date: "১০ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image.jpg",
     alt: "Breaking News 3",
-    videoUrl:
-      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
+    videoUrl: "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
 ];
 
 const VideoGallery = () => {
-
   const [currentCarouselIndex, setCurrentCarouselIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const goToPrevious = useCallback(() => {
     setCurrentCarouselIndex((prevIndex) =>
@@ -100,12 +94,11 @@ const VideoGallery = () => {
     };
   }, [goToNext, isPaused, isVideoModalOpen]);
 
-  const handleSideImageClick = (index) => {
+  const handleSideImageClick = (index: React.SetStateAction<number>) => {
     setCurrentCarouselIndex(index);
   };
 
   const VideoModal = () => (
-
     <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
       <div className="relative w-full max-w-4xl bg-black overflow-hidden">
         <button
