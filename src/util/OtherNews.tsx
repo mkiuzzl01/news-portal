@@ -34,7 +34,7 @@ const OtherNews = ({ relatedNews }:newsData) => {
               </Link>
             </div>
 
-            <div className="w-2/3 space-y-2">
+            <div className="w-2/3 flex-1 ms-2 space-y-2">
               <Link href={`view_details`}>
                 <h2 className="text-base font-semibold text-gray-800 line-clamp-2 hover:text-blue-600 transition-colors">
                   {news.title}
