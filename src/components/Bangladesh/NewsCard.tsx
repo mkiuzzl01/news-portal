@@ -73,8 +73,7 @@ const NewsCard = () => {
   const normalNews = politicsData.filter((news) => news.news_type === "normal");
 
   return (
-    <div className="">
-      {/* Header */}
+    <div>
       <div className="flex justify-between items-center">
         <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">
           সমগ্র জনপথ{" "}
@@ -89,10 +88,7 @@ const NewsCard = () => {
           </p>
         </Link>
       </div>
-
-      {/* card */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {/* Trending News */}
         <div className="bg-white overflow-hidden">
           {trendingNews && (
             <div>
@@ -121,13 +117,11 @@ const NewsCard = () => {
             </div>
           )}
         </div>
-
-        {/* Normal News */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[400px] overflow-auto p-4">
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-4  overflow-auto p-4">
           {normalNews.map((news, index) => (
             <div
               key={index}
-              className="bg-white overflow-hidden flex justify-between"
+              className="bg-white overflow-hidden flex justify-between p-2"
             >
               <div className="flex-1 pe-1">
                 <h2 className="text-md font-bold hover:text-blue-600">
@@ -140,11 +134,11 @@ const NewsCard = () => {
                   <Link href="/view_details">আরো পড়ুন </Link>
                 </p>
               </div>
-              <div className="w-1/2 h-full">
+              <div className="w-1/2 h-auto">
                 <Image
                   src={news.image}
                   alt={news.title}
-                  className="object-cover w-full h-full hover:scale-110 transition-transform duration-300"
+                  className="object-cover w-full h-[150px] hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>

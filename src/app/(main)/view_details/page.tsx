@@ -4,6 +4,7 @@ import image1 from "@public/asset/Gallery/image-6.jpg";
 import RelatedNews from "./__components/RelatedNews";
 import related_news from "@public/asset/Gallery/image02.jpg";
 import PaginationPages from "@/util/PaginationPages";
+import Feedback from "./__components/Feedback";
 
 const newsData = {
   id: 1,
@@ -64,6 +65,7 @@ const Page = () => {
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="w-full lg:w-3/4">
           <NewsCard news={newsData} />
+          <Feedback />
           <RelatedNews data={relatedNews} />
           <PaginationPages />
         </div>

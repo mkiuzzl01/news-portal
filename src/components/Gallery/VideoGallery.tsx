@@ -6,6 +6,7 @@ import {
   ChevronRight,
   ChevronsRight,
   PlayIcon,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -18,9 +19,8 @@ const newsData = [
     date: "১২ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image-3.jpg",
     alt: "Breaking News 1",
-    category: "অর্থনীতি",
     videoUrl:
-      "https://www.youtube.com/watch?v=lE6RYpe9IT0&t=3s&ab_channel=321Relaxing-MeditationRelaxClips",
+      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1", 
   },
   {
     id: 2,
@@ -30,9 +30,8 @@ const newsData = [
     date: "১১ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image-4.jpg",
     alt: "Breaking News 2",
-    category: "প্রযুক্তি",
     videoUrl:
-      "https://www.youtube.com/watch?v=lE6RYpe9IT0&t=3s&ab_channel=321Relaxing-MeditationRelaxClips",
+      "https://www.youtube.com/embed/BumD3DxlxeM?autoplay=1",
   },
   {
     id: 3,
@@ -41,49 +40,45 @@ const newsData = [
     date: "১০ ডিসেম্বর, ২০২৪",
     Thumbnail: "/asset/Gallery/image-5.jpg",
     alt: "Breaking News 3",
-    category: "পরিবেশ",
     videoUrl:
-      "https://www.youtube.com/watch?v=lE6RYpe9IT0&t=3s&ab_channel=321Relaxing-MeditationRelaxClips",
+      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
   {
     id: 4,
-    title: "স্বাস্থ্যখাতে উদ্ভাবন রোগী সেবা উন্নত করছে",
-    description:
-      "এআই-চালিত ডায়াগনস্টিক সিস্টেমগুলি রোগের প্রাথমিক শনাক্তকরণে অসাধারণ নির্ভুলতা দেখাচ্ছে",
-    date: "৯ ডিসেম্বর, ২০২৪",
-    Thumbnail: "/asset/Gallery/image-6.jpg",
-    alt: "Breaking News 4",
-    category: "স্বাস্থ্য",
+    title: "জলবায়ু পরিবর্তন সম্মেলন ফলপ্রসূ হচ্ছে",
+    description: "বিশ্ব নেতারা কঠোর কার্বন হ্রাস লক্ষ্য পূরণের অঙ্গীকার করেছেন",
+    date: "১০ ডিসেম্বর, ২০২৪",
+    Thumbnail: "/asset/Gallery/image02.jpg",
+    alt: "Breaking News 3",
     videoUrl:
-      "https://www.youtube.com/watch?v=lE6RYpe9IT0&t=3s&ab_channel=321Relaxing-MeditationRelaxClips",
+      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
   {
     id: 5,
-    title: "মহাকাশ অন্বেষণ নতুন মাইলফলকে পৌঁছেছে",
-    description:
-      "আন্তর্জাতিক মিশন চাঁদে গুরুত্বপূর্ণ গবেষণার জন্য প্রস্তুতি নিচ্ছে",
-    date: "৮ ডিসেম্বর, ২০২৪",
-    Thumbnail: "/asset/Gallery/image02.jpg",
-    alt: "Breaking News 5",
-    category: "বিজ্ঞান",
+    title: "জলবায়ু পরিবর্তন সম্মেলন ফলপ্রসূ হচ্ছে",
+    description: "বিশ্ব নেতারা কঠোর কার্বন হ্রাস লক্ষ্য পূরণের অঙ্গীকার করেছেন",
+    date: "১০ ডিসেম্বর, ২০২৪",
+    Thumbnail: "/asset/Gallery/image.jpg",
+    alt: "Breaking News 3",
     videoUrl:
-      "https://www.youtube.com/watch?v=lE6RYpe9IT0&t=3s&ab_channel=321Relaxing-MeditationRelaxClips",
+      "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
 ];
 
-const VideoGallery: React.FC = () => {
-  const [currentCarouselIndex, setCurrentCarouselIndex] = useState<number>(0);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
+const VideoGallery = () => {
 
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [currentCarouselIndex, setCurrentCarouselIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const intervalRef = useRef(null);
 
-  const goToPrevious = useCallback((): void => {
+  const goToPrevious = useCallback(() => {
     setCurrentCarouselIndex((prevIndex) =>
       prevIndex === 0 ? newsData.length - 1 : prevIndex - 1
     );
   }, []);
 
-  const goToNext = useCallback((): void => {
+  const goToNext = useCallback(() => {
     setCurrentCarouselIndex((prevIndex) =>
       prevIndex === newsData.length - 1 ? 0 : prevIndex + 1
     );
@@ -94,7 +89,7 @@ const VideoGallery: React.FC = () => {
       clearInterval(intervalRef.current);
     }
 
-    if (!isPaused) {
+    if (!isPaused && !isVideoModalOpen) {
       intervalRef.current = setInterval(goToNext, 2000);
     }
 
@@ -103,11 +98,34 @@ const VideoGallery: React.FC = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [goToNext, isPaused]);
+  }, [goToNext, isPaused, isVideoModalOpen]);
 
-  const handleSideImageClick = (index: number): void => {
+  const handleSideImageClick = (index) => {
     setCurrentCarouselIndex(index);
   };
+
+  const VideoModal = () => (
+
+    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
+      <div className="relative w-full max-w-4xl bg-black overflow-hidden">
+        <button
+          onClick={() => setIsVideoModalOpen(false)}
+          className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+        >
+          <X size={24} />
+        </button>
+        <div className="relative pt-[56.25%]">
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src={newsData[currentCarouselIndex].videoUrl}
+            title={newsData[currentCarouselIndex].title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="py-8">
@@ -119,8 +137,7 @@ const VideoGallery: React.FC = () => {
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             আরো দেখুন{" "}
             <span>
-              {" "}
-              <ChevronsRight size={30} />{" "}
+              <ChevronsRight size={30} />
             </span>
           </p>
         </Link>
@@ -141,81 +158,61 @@ const VideoGallery: React.FC = () => {
                 className="object-cover"
                 priority={currentCarouselIndex === 0}
               />
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-100 transition-opacity duration-300">
-                <Link
-                  href={newsData[currentCarouselIndex].videoUrl}
-                  target="_blank"
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                <button
+                  onClick={() => setIsVideoModalOpen(true)}
+                  className="bg-red-400 hover:bg-red-600 p-5 rounded-full text-white"
                 >
-                  <div className="bg-red-400 hover:bg-red-600 p-5 rounded-full text-white ">
-                    <PlayIcon />
-                  </div>
-                </Link>
+                  <PlayIcon />
+                </button>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-1 lg:p-4">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm text-gray-300 hidden lg:block">
-                    {newsData[currentCarouselIndex].date}
-                  </span>
-                </div>
-                <Link
-                  href={`view_details`}
-                  className="hover:text-blue-500"
-                >
-                  <h2 className="text-xl lg:text-2xl font-bold mb-2 text-ellipsis">
-                    {newsData[currentCarouselIndex].title}
-                  </h2>
-                  <p className="text-sm text-gray-200 hidden lg:block">
-                    {newsData[currentCarouselIndex].description}
-                  </p>
-                </Link>
+                <h2 className="text-xl lg:text-2xl font-bold mb-2">
+                  {newsData[currentCarouselIndex].title}
+                </h2>
+                <p className="text-sm text-gray-200 hidden lg:block">
+                  {newsData[currentCarouselIndex].description}
+                </p>
               </div>
               <div className="absolute top-3 right-3 space-x-2">
                 <button
                   onClick={goToPrevious}
-                  aria-label="Previous News"
-                  className=" bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
+                  className="bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
                 >
                   <ChevronLeft size={32} />
                 </button>
                 <button
                   onClick={goToNext}
-                  aria-label="Next News"
-                  className=" bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
+                  className="bg-white/50 rounded-full p-1 hover:bg-white/75 z-10"
                 >
                   <ChevronRight size={32} />
                 </button>
               </div>
             </div>
           </div>
-
           <div className="w-full flex-1 grid grid-cols-3 md:grid-cols-2 lg:grid-cols-2 gap-4">
             {newsData.map((newsItem, index) => (
               <div
                 key={newsItem.id}
                 onClick={() => handleSideImageClick(index)}
-                className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300 relative"
+                className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
-                <div>
-                  <Image
-                    src={newsItem.Thumbnail}
-                    alt={newsItem.alt}
-                    width={1200}
-                    height={600}
-                    className="object-cover"
-                  />
-                </div>
-                <div className="mt-2">
-                  <p className="font-semibold hover:text-blue-500">
-                    <Link href={`/view_details`}>
-                      {newsItem.title}
-                    </Link>
-                  </p>
-                </div>
+                <Image
+                  src={newsItem.Thumbnail}
+                  alt={newsItem.alt}
+                  width={1200}
+                  height={600}
+                  className="object-cover"
+                />
+                <p className="font-semibold hover:text-blue-500">
+                  {newsItem.title}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </div>
+      {isVideoModalOpen && <VideoModal />}
     </div>
   );
 };
