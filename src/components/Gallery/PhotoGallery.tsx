@@ -100,15 +100,6 @@ const NewsSlider: React.FC = () => {
         <h1 className="text-4xl font-semibold border-s-4 border-blue-500 ps-2">
           ছবি
         </h1>
-        <Link href="/allNews">
-          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            আরো দেখুন{" "}
-            <span>
-              {" "}
-              <ChevronsRight size={30} />{" "}
-            </span>
-          </p>
-        </Link>
       </div>
       <div>
         <div className="flex flex-col lg:flex-row gap-6">
@@ -133,12 +124,9 @@ const NewsSlider: React.FC = () => {
                     {newsData[currentCarouselIndex].date}
                   </span>
                 </div>
-                <Link
-                  href={`/view_details`}
-                  className="hover:text-blue-500"
-                >
+                <Link href={`/view_details`} className="hover:text-blue-500">
                   <h2 className=" text-ellipsis text-xl lg:text-2xl font-bold mb-2">
-                  {newsData[currentCarouselIndex].title}
+                    {newsData[currentCarouselIndex].title}
                   </h2>
                   <p className="text-sm text-gray-200 hidden lg:block">
                     {newsData[currentCarouselIndex].description}

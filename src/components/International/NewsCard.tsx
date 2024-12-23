@@ -83,7 +83,7 @@ const NewsCard = () => {
         </h1>
         <Link href="/allNews">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            আরো দেখুন{" "}
+            <Link href={`/international`}>আরো দেখুন </Link>
             <span>
               {" "}
               <ChevronsRight size={30} />{" "}

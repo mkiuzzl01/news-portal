@@ -14,7 +14,7 @@ const Sports = () => {
         </h1>
         <Link href="/sports">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            আরো দেখুন{" "}
+            <Link href={`/sports`}> আরো দেখুন </Link>
             <span>
               <ChevronsRight size={30} />
             </span>

@@ -126,14 +126,6 @@ const VideoGallery = () => {
         <h1 className="text-4xl font-semibold border-s-4 border-blue-500 ps-2">
           ভিডিও
         </h1>
-        <Link href="/allNews">
-          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            আরো দেখুন{" "}
-            <span>
-              <ChevronsRight size={30} />
-            </span>
-          </p>
-        </Link>
       </div>
       <div>
         <div className="flex flex-col lg:flex-row-reverse gap-6">

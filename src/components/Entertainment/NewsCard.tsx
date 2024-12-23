@@ -91,7 +91,7 @@ const NewsCard = () => {
         </h1>
         <Link href="/entrainment">
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            আরো দেখুন{" "}
+            <Link href={`/entertainment`}> আরো দেখুন </Link>
             <span>
               {" "}
               <ChevronsRight size={30} />{" "}
@@ -115,10 +115,7 @@ const NewsCard = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                 <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
-                  <Link
-                    href={`view_details`}
-                    className="text-2xl lg:text-4xl"
-                  >
+                  <Link href={`view_details`} className="text-2xl lg:text-4xl">
                     {trendingNews?.title}
                   </Link>
                 </h2>
