@@ -1,5 +1,7 @@
 "use client";
 import React, { FC } from "react";
+import Autoplay from "embla-carousel-autoplay";
+
 import {
   Carousel,
   CarouselContent,
@@ -22,7 +24,17 @@ interface TaglineSliderProps {
 const TaglineSlider: FC<TaglineSliderProps> = ({ data }) => {
   return (
     <div className="mt-4  w-full">
-      <Carousel className="relative">
+      <Carousel
+        className="relative"
+        opts={{
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+      >
         <CarouselContent>
           {data.map((item) => (
             <CarouselItem key={item?.tag_id} className="px-4">
@@ -30,7 +42,7 @@ const TaglineSlider: FC<TaglineSliderProps> = ({ data }) => {
                 <div className="relative w-full h-[200px] sm:h-[250px] lg:h-[300px]">
                   <Image
                     src={item?.image}
-                    alt={`Tagline image: ${item?.title}`}
+                    alt={item?.title}
                     fill
                     className="object-cover"
                     quality={100}
@@ -43,15 +55,10 @@ const TaglineSlider: FC<TaglineSliderProps> = ({ data }) => {
               </div>
             </CarouselItem>
           ))}
-
         </CarouselContent>
         <div className="flex gap-2">
-          <CarouselPrevious 
-            className="relative left-0 bg-black/50 hover:bg-black/70 transition-all"
-          />
-          <CarouselNext 
-            className="relative right-0 bg-black/50 hover:bg-black/70 transition-all"
-          />
+          <CarouselPrevious className="relative left-0 bg-black/50 hover:bg-black/70 transition-all" />
+          <CarouselNext className="relative right-0 bg-black/50 hover:bg-black/70 transition-all" />
         </div>
       </Carousel>
     </div>
