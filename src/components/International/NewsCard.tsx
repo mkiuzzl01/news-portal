@@ -81,7 +81,7 @@ const NewsCard = () => {
         <h1 className="text-4xl font-bold my-4 border-s-4 ps-2 border-blue-500 ">
           আন্তর্জাতিক
         </h1>
-        <Link href="/allNews">
+  
           <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
             <Link href={`/international`}>আরো দেখুন </Link>
             <span>
@@ -89,7 +89,6 @@ const NewsCard = () => {
               <ChevronsRight size={30} />{" "}
             </span>
           </p>
-        </Link>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {trendingNews && (

@@ -78,15 +78,13 @@ const NewsCard = () => {
         <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">
           সমগ্র জনপথ{" "}
         </h1>
-        <Link href="/bangladesh">
-          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            <Link href={`/national`}>আরো দেখুন </Link>
-            <span>
-              {" "}
-              <ChevronsRight size={30} />{" "}
-            </span>
-          </p>
-        </Link>
+        <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+          <Link href={`/national`}>আরো দেখুন </Link>
+          <span>
+            {" "}
+            <ChevronsRight size={30} />{" "}
+          </span>
+        </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="bg-white overflow-hidden">

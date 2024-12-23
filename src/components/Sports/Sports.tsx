@@ -12,14 +12,13 @@ const Sports = () => {
         <h1 className="text-4xl border-blue-500 border-s-4 font-bold my-4 ps-2">
           খেলাধুলা
         </h1>
-        <Link href="/sports">
-          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            <Link href={`/sports`}> আরো দেখুন </Link>
-            <span>
-              <ChevronsRight size={30} />
-            </span>
-          </p>
-        </Link>
+
+        <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+          <Link href={`/sports`}> আরো দেখুন </Link>
+          <span>
+            <ChevronsRight size={30} />
+          </span>
+        </p>
       </div>
 
       {/* Main Content */}

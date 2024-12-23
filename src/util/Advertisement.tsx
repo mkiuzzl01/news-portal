@@ -6,15 +6,15 @@ interface AdvertisementProps {
 
 const Advertisement = ({ banner }: AdvertisementProps) => {
   return (
-    <div className="w-full my-4 h-[300px]">
+    <div className="w-full my-4 h-[300px] relative">
       <Image
         src={banner}
         placeholder="blur"
         alt="Advertisement banner"
-        layout="responsive"
+        layout="intrinsic"
         objectFit="cover"
-        width={1000} 
-        height={300}
+        height={300} 
+        width={1200}
         className="w-full"
       />
     </div>

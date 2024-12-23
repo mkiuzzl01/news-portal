@@ -125,7 +125,6 @@ const Page = () => {
   return (
     <div className="container mx-auto p-2">
       <div className="flex lg:flex-row flex-col gap-4">
-        {/* Main Content - Scrollable */}
         <div className="w-full lg:w-3/4 lg:pr-4">
           <TopNews data={economy} />
           <Advertisement banner={banner} />

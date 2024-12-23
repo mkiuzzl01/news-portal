@@ -1,13 +1,9 @@
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import {
-  ChevronLeft,
-  ChevronRight,
-  PlayIcon,
-  X,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, PlayIcon } from "lucide-react";
 import Link from "next/link";
+import VideoModal from "./VideoModal";
 
 const newsData = [
   {
@@ -97,28 +93,6 @@ const VideoGallery = () => {
     setCurrentCarouselIndex(index);
   };
 
-  const VideoModal = () => (
-    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
-      <div className="relative w-full max-w-4xl bg-black overflow-hidden">
-        <button
-          onClick={() => setIsVideoModalOpen(false)}
-          className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
-        >
-          <X size={24} />
-        </button>
-        <div className="relative pt-[56.25%]">
-          <iframe
-            className="absolute inset-0 w-full h-full"
-            src={newsData[currentCarouselIndex].videoUrl}
-            title={newsData[currentCarouselIndex].title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="py-8">
       <div className="border-t-2 py-2 flex justify-between">
@@ -128,6 +102,8 @@ const VideoGallery = () => {
       </div>
       <div>
         <div className="flex flex-col lg:flex-row-reverse gap-6">
+          {/* trending news */}
+
           <div
             className="w-full lg:w-2/3 relative"
             onMouseEnter={() => setIsPaused(true)}
@@ -135,8 +111,8 @@ const VideoGallery = () => {
           >
             <div className="relative overflow-hidden">
               <Image
-                src={newsData[currentCarouselIndex].Thumbnail}
-                alt={newsData[currentCarouselIndex].alt}
+                src={newsData[currentCarouselIndex]?.Thumbnail}
+                alt={newsData[currentCarouselIndex]?.alt}
                 width={1200}
                 height={600}
                 className="object-cover"
@@ -151,14 +127,14 @@ const VideoGallery = () => {
                 </button>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-1 lg:p-4">
-                <h2 className="text-xl lg:text-2xl font-bold mb-2 hover:text-blue-500">
-                  <Link href={`/view_details`}>
-                    {newsData[currentCarouselIndex].title}
-                  </Link>
-                </h2>
-                <p className="text-sm text-gray-200 hidden lg:block">
-                  {newsData[currentCarouselIndex].description}
-                </p>
+                <Link href={`/view_details`}>
+                  <h2 className="text-xl lg:text-2xl font-bold mb-2 hover:text-blue-500">
+                    {newsData[currentCarouselIndex]?.title}
+                  </h2>
+                  <p className="text-sm text-gray-200 hidden lg:block">
+                    {newsData[currentCarouselIndex]?.description}
+                  </p>
+                </Link>
               </div>
               <div className="absolute top-3 right-3 space-x-2">
                 <button
@@ -176,6 +152,8 @@ const VideoGallery = () => {
               </div>
             </div>
           </div>
+
+          {/* other card of related tending news */}
           <div className="w-full flex-1 grid grid-cols-3 md:grid-cols-2 lg:grid-cols-2 gap-4">
             {newsData.map((newsItem, index) => (
               <div
@@ -184,21 +162,29 @@ const VideoGallery = () => {
                 className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
-                  src={newsItem.Thumbnail}
-                  alt={newsItem.alt}
+                  src={newsItem?.Thumbnail}
+                  alt={newsItem?.alt}
                   width={1200}
                   height={600}
                   className="object-cover"
                 />
-                <h2 className="font-semibold hover:text-blue-500">
-                  <Link href={`/view_details`}> {newsItem.title}</Link>
-                </h2>
+                <Link href={`/view_details`}>
+                  <h2 className="font-semibold hover:text-blue-500">
+                    {newsItem?.title}
+                  </h2>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </div>
-      {isVideoModalOpen && <VideoModal />}
+      {isVideoModalOpen && (
+        <VideoModal
+          currentCarouselIndex={currentCarouselIndex}
+          newsData={newsData}
+          setIsVideoModalOpen={setIsVideoModalOpen}
+        />
+      )}
     </div>
   );
 };

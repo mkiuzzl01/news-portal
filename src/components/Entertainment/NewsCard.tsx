@@ -89,15 +89,14 @@ const NewsCard = () => {
         <h1 className="text-4xl font-bold my-4 ps-2 border-blue-500 border-s-4">
           বিনোদন
         </h1>
-        <Link href="/entrainment">
-          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            <Link href={`/entertainment`}> আরো দেখুন </Link>
-            <span>
-              {" "}
-              <ChevronsRight size={30} />{" "}
-            </span>
-          </p>
-        </Link>
+
+        <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+          <Link href={`/entertainment`}> আরো দেখুন </Link>
+          <span>
+            {" "}
+            <ChevronsRight size={30} />{" "}
+          </span>
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -114,11 +113,11 @@ const NewsCard = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
-                  <Link href={`view_details`} className="text-2xl lg:text-4xl">
+                <Link href={`view_details`} className="text-2xl lg:text-4xl">
+                  <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
                     {trendingNews?.title}
-                  </Link>
-                </h2>
+                  </h2>
+                </Link>
               </div>
             </div>
           </div>
@@ -138,9 +137,12 @@ const NewsCard = () => {
                 />
               </div>
               <div className="flex-1 ps-4 flex flex-col justify-between">
-                <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details`}>{news?.title}</Link>
-                </h2>
+                <Link href={`view_details`}>
+                  <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
+                    {news?.title}
+                  </h2>
+                </Link>
+
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news?.description}
                 </p>
@@ -158,9 +160,11 @@ const NewsCard = () => {
               className="bg-white overflow-hidden flex items-stretch"
             >
               <div className="flex-1 ps-4 flex flex-col justify-between">
-                <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details`}>{news?.title}</Link>
-                </h2>
+                <Link href={`view_details`}>
+                  <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
+                    {news?.title}
+                  </h2>
+                </Link>
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news?.description}
                 </p>

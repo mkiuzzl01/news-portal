@@ -31,8 +31,8 @@ const TopNews = ({ data }: newsData) => {
           <div className="col-span-2 relative bg-gray-200 overflow-hidden">
             <div className="relative w-full h-[400px] lg:h-[500px]">
               <Image
-                src={trendingNews.image}
-                alt={trendingNews.title}
+                src={trendingNews?.image}
+                alt={trendingNews?.title}
                 className="object-cover"
                 fill
                 priority
@@ -40,9 +40,9 @@ const TopNews = ({ data }: newsData) => {
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
               <h1 className="text-2xl lg:text-4xl text-white font-semibold hover:text-yellow-500">
-                <Link href={`view_details`}>{trendingNews.title}</Link>
+                <Link href={`/view_details`}>{trendingNews?.title}</Link>
               </h1>
-              <p className="text-lg text-white">{trendingNews.published_time}</p>
+              <p className="text-lg text-white">{trendingNews?.published_time}</p>
             </div>
           </div>
         )}
@@ -61,10 +61,10 @@ const TopNews = ({ data }: newsData) => {
             </div>
             <div className="pt-4">
               <h2 className="text-lg lg:text-xl font-bold hover:text-blue-600">
-                <Link href={`view_details`}>{news.title}</Link>
+                <Link href={`view_details`}>{news?.title}</Link>
               </h2>
-              <p className="text-sm text-gray-600">{news.description}</p>
-              <p className="text-sm text-gray-400">{news.published_time}</p>
+              <p className="text-sm text-gray-600">{news?.description}</p>
+              <p className="text-sm text-gray-400">{news?.published_time}</p>
             </div>
           </div>
         ))}
