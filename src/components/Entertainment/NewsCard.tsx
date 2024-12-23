@@ -86,7 +86,7 @@ const NewsCard = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold my-4 ps-2 border-blue-500 border-s-4">
+        <h1 className="text-4xl font-bold my-6 ps-2 border-blue-500 border-s-4">
           বিনোদন
         </h1>
 
@@ -159,7 +159,7 @@ const NewsCard = () => {
               key={news.id}
               className="bg-white overflow-hidden flex items-stretch"
             >
-              <div className="flex-1 ps-4 flex flex-col justify-between">
+              <div className="flex-1 pe-4 flex flex-col justify-between">
                 <Link href={`view_details`}>
                   <h2 className="text-lg font-bold mb-2 hover:text-blue-600">
                     {news?.title}

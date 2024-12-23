@@ -13,25 +13,25 @@ const socialLinks = [
   {
     name: "Facebook",
     link: "https://www.facebook.com",
-    icon: <Facebook className="w-6 h-6" />,
+    icon: <Facebook className="w-4 h-4" />,
     color: "hover:text-blue-600"
   },
   {
     name: "Twitter",
     link: "https://www.twitter.com",
-    icon: <Twitter className="w-6 h-6" />,
+    icon: <Twitter className="w-4 h-4" />,
     color: "hover:text-blue-400"
   },
   {
     name: "Instagram",
     link: "https://www.instagram.com",
-    icon: <Instagram className="w-6 h-6" />,
+    icon: <Instagram className="w-4 h-4" />,
     color: "hover:text-pink-600"
   },
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com",
-    icon: <Linkedin className="w-6 h-6" />,
+    icon: <Linkedin className="w-4 h-4" />,
     color: "hover:text-blue-700"
   }
 ];
