@@ -52,7 +52,7 @@ const Carousel = React.forwardRef<
       opts,
       setApi,
       plugins,
-      className,
+      className="",
       children,
       ...props
     },
@@ -149,6 +149,8 @@ const Carousel = React.forwardRef<
   }
 )
 Carousel.displayName = "Carousel"
+
+
 
 const CarouselContent = React.forwardRef<
   HTMLDivElement,

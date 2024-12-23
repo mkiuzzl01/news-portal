@@ -11,7 +11,7 @@ import Image, { StaticImageData } from "next/image";
 
 interface NewsTag {
   tag_id: string;
-  image: StaticImageData;
+  image: StaticImageData | string;
   title: string;
 }
 
@@ -20,36 +20,39 @@ interface TaglineSliderProps {
 }
 
 const TaglineSlider: FC<TaglineSliderProps> = ({ data }) => {
-  
   return (
-    <div className="mt-4 relative">
-      <Carousel>
+    <div className="mt-4  w-full">
+      <Carousel className="relative">
         <CarouselContent>
           {data.map((item) => (
-            <CarouselItem key={item.tag_id} className="px-4">
-              <div className="flex flex-col items-center">
-               <div className="w-full lg:h-[300px]">
-               <Image
-                  src={item?.image}
-                  alt={`Tagline image: ${item.title}`}
-                  width={1200}
-                  height={300}
-                  style={{ objectFit: "cover" }}
-                />
-               </div>
-                <p className="mt-2 text-center text-gray-700">{item.title}</p>
+            <CarouselItem key={item?.tag_id} className="px-4">
+              <div className="flex flex-col items-center w-full">
+                <div className="relative w-full h-[200px] sm:h-[250px] lg:h-[300px]">
+                  <Image
+                    src={item?.image}
+                    alt={`Tagline image: ${item?.title}`}
+                    fill
+                    className="object-cover"
+                    quality={100}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
+                  />
+                </div>
+                <p className="mt-2 text-center font-semibold text-gray-700 text-xl sm:text-base">
+                  {item?.title}
+                </p>
               </div>
             </CarouselItem>
           ))}
-        </CarouselContent>
 
-        {/* Arrow buttons */}
-        <CarouselPrevious className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70 transition-all">
-          &lt;
-        </CarouselPrevious>
-        <CarouselNext className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70 transition-all">
-          &gt;
-        </CarouselNext>
+        </CarouselContent>
+        <div className="flex gap-2">
+          <CarouselPrevious 
+            className="relative left-0 bg-black/50 hover:bg-black/70 transition-all"
+          />
+          <CarouselNext 
+            className="relative right-0 bg-black/50 hover:bg-black/70 transition-all"
+          />
+        </div>
       </Carousel>
     </div>
   );

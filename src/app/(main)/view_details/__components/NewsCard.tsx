@@ -37,12 +37,15 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
       </header>
       <div className="mt-2">
         <h2 className="text-2xl font-semibold text-gray-800">{news?.title}</h2>
-        <p className="mt-2 text-gray-700">{news?.description}</p>
+        <p className="mt-2 text-gray-700">{news?.description.substring(0,1000)}</p>
 
         {/* tagline related carousel */}
         <div>
           {news?.tagLine?.length !== 0 && <TaglineSlider data={news?.tagLine} />}
         </div>
+
+        <p className="mt-2 text-gray-700">{news?.description.substring(1000)}</p>
+
         {news?.readTime && (
           <p className="mt-1 text-sm text-gray-500">
             Estimated Read Time: {news.readTime}

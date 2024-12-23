@@ -48,12 +48,12 @@ const Feedback = () => {
   };
 
   return (
-    <div className="m-auto my-8">
+    <div className=" my-8">
       {/* Social Media Section */}
       <div className="space-y-4 my-4">
         <div className="flex items-center gap-2">
           <MessageCircle className="w-5 h-5 text-gray-600" />
-          <h2 className="text-xl font-semibold text-gray-800">Connect With Us</h2>
+          <h2 className="text-xl font-semibold text-gray-800">Share With</h2>
         </div>
         <div className="flex gap-6 items-center">
           {socialLinks.map((social) => (
