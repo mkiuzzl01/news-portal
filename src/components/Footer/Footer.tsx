@@ -35,8 +35,11 @@ const Footer = () => {
   return (
     <footer className="bg-[#141E46] text-gray-100">
       {/* Breaking News Section */}
-      <BreakingNews />
-      <div className="max-w-7xl mx-auto px-4 py-8 ">
+      <div className="sticky bottom-0 left-0 w-full z-50 text-white">
+        <BreakingNews />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Top Section: Logo and Social Links */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
           {/* Logo */}
@@ -45,7 +48,7 @@ const Footer = () => {
               <h1 className="text-3xl font-extrabold text-white">
                 Daily Times <span className="text-red-500">24</span>
               </h1>
-              <p className="text-red-500">সত্যের সন্ধানে সব সময় </p>
+              <p className="text-red-500">সত্যের সন্ধানে সব সময়</p>
             </Link>
           </div>
 
