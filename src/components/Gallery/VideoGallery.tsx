@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
   ChevronLeft,
   ChevronRight,
-  ChevronsRight,
   PlayIcon,
   X,
 } from "lucide-react";
