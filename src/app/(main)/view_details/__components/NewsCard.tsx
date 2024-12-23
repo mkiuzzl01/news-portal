@@ -24,7 +24,7 @@ interface NewsTypes {
 interface NewsCardProps {
   news: NewsTypes;
 }
-const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
+const   NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   return (
     <article className=" pt-2 bg-white">
       <div className="relative w-full h-full lg:h-96 overflow-hidden">

@@ -1,4 +1,3 @@
-"use client";
 import NewsCard from "./NewsCard";
 import SaidTabs from "./SaidTabs";
 import SaidBar from "./SaidBar";

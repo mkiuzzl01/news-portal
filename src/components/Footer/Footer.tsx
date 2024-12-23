@@ -40,7 +40,6 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Top Section: Logo and Social Links */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
           {/* Logo */}
           <div className="lg:col-span-3">
@@ -71,7 +70,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Links Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-8 gap-8 lg:gap-0">
           <div>
             <h2 className="font-bold mb-4 text-white">সাম্প্রতিক খবর</h2>

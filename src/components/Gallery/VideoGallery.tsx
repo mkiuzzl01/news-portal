@@ -160,8 +160,10 @@ const VideoGallery = () => {
                 </button>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-1 lg:p-4">
-                <h2 className="text-xl lg:text-2xl font-bold mb-2">
-                  {newsData[currentCarouselIndex].title}
+                <h2 className="text-xl lg:text-2xl font-bold mb-2 hover:text-blue-500">
+                  <Link href={`/view_details`}>
+                    {newsData[currentCarouselIndex].title}
+                  </Link>
                 </h2>
                 <p className="text-sm text-gray-200 hidden lg:block">
                   {newsData[currentCarouselIndex].description}
@@ -197,9 +199,9 @@ const VideoGallery = () => {
                   height={600}
                   className="object-cover"
                 />
-                <p className="font-semibold hover:text-blue-500">
-                  {newsItem.title}
-                </p>
+                <h2 className="font-semibold hover:text-blue-500">
+                  <Link href={`/view_details`}> {newsItem.title}</Link>
+                </h2>
               </div>
             ))}
           </div>
