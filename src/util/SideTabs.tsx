@@ -1,4 +1,3 @@
-"use client";
 import Discussed from "@/components/News/Discussed";
 import ImportantNews from "@/components/News/ImportantNews";
 import ReadNews from "@/components/News/ReadNews";

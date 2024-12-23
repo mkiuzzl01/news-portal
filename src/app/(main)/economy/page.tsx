@@ -1,3 +1,4 @@
+import React from "react";
 import Advertisement from "@/util/Advertisement";
 import OtherNews from "@/util/OtherNews";
 import SideTabs from "@/util/SideTabs";
