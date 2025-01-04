@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import Image from "next/image";
 import top_news from "@public/asset/bangladesh/bangladesh-top.jpg";
@@ -5,6 +6,9 @@ import economy from "@public/asset/bangladesh/economy.jpg";
 import environment from "@public/asset/bangladesh/environment.jpg";
 import sport from "@public/asset/bangladesh/sport.jpg";
 import Link from "next/link";
+import { useGetAllNewsQuery } from "@/redux/dailynews/news.api";
+
+
 
 const bangladesh_news_data = [
   {
@@ -54,6 +58,19 @@ const bangladesh_news_data = [
 ];
 
 const NewsCard = () => {
+
+const {data, isLoading, isError} = useGetAllNewsQuery({}); 
+
+if (isLoading) {
+  return(
+    <h1>loading</h1>
+  )
+}
+
+console.log(data)
+
+
+
   const leadNews = bangladesh_news_data.find(
     (news) => news.news_type === "lead"
   );
