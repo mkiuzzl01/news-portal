@@ -111,6 +111,7 @@ const  SaidBar = () => {
               <h1 className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
                 <Link href={`/view_details`}>{news?.title}</Link>
               </h1>
+              <p className="truncate">{news?.date}</p>
             </div>
             <div className="flex-1  flex-shrink-0 overflow-hidden  hover:scale-105 duration-300">
               <Image
