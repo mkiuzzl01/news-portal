@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Baloo_Da_2 } from "next/font/google";
+import Providers from "@/lib/Provider";
 const baloo_font = Baloo_Da_2({
   weight: "400",
   subsets: ["latin"],
@@ -17,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={baloo_font.className}>{children}</body>
+    <html lang="en">      
+      <Providers>
+        <body className={baloo_font.className}>{children}</body>
+      </Providers>
     </html>
   );
 }
