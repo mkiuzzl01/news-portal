@@ -72,16 +72,6 @@ const NewsCard = () => {
 
 const {data, isLoading, isError} = useGetAllNewsQuery({}); 
 
-if (isLoading) {
-  return(
-    <h1>loading</h1>
-  )
-}
-
-console.log(data)
-
-
-
   const leadNews = bangladesh_news_data.find(
     (news) => news.news_type === "lead"
   );
