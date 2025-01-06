@@ -5,6 +5,7 @@ import RelatedNews from "./__components/RelatedNews";
 import related_news from "@public/asset/Gallery/image02.jpg";
 import PaginationPages from "@/util/PaginationPages";
 import Feedback from "./__components/Feedback";
+import Advertisements from "./__components/Advertisment";
 
 const newsData = {
   id: 1,
@@ -97,25 +98,39 @@ const relatedNews = [
 
 const Page = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-2">
-      <div className="flex flex-col lg:flex-row gap-6">
-        {/* Main Content */}
-        <div className="w-full lg:w-3/4 flex flex-col gap-6 p-4 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto  [scrollbar-width:none]">
-          <NewsCard news={newsData} />
-          <Feedback />
-          <RelatedNews data={relatedNews} />
-          <PaginationPages />
-        </div>
+    <main className="min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Main Content Section */}
+          <div className="w-full lg:w-3/4">
+            <div className="bg-white rounded-lg shadow-sm">
+              <div className="space-y-6">
+                {/* News Card */}
+                <div className="overflow-hidden">
+                  <NewsCard news={newsData} />
+                  <Feedback />
+                  <Advertisements />
+                  <RelatedNews data={relatedNews} />
+                  <PaginationPages />
+                </div>
 
-        {/* Sidebar */}
-        <aside
-          className="w-full lg:w-1/4 lg:sticky lg:top-0"
-          aria-label="Sidebar"
-        >
-          <SaidBar />
-        </aside>
+                {/* Feedback Section */}
+                <div className="px-4 py-6 border-t border-gray-100"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar Section */}
+          <div className="hidden lg:block w-full lg:w-1/4">
+            <div className="sticky top-[70px]">
+              <div className="bg-white py-2">
+                <SaidBar />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
 };
 

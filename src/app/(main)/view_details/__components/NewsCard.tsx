@@ -26,9 +26,9 @@ interface NewsCardProps {
 }
 const   NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   return (
-    <article className=" pt-2 bg-white">
-      <div className="relative w-full h-full lg:h-96 overflow-hidden">
-        <Image src={news?.image} alt={news?.title} objectFit="cover" />
+    <article className="pt-2">
+      <div className="relative w-full  overflow-hidden aspect-[3/2]">
+        <Image src={news?.image} alt={news?.title} objectFit="cover" placeholder="blur" fill />
       </div>
       <header className="mt-4">
         <p className="text-sm text-gray-500">

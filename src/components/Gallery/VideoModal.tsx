@@ -5,7 +5,7 @@ interface NewsItem {
   title: string;
   description: string;
   date: string;
-  Thumbnail: string;
+  Thumbnail: any;
   alt: string;
   videoUrl: string;
 }

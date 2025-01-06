@@ -48,58 +48,69 @@ const NewsCard = () => {
   const normalNews = sports.filter((news) => news.news_type === "normal");
 
   return (
-    <div className="px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-        {/* Display Trending News */}
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Trending News */}
         {trendingNews && (
-          <div className="col-span-1 sm:col-span-2 bg-gray-100 relative overflow-hidden">
-            <div className="w-full h-auto lg:h-[600] hover:scale-105 transform duration-500">
-              <Image
-                src={trendingNews.image}
-                alt={trendingNews.title}
-                className="w-full h-full object-fill"
-                placeholder="blur"
-                objectFit="cover"
-              />
-            </div>
-            <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full rounded-b-lg">
-              <h1 className="text-3xl font-bold text-white hover:text-yellow-400">
-                <Link
-                  href={`view_details`}
-                  className="text-2xl lg:text-4xl"
-                >
-                  {trendingNews.title}
-                </Link>
-              </h1>
-            </div>
+          <div className="col-span-1 sm:col-span-2">
+            <Link href="/view_details" className="block group">
+              <div className="relative aspect-[3/2] overflow-hidden">
+                <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-105">
+                  <Image
+                    src={trendingNews.image}
+                    alt={trendingNews.title}
+                    className="object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
+                    priority
+                  />
+                </div>
+                <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:text-yellow-400 transition-colors">
+                    {trendingNews.title}
+                  </h1>
+                </div>
+              </div>
+            </Link>
           </div>
         )}
 
-        {/* Display Normal News */}
+        {/* Normal News */}
         {normalNews.map((news) => (
-          <div
-            key={news.id}
-            className="bg-white overflow-hidden hidden md:block"
-          >
-            <div className="hover:scale-110 duration-700">
-              <Image
-                src={news.image}
-                alt={news.title}
-                width={300}
-                height={200}
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                  height: "200px",
-                }}
-              />
-            </div>
-            <div className="p-4">
-              <h2 className="text-lg font-bold hover:text-blue-600">
-                <Link href={`view_details`}>{news.title}</Link>
-              </h2>
-              <p className="text-sm text-gray-600 mt-2">{news.description}</p>
-            </div>
+          <div key={news.id} className="col-span-1">
+            <Link href="/view_details" className="block group">
+              <article className="bg-white overflow-hidden">
+                <div className="flex flex-row sm:flex-row lg:flex-col h-full">
+                  {/* Image container */}
+                  <div className="w-1/3 sm:w-1/2 lg:w-full relative">
+                    <div className="overflow-hidden">
+                      <div className="relative aspect-[3/2]">
+                        <Image
+                          src={news.image}
+                          alt={news.title}
+                          className="object-cover transform transition-transform duration-500 group-hover:scale-110"
+                          fill
+                          sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content container */}
+                  <div className="w-2/3 sm:w-1/2 lg:w-full px-2">
+                    <div className="space-y-2"> 
+                      <h2 className="text-base sm:text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        {news.title}
+                      </h2>
+                      <p className="text-sm text-gray-600 line-clamp-2 sm:line-clamp-3 lg:line-clamp-4">
+                        {news.description}
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </Link>
           </div>
         ))}
       </div>

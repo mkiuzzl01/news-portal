@@ -1,45 +1,47 @@
 "use client";
-import React, { useState } from 'react';
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
+import React, { useState } from "react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
   Send,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const socialLinks = [
   {
     name: "Facebook",
     link: "https://www.facebook.com",
     icon: <Facebook className="w-4 h-4" />,
-    color: "hover:text-blue-600"
+    color: "hover:text-blue-600",
   },
   {
     name: "Twitter",
     link: "https://www.twitter.com",
     icon: <Twitter className="w-4 h-4" />,
-    color: "hover:text-blue-400"
+    color: "hover:text-blue-400",
   },
   {
     name: "Instagram",
     link: "https://www.instagram.com",
     icon: <Instagram className="w-4 h-4" />,
-    color: "hover:text-pink-600"
+    color: "hover:text-pink-600",
   },
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com",
     icon: <Linkedin className="w-4 h-4" />,
-    color: "hover:text-blue-700"
-  }
+    color: "hover:text-blue-700",
+  },
 ];
 
 const Feedback = () => {
   const [comment, setComment] = useState("");
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (comment.trim()) {
       console.log("Submitted comment:", comment);
@@ -48,7 +50,7 @@ const Feedback = () => {
   };
 
   return (
-    <div className=" my-8">
+    <div className="my-8">
       {/* Social Media Section */}
       <div className="space-y-4 my-4">
         <div className="flex items-center gap-2">
@@ -74,21 +76,20 @@ const Feedback = () => {
       <div className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex gap-2">
-            <input
+            <Input
               type="text"
               value={comment}
-              onChange={(e) => setComment(e.target.value)}
               placeholder="Write your comment here..."
-              className="flex-1 px-4 py-2 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <button
+              onChange={(e) => setComment(e.target.value)}
+            ></Input>
+            <Button
               type="submit"
-              className="flex items-center px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center px-4 py-2 bg-blue-700 text-white hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!comment.trim()}
             >
               <Send className="w-4 h-4" />
               <span>Submit</span>
-            </button>
+            </Button>
           </div>
         </form>
       </div>

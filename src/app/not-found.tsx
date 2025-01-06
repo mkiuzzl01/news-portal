@@ -1,7 +1,10 @@
 "use client";
-import Lottie from "lottie-react";
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import error from "@public/error.json";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const NotFound = () => {
   return (
@@ -13,10 +16,12 @@ const NotFound = () => {
           style={{ width: 300, height: 300 }}
         />
       </div>
-      <h2 className="text-4xl font-semibold">Not Found</h2>
-      <p>Could not find the requested resource.</p>
-      <button className="px-4 py-2 bg-gray-200 my-4 hover:bg-gray-400">
-        <Link href="/" className="text-xl">
+      <h2 className="text-4xl font-semibold mt-4">Not Found</h2>
+      <p className="text-lg text-center my-2">
+        Could not find the requested resource.
+      </p>
+      <button className="px-6 py-3 bg-gray-200 rounded-md my-4 hover:bg-gray-400 transition-colors">
+        <Link href="/" className="text-xl font-medium">
           Return Home
         </Link>
       </button>

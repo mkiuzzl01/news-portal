@@ -73,7 +73,7 @@ const othersNews = [
     id: 1,
     category: "Bangladesh",
     title: "বাংলাদেশে নতুন মেট্রোরেল উদ্বোধন",
-    description: "ঢাকা শহরে প্রথমবারের মতো মেট্রোরেল সেবা চালু করা হয়েছে।",
+    description: "ঢাকা শহরে প্রথমবারের মতো মেট্রোরেল সেবা চালু করা হয়েছে। ",
     date: "2024-12-05",
     image: image,
   },
@@ -124,14 +124,14 @@ const othersNews = [
 
 const Page = () => {
   return (
-    <div className="container mx-auto p-2">
+    <div className="max-w-7xl mx-auto p-2">
       <div className="flex lg:flex-row flex-col gap-4">
-        <div className="w-full lg:w-3/4 lg:pr-4">
+        <div className="w-full lg:w-3/4 lg:pr-4 order-2 md:order-1">
           <TopNews data={national} />
           <Advertisement banner={banner} />
           <OtherNews relatedNews={othersNews} />
         </div>
-        <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start">
+        <div className="w-full order-1 md:order-2 lg:w-1/4 lg:sticky lg:top-20 lg:self-start">
           <Search />
         </div>
       </div>

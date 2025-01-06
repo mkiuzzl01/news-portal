@@ -86,33 +86,30 @@ const NewsCard = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold my-6 ps-2 border-blue-500 border-s-4">
-          বিনোদন
-        </h1>
+        <h1 className="text-4xl font-bold my-6 ps-2">বিনোদন</h1>
 
         <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
           <Link href={`/entertainment`}> আরো দেখুন </Link>
           <span>
-            {" "}
-            <ChevronsRight size={30} />{" "}
+            <ChevronsRight size={30} />
           </span>
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {" "}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {trendingNews && (
-          <div className="relative group order-1 lg:order-2 lg:col-span-2">
-            <div className="bg-gray-100 overflow-hidden">
-              <div className="relative w-full hover:scale-110 duration-700 overflow-hidden">
+          <div className="relative group order-1 lg:order-2 lg:col-span-2 ">
+            <div className="overflow-hidden">
+              <div className="relative overflow-hidden aspect-[3/2]">
                 <Image
-                  src={trendingNews?.image}
-                  alt={trendingNews?.title}
+                  src={trendingNews.image}
+                  alt={trendingNews.title}
                   placeholder="blur"
-                  className="inset-0 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+              <div className="absolute inset-0 flex items-end p-4">
                 <Link href={`view_details`} className="text-2xl lg:text-4xl">
                   <h2 className="text-white text-xl md:text-4xl font-bold hover:text-yellow-400 transition-colors">
                     {trendingNews?.title}
@@ -122,18 +119,19 @@ const NewsCard = () => {
             </div>
           </div>
         )}
-        <div className="space-y-6 order-2 lg:order-1 lg:col-span-1">
+
+        <div className="space-y-6 order-2 lg:order-1 lg:col-span-1 lg:border-e border-black pe-2">
           {normalNews.slice(0, 3).map((news, idx) => (
             <div
               key={idx}
               className="bg-white overflow-hidden flex items-stretch"
             >
-              <div className="w-1/3 hover:scale-110 duration-700">
+              <div className="w-1/2 overflow-hidden ">
                 <Image
                   src={news?.image}
                   alt={news?.title}
                   placeholder="blur"
-                  className="object-cover"
+                  className="object-cover  hover:scale-110 duration-700"
                 />
               </div>
               <div className="flex-1 ps-4 flex flex-col justify-between">
@@ -146,14 +144,12 @@ const NewsCard = () => {
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news?.description}
                 </p>
-                <div className="text-xs text-gray-500">
-                  {news?.date} • {news?.published_time}
-                </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="hidden md:block space-y-6 order-3 lg:order-3 lg:col-span-1">
+
+        <div className="hidden md:block space-y-6 order-3 lg:order-3 lg:col-span-1 border-s border-black ps-2">
           {normalNews.slice(2).map((news) => (
             <div
               key={news.id}
@@ -168,11 +164,8 @@ const NewsCard = () => {
                 <p className="text-sm text-gray-600 line-clamp-2 mb-2">
                   {news?.description}
                 </p>
-                <div className="text-xs text-gray-500 mt-auto">
-                  {news?.date} • {news?.published_time}
-                </div>
               </div>
-              <div className="w-1/3">
+              <div className="w-1/2 overflow-hidden">
                 <Image
                   src={news?.image}
                   alt={news?.title}

@@ -66,7 +66,7 @@ const Jobs = () => {
   return (
     <div>
       <div className="border-t-2">
-        <h1 className="text-4xl font-semibold py-2 flex items-center">
+        <h1 className="text-4xl font-bold py-2 flex items-center">
           চাকরি{" "}
           <span>
             <ChevronRight size={50} color="red" />
@@ -79,7 +79,7 @@ const Jobs = () => {
             {news?.news_type === "trending" && (
               <Image src={news?.image} alt={news?.title} className="w-full" />
             )}
-            <h1 className="text-xl font-medium py-2 border-b-2 hover:text-blue-500">
+            <h1 className="text-xl font-semibold py-2 border-b-2 hover:text-blue-500">
               <Link href={`/view_details`}>{news?.title}</Link>
             </h1>
           </div>

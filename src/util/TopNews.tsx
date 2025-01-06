@@ -29,20 +29,21 @@ const TopNews = ({ data }: newsData) => {
         {/* Trending News */}
         {trendingNews && (
           <div className="col-span-2 relative bg-gray-200 overflow-hidden">
-            <div className="relative w-full h-[400px] lg:h-[500px]">
+            <div className="relative w-full aspect-[3/2] hover:scale-110 duration-700 ">
               <Image
                 src={trendingNews?.image}
                 alt={trendingNews?.title}
                 className="object-cover"
                 fill
-                priority
+                placeholder="blur"
               />
             </div>
             <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-              <h1 className="text-2xl lg:text-4xl text-white font-semibold hover:text-yellow-500">
-                <Link href={`/view_details`}>{trendingNews?.title}</Link>
-              </h1>
-              <p className="text-lg text-white">{trendingNews?.published_time}</p>
+              <Link href={`/view_details`}>
+                <h1 className="text-2xl font-semibold lg:text-4xl text-white hover:text-yellow-500">
+                  {trendingNews?.title}
+                </h1>
+              </Link>
             </div>
           </div>
         )}
@@ -50,7 +51,7 @@ const TopNews = ({ data }: newsData) => {
         {/* Normal News */}
         {normalNews.map((news) => (
           <div key={news.id} className="bg-white overflow-hidden">
-            <div className="relative w-full h-[200px] sm:h-[250px] lg:h-[300px]">
+            <div className="relative w-full aspect-[3/2] hover:scale-105 duration-500 ">
               <Image
                 src={news.image}
                 alt={news.title}
@@ -64,7 +65,12 @@ const TopNews = ({ data }: newsData) => {
                 <Link href={`view_details`}>{news?.title}</Link>
               </h2>
               <p className="text-sm text-gray-600">{news?.description}</p>
-              <p className="text-sm text-gray-400">{news?.published_time}</p>
+              <div className="flex justify-between">
+                <p className="text-sm text-gray-400">{news?.published_time}</p>
+                <p className="text-blue-600 text-sm">
+                  <Link href={`/view_details`}>আরো পড়ুন</Link>
+                </p>
+              </div>
             </div>
           </div>
         ))}

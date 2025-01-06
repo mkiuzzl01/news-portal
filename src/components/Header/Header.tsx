@@ -35,9 +35,9 @@ const topNews = [
 const Header = () => {
   return (
     <section className="hidden lg:block border-b-2 border-[#B99470] py-2 bg-blue-100">
-      <div className="container mx-auto  grid grid-cols-4 items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto  grid grid-cols-4 items-center justify-between gap-4">
         
-        <div className="flex items-center grid-cols-1 gap-4">
+        <div className="flex items-center grid-cols-1 gap-2">
           <Link href="/">
             {" "}
             <Image
@@ -54,7 +54,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex col-span-1 flex-col lg:flex-row">
+        <div className="flex w-full col-span-1 flex-col lg:flex-row">
           <Image
             src={banner}
             alt="banner"
@@ -76,8 +76,8 @@ const Header = () => {
                   className=" object-cover"
                   placeholder="blur"
                   blurDataURL={item?.title}
-                  width={100}
-                  height={50}
+                  width={80}
+                  height={40}
                 />
               </div>
 

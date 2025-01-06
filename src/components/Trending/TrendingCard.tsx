@@ -16,9 +16,9 @@ interface News {
 
 const TrendingCard = ({ data }: { data: News[] }) => {
   return (
-    <div className="grid gap-6">
+    <div className="grid">
       {data.map((news) => (
-        <div key={news.id} className="flex flex-row bg-white pt-4">
+        <div key={news.id} className="flex flex-row bg-white pt-2">
           <Image
             src={news.image}
             alt={news.title}

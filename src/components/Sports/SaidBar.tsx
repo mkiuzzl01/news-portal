@@ -97,23 +97,22 @@ const sports = [
   },
 ];
 
-const SaidBar = () => {
+const  SaidBar = () => {
   return (
     <div
-      className="p-4 max-h-[300px] lg:max-h-[900px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
+      className="p-4 max-h-[300px] lg:max-h-[720px] overflow-y-auto [&::-webkit-scrollbar]:hidden 
         [-ms-overflow-style:none] 
-        [scrollbar-width:none]"
+        [scrollbar-width:none] border border-black"
     >
       <div className="grid grid-cols-1 gap-4">
         {sports?.map((news, index) => (
           <div key={index} className="flex gap-4 items-start border-b pb-4">
-            <div className="flex-1">
-              <h1 className="text-lg font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
+            <div className="w-1/2">
+              <h1 className="font-semibold text-gray-800 hover:text-blue-600 cursor-pointer">
                 <Link href={`/view_details`}>{news?.title}</Link>
               </h1>
-              <p>{news?.date}</p>
             </div>
-            <div className="w-1/2  flex-shrink-0 overflow-hidden  hover:scale-105 duration-300">
+            <div className="flex-1  flex-shrink-0 overflow-hidden  hover:scale-105 duration-300">
               <Image
                 src={news?.image}
                 alt={news?.title}

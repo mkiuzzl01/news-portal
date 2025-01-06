@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, PlayIcon } from "lucide-react";
 import Link from "next/link";
 import VideoModal from "./VideoModal";
+import image from "@public/asset/Gallery/image-3.jpg";
 
 const newsData = [
   {
@@ -12,7 +13,7 @@ const newsData = [
     description:
       "বিশ্ব বাণিজ্যে গুরুত্বপূর্ণ পরিবর্তনের পূর্বাভাস দিয়েছেন বিশেষজ্ঞরা",
     date: "১২ ডিসেম্বর, ২০২৪",
-    Thumbnail: "/asset/Gallery/image-3.jpg",
+    Thumbnail: image,
     alt: "Breaking News 1",
     videoUrl: "https://www.youtube.com/embed/lE6RYpe9IT0?autoplay=1",
   },
@@ -110,14 +111,15 @@ const VideoGallery = () => {
             onMouseLeave={() => setIsPaused(false)}
           >
             <div className="relative overflow-hidden">
-              <Image
-                src={newsData[currentCarouselIndex]?.Thumbnail}
-                alt={newsData[currentCarouselIndex]?.alt}
-                width={1200}
-                height={600}
-                className="object-cover"
-                priority={currentCarouselIndex === 0}
-              />
+              <div className="relative w-full h-full aspect-[3/2]">
+                <Image
+                  src={newsData[currentCarouselIndex]?.Thumbnail}
+                  alt={newsData[currentCarouselIndex]?.alt}
+                  className="object-cover"
+                  fill
+                  priority={currentCarouselIndex === 0}
+                />
+              </div>
               <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
                 <button
                   onClick={() => setIsVideoModalOpen(true)}
@@ -161,15 +163,16 @@ const VideoGallery = () => {
                 onClick={() => handleSideImageClick(index)}
                 className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
-                <Image
-                  src={newsItem?.Thumbnail}
-                  alt={newsItem?.alt}
-                  width={1200}
-                  height={600}
-                  className="object-cover"
-                />
+                <div className="relative aspect-[3/2]">
+                  <Image
+                    src={newsItem?.Thumbnail}
+                    alt={newsItem?.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <Link href={`/view_details`}>
-                  <h2 className="font-semibold hover:text-blue-500">
+                  <h2 className="font-semibold hover:text-blue-500 pt-2">
                     {newsItem?.title}
                   </h2>
                 </Link>

@@ -77,7 +77,7 @@ const dailyIslam = [
 const DailyIslam = () => {
   return (
     <div
-      className="w-full max-h-[200px] lg:max-h-[850px] px-2 md:px-4 overflow-y-auto 
+      className="w-full max-h-[200px] lg:max-h-[700px] px-2 md:px-4 overflow-y-auto 
         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
       <ul className="divide-y divide-gray-200">

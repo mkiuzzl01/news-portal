@@ -51,6 +51,17 @@ const bangladesh_news_data = [
     published_time: "15:10",
     image: sport,
   },
+  {
+    id: 5,
+    category: "Sports",
+    title: "বিশ্বকাপে বাংলাদেশের জয়",
+    description:
+      "বাংলাদেশের ক্রিকেট দল সম্প্রতি বিশ্বকাপে দুর্দান্ত পারফর্মেন্স প্রদর্শন করেছে এবং একটি ঐতিহাসিক জয় লাভ করেছে।",
+    date: "2024-12-02",
+    news_type: "normal",
+    published_time: "15:10",
+    image: sport,
+  },
 ];
 
 const NewsCard = () => {
@@ -62,58 +73,93 @@ const NewsCard = () => {
   );
 
   return (
-    <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {/* Trending News Section */}
-        {leadNews && (
-          <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative bg-gray-200 overflow-hidden border-red-500">
-            <div className="w-full h-full lg:h-[600px] hover:scale-105 duration-700">
-              <Image
-                src={leadNews?.image}
-                alt={leadNews?.title}
-                className="w-full h-full object-fill"
-                placeholder="blur"
-                objectFit="cover"
-              />
-            </div>
-            <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-              <h1 className="text-2xl lg:text-4xl text-white font-semibold hover:text-yellow-500">
-                <Link href={`/view_details`}>
-                  {leadNews.title}
-                </Link>
-              </h1>
-            </div>
+    <div className="flex flex-col gap-4">
+      {/* Trending News Section */}
+      {leadNews && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* Lead News */}
+          <div className="lg:col-span-2">
+            <Link href="/view_details" className="block group">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+                  <Image
+                    src={leadNews.image}
+                    alt={leadNews.title}
+                    placeholder="blur"
+                    className="object-cover"
+                    fill
+                  />
+                </div>
+                <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
+                  <h1 className="text-2xl lg:text-4xl text-white font-semibold group-hover:text-yellow-500 transition-colors">
+                    {leadNews.title}
+                  </h1>
+                </div>
+              </div>
+            </Link>
           </div>
-        )}
 
-        {/* Normal News Sections */}
-        {normalNews.map((news) => (
-          <div
+          {/* Side News */}
+          <div className="hidden lg:flex flex-col gap-4 border-s border-gray-500 ps-2">
+            {normalNews.map((news) => (
+              <Link
+                key={news.id}
+                href="/view_details"
+                className="group flex flex-row-reverse gap-2 border-b  border-gray-200 p-1"
+              >
+                <div className="w-full overflow-hidden">
+                  <div className="relative aspect-[3/2] transform transition-transform duration-500 hover:scale-105">
+                    <Image
+                      src={news.image}
+                      alt={news.title}
+                      placeholder="blur"
+                      className="object-cover"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="w-full ps-2 lg:pt-2">
+                  <h2 className="text-xl font-bold hover:text-blue-600 transition-colors">
+                    {news.title}
+                  </h2>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="border-t border-gray-500" />
+
+      {/* Bottom News Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {normalNews.slice(0, 3).map((news) => (
+          <Link
             key={news.id}
-            className="flex lg:flex-col flex-row overflow-hidden"
+            href="/view_details"
+            className="group flex lg:flex-col flex-row gap-4"
           >
-            <div className="w-full">
-              <Image
-                src={news?.image}
-                alt={news?.title}
-                width={1000}
-                height={600}
-                layout="responsive"
-                objectFit="cover"
-                placeholder="blur"
-                className="h-full w-full object-cover"
-              />
+            <div className="w-full overflow-hidden">
+              <div className="relative aspect-[3/2] transform transition-transform duration-500 hover:scale-105">
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  placeholder="blur"
+                  className="object-cover"
+                  fill
+                />
+              </div>
             </div>
             <div className="w-full ps-2 lg:pt-2">
-              <h2 className="text-xl font-bold hover:text-blue-600">
-                <Link href={`view_details`}>{news?.title}</Link>
+              <h2 className="text-xl font-bold hover:text-blue-600 transition-colors">
+                {news.title}
               </h2>
-              <p className="text-sm text-gray-600">{news?.description}</p>
+              <p className="text-sm text-gray-600 mt-2">{news.description}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

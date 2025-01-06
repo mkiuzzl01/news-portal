@@ -13,7 +13,7 @@ const politicsData = [
     category: "রাজনীতি",
     title: "সংসদে নতুন কর সংস্কার বিল পাস",
     description:
-      "সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা রাজস্ৱ বৃদ্ধির প্রতিশ্রুতি দিচ্ছে।",
+      "সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা রাজস্ৱ বৃদ্ধির প্রতিশ্রুতি দিচ্ছে। সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা রাজস্ৱ বৃদ্ধির প্রতিশ্রুতি দিচ্ছে। সরকার সংসদে নতুন কর সংস্কার বিল পাস করেছে, যা রাজস্ৱ বৃদ্ধির প্রতিশ্রুতি দিচ্ছে।",
     date: "২০২৪-১২-০৪",
     news_type: "trending",
     published_time: "09:00",
@@ -52,17 +52,6 @@ const politicsData = [
     published_time: "14:30",
     image: vote,
   },
-  {
-    id: "05",
-    category: "রাজনীতি",
-    title: "স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা",
-    description:
-      "নির্বাচন কমিশন স্থানীয় সরকার নির্বাচনের তারিখ ঘোষণা করেছে, যা আগামী মাসে অনুষ্ঠিত হবে।",
-    date: "২০২৪-১২-০৪",
-    news_type: "normal",
-    published_time: "14:30",
-    image: vote,
-  },
 ];
 
 const NewsCard = () => {
@@ -87,57 +76,60 @@ const NewsCard = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="bg-white overflow-hidden">
-          {trendingNews && (
-            <div>
-              <div className="overflow-hidden">
-                <Image
-                  src={trendingNews.image}
-                  alt={trendingNews.title}
-                  width={1200}
-                  height={600}
-                  className="w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <div className="p-4">
-                <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
-                  <Link href={`view_details`} className="text-2xl lg:text-4xl">
-                    {trendingNews.title}
-                  </Link>
-                </h2>
-                <p className="text-gray-600 mb-3 text-sm">
-                  {trendingNews.description}
-                </p>
-                <p className="text-xs text-gray-500">
+        {trendingNews && (
+          <div className="bg-white overflow-hidden relative">
+            <div className="relative w-full aspect-[2/1]">
+              <Image
+                src={trendingNews.image}
+                alt={trendingNews.title}
+                placeholder="blur"
+                fill
+                className="object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <div className="p-4">
+              <h2 className="text-2xl font-bold mb-2 hover:text-blue-600">
+                <Link href={`/view_details`}>{trendingNews.title}</Link>
+              </h2>
+              <p className="text-gray-600 mb-3">{trendingNews.description}</p>
+              <div className="flex justify-between text-xs text-gray-500">
+                <p>
                   {trendingNews.date} • {trendingNews.published_time}
+                </p>
+                <p className="text-blue-600 text-sm">
+                  <Link href={`/view_details`}>আরো পড়ুন</Link>
                 </p>
               </div>
             </div>
-          )}
-        </div>
-        <div className="grid grid-cols-1  md:grid-cols-2 gap-4  overflow-auto p-4">
-          {normalNews.map((news, index) => (
+          </div>
+        )}
+
+        {/* Normal News Section */}
+        <div className="grid grid-cols-1 gap-4 lg:border-s border-black lg:ps-4">
+          {normalNews.map((news) => (
             <div
-              key={index}
-              className="bg-white overflow-hidden flex justify-between p-2"
+              key={news.id}
+              className="bg-white flex overflow-hidden flex-row-reverse"
             >
-              <div className="flex-1 pe-1">
-                <h2 className="text-md font-bold hover:text-blue-600">
-                  <Link href={`view_details`} aria-label={news.title}>
-                    {news.title}
-                  </Link>
-                </h2>
-                <p className="text-sm overflow-hidden">{news?.description}</p>
-                <p className="text-blue-700 text-sm pt-2">
-                  <Link href="/view_details">আরো পড়ুন </Link>
-                </p>
-              </div>
-              <div className="w-1/2 h-auto">
+              <div className="w-2/5 relative h-full aspect-[2/1] overflow-hidden">
                 <Image
                   src={news.image}
                   alt={news.title}
-                  className="object-cover w-full h-[150px] hover:scale-110 transition-transform duration-300"
+                  placeholder="blur"
+                  fill
+                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
                 />
+              </div>
+              <div className="flex-1 pe-1">
+                <h2 className="text-lg font-bold hover:text-blue-600">
+                  <Link href={`/view_details`}>{news.title}</Link>
+                </h2>
+                <p className="text-sm text-gray-600 touch-pan-right">
+                  {news.description}
+                </p>
+                <p className="text-blue-600 text-sm">
+                  <Link href={`/view_details`}>আরো পড়ুন</Link>
+                </p>
               </div>
             </div>
           ))}

@@ -1,6 +1,5 @@
 "use client";
 
-import BreakingNews from "@/util/BreakingNews";
 import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 
@@ -34,11 +33,6 @@ const socialLinks = [
 const Footer = () => {
   return (
     <footer className="bg-[#141E46] text-gray-100">
-      {/* Breaking News Section */}
-      <div className="sticky bottom-0 left-0 w-full z-50 text-white">
-        <BreakingNews />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
           {/* Logo */}

@@ -81,37 +81,42 @@ const NewsCard = () => {
         <h1 className="text-4xl font-bold my-4 border-s-4 ps-2 border-blue-500 ">
           আন্তর্জাতিক
         </h1>
-  
-          <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
-            <Link href={`/international`}>আরো দেখুন </Link>
-            <span>
-              {" "}
-              <ChevronsRight size={30} />{" "}
-            </span>
-          </p>
+
+        <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
+          <Link href={`/international`}>আরো দেখুন </Link>
+          <span>
+            {" "}
+            <ChevronsRight size={30} />{" "}
+          </span>
+        </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {trendingNews && (
           <div className="bg-white overflow-hidden">
-            <div className="h-64 lg:h-96 overflow-hidden">
+            <div className="relative w-full aspect-[2/1] overflow-hidden">
               <Image
                 src={trendingNews.image}
                 alt={trendingNews.title}
-                width={1200}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                placeholder="blur"
+                fill
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
             </div>
             <div className="pt-4">
               <h2 className="text-2xl font-bold mb-3 hover:text-blue-600">
                 <Link href={`/view_details`}>{trendingNews.title}</Link>
               </h2>
-              <p className="text-sm text-gray-600 mb-4">
-                {trendingNews.description}
+              <p className="text-sm text-gray-600 mb-2">
+                {trendingNews?.description}
               </p>
-              <p className="text-xs text-gray-500">
-                {trendingNews.date} • {trendingNews.published_time}
-              </p>
+               <div className="flex justify-between text-xs text-gray-500">
+                <p>
+                  {trendingNews.date} • {trendingNews.published_time}
+                </p>
+                <p className="text-blue-600 text-sm">
+                  <Link href={`/view_details`}>আরো পড়ুন</Link>
+                </p>
+              </div>
             </div>
           </div>
         )}
@@ -121,27 +126,21 @@ const NewsCard = () => {
           {normalNews.map((news) => (
             <div
               key={news.id}
-              className="bg-white overflow-hidden flex flex-col"
+              className="bg-white overflow-hidden flex flex-row lg:flex-col"
             >
-              <div className="h-40 lg:h-48 overflow-hidden">
+              <div className="relative w-1/2 lg:w-full aspect-[3/2] overflow-hidden">
                 <Image
                   src={news.image}
                   alt={news.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  placeholder="blur"
+                  fill
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
-              <div className="pt-4 flex flex-col justify-between">
+              <div className="flex-1 ps-2 lg:pt-4 flex flex-col justify-between">
                 <h3 className="text-lg font-semibold mb-2 hover:text-blue-600">
                   <Link href={`/view_details`}>{news.title}</Link>
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {news.description.slice(0, 100)}...
-                </p>
-                <p className="text-xs text-gray-500">
-                  {news.date} • {news.published_time}
-                </p>
               </div>
             </div>
           ))}

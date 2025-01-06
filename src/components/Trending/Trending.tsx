@@ -44,8 +44,8 @@ const technology_news = [
 const Trending = () => {
   return (
     <div className="pt-4">
-      <div className="flex flex-col lg:flex-row justify-between gap-4">
-        <div className="w-full lg:w-4/5 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="flex flex-col lg:flex-row-reverse justify-between gap-4">
+        <div className="w-full lg:w-3/4 flex flex-col lg:flex-row  justify-between gap-4">
           {/* Trending News Section */}
           <div>
             <SectionHeader title="সম্বার" />
@@ -57,6 +57,7 @@ const Trending = () => {
             </div>
           </div>
 
+          <div className="hidden lg:block border-s border-black"></div>
           {/* Normal News Section */}
           <div>
             <SectionHeader title="গুরুত্বপূর্ণ" />
@@ -67,10 +68,11 @@ const Trending = () => {
               <TrendingCard data={technology_news} />
             </div>
           </div>
+          <div className="hidden lg:block border-s border-black"></div>
         </div>
 
         {/* Table Section */}
-        <div className="lg:w-1/5 w-full mt-4 lg:mt-0">
+        <div className="lg:w-1/4 w-full mt-4 lg:mt-0">
           <SaidTabs />
         </div>
       </div>

@@ -1,8 +1,14 @@
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+
+import image2 from "@public/asset/Gallery/image02.jpg";
+import image3 from "@public/asset/Gallery/image-3.jpg";
+import image4 from "@public/asset/Gallery/image-4.jpg";
+import image5 from "@public/asset/Gallery/image-5.jpg";
+import image6 from "@public/asset/Gallery/image-6.jpg";
 
 const newsData = [
   {
@@ -11,7 +17,7 @@ const newsData = [
     description:
       "বিশ্ব বাণিজ্যে গুরুত্বপূর্ণ পরিবর্তনের পূর্বাভাস দিয়েছেন বিশেষজ্ঞরা",
     date: "১২ ডিসেম্বর, ২০২৪",
-    src: "/asset/Gallery/image-3.jpg",
+    src: image6,
     alt: "Breaking News 1",
     category: "অর্থনীতি",
   },
@@ -21,7 +27,7 @@ const newsData = [
     description:
       "নতুন সৌর প্রযুক্তি বর্তমান মডেলের চেয়ে ৫০% বেশি কার্যকারিতা প্রদানের প্রতিশ্রুতি দেয়",
     date: "১১ ডিসেম্বর, ২০২৪",
-    src: "/asset/Gallery/image-4.jpg",
+    src: image2,
     alt: "Breaking News 2",
     category: "প্রযুক্তি",
   },
@@ -30,7 +36,7 @@ const newsData = [
     title: "জলবায়ু পরিবর্তন সম্মেলন ফলপ্রসূ হচ্ছে",
     description: "বিশ্ব নেতারা কঠোর কার্বন হ্রাস লক্ষ্য পূরণের অঙ্গীকার করেছেন",
     date: "১০ ডিসেম্বর, ২০২৪",
-    src: "/asset/Gallery/image-5.jpg",
+    src: image3,
     alt: "Breaking News 3",
     category: "পরিবেশ",
   },
@@ -40,7 +46,7 @@ const newsData = [
     description:
       "এআই-চালিত ডায়াগনস্টিক সিস্টেমগুলি রোগের প্রাথমিক শনাক্তকরণে অসাধারণ নির্ভুলতা দেখাচ্ছে",
     date: "৯ ডিসেম্বর, ২০২৪",
-    src: "/asset/Gallery/image-6.jpg",
+    src: image4,
     alt: "Breaking News 4",
     category: "স্বাস্থ্য",
   },
@@ -50,7 +56,7 @@ const newsData = [
     description:
       "আন্তর্জাতিক মিশন চাঁদে গুরুত্বপূর্ণ গবেষণার জন্য প্রস্তুতি নিচ্ছে",
     date: "৮ ডিসেম্বর, ২০২৪",
-    src: "/asset/Gallery/image02.jpg",
+    src: image5,
     alt: "Breaking News 5",
     category: "বিজ্ঞান",
   },
@@ -109,15 +115,17 @@ const NewsSlider: React.FC = () => {
             onMouseLeave={() => setIsPaused(false)}
           >
             {" "}
-            <div className="relative overflow-hidden">
-              <Image
-                src={newsData[currentCarouselIndex].src}
-                alt={newsData[currentCarouselIndex].alt}
-                width={1200}
-                height={600}
-                className="object-cover"
-                priority={currentCarouselIndex === 0}
-              />
+            <div className="relative w-full aspect-[3/2] overflow-hidden">
+              <div className="relative w-full h-full aspect-[3/2]">
+                <Image
+                  src={newsData[currentCarouselIndex].src}
+                  alt={newsData[currentCarouselIndex].alt}
+                  className="object-cover"
+                  placeholder="blur"
+                  fill
+                  priority={currentCarouselIndex === 0}
+                />
+              </div>
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-1 lg:p-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm text-gray-300 hidden lg:block">
@@ -159,13 +167,14 @@ const NewsSlider: React.FC = () => {
                 onClick={() => handleSideImageClick(index)}
                 className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
-                <Image
-                  src={newsItem.src}
-                  alt={newsItem.alt}
-                  width={1200}
-                  height={600}
-                  className="object-cover"
-                />
+                <div className="relative  aspect-[3/2]">
+                  <Image
+                    src={newsItem.src}
+                    alt={newsItem.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="pt-2">
                   <p className="font-semibold hover:text-blue-500">
                     <Link href={`/view_details`}>{newsItem?.title}</Link>

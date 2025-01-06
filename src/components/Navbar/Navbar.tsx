@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
       className="bg-gradient-to-r from-blue-700 to-blue-600 lg:bg-blue-600"
     >
       {/* Mobile Top Bar */}
-      <div className="lg:hidden container mx-auto px-4">
+      <div className="lg:hidden mx-auto px-4">
         <div className="flex justify-between items-center py-2 border-b border-blue-400">
           <div className="flex items-center space-x-4">
             <Image
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden lg:block container mx-auto px-4 py-4">
+      <div className="hidden lg:block max-w-7xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo Area */}
           <div className="lg:hidden flex items-center space-x-4">
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
                         {item.label}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid grid-cols-2 gap-4 w-[500px] p-4">
+                        <ul className="grid grid-cols-4 gap-4 w-[750px] p-4">
                           {item.nested.map((nestedItem) => (
                             <ListItem
                               key={nestedItem.href}

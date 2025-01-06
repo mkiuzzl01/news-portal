@@ -13,7 +13,7 @@ import banner from "@public/asset/banner.jpg";
 
 const Page = () => {
   return (
-    <div className="container mx-auto px-4">
+    <div className="max-w-7xl mx-auto px-4">
       <LeadSection />
       <Trending />
       <Entertainment />

@@ -123,15 +123,15 @@ const othersNews = [
 
 const Page = () => {
   return (
-    <div className="container mx-auto p-2">
+    <div className="max-w-7xl mx-auto p-2">
       <div className="flex lg:flex-row flex-col gap-4">
         {/* Main Content - Scrollable */}
-        <div className="w-full lg:w-3/4 lg:pr-4">
+        <div className="w-full lg:w-3/4 lg:pr-4 lg:order-1 order-2">
           <TopNews data={sports} />
           <Advertisement banner={banner} />
           <OtherNews relatedNews={othersNews} />
         </div>
-        <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start">
+        <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start order-1 lg:order-2">
           <SideTabs />
         </div>
       </div>
