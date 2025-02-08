@@ -86,7 +86,7 @@ const NewsCard = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold my-6 ps-2">বিনোদন</h1>
+        <h1 className="text-4xl font-bold border-s-4 border-blue-500 ps-4 my-4">বিনোদন</h1>
 
         <p className="text-blue-600 hover:text-blue-700 flex items-center text-xl">
           <Link href={`/entertainment`}> আরো দেখুন </Link>

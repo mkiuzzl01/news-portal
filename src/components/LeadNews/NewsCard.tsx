@@ -8,8 +8,6 @@ import sport from "@public/asset/bangladesh/sport.jpg";
 import Link from "next/link";
 import { useGetAllNewsQuery } from "@/redux/dailynews/news.api";
 
-
-
 const bangladesh_news_data = [
   {
     id: 1,
@@ -69,8 +67,7 @@ const bangladesh_news_data = [
 ];
 
 const NewsCard = () => {
-
-const {data, isLoading, isError} = useGetAllNewsQuery({}); 
+  const { data, isLoading, isError } = useGetAllNewsQuery({});
 
   const leadNews = bangladesh_news_data.find(
     (news) => news.news_type === "lead"
@@ -84,30 +81,8 @@ const {data, isLoading, isError} = useGetAllNewsQuery({});
       {/* Trending News Section */}
       {leadNews && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {/* Lead News */}
-          <div className="lg:col-span-2">
-            <Link href="/view_details" className="block group">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-110">
-                  <Image
-                    src={leadNews.image}
-                    alt={leadNews.title}
-                    placeholder="blur"
-                    className="object-cover"
-                    fill
-                  />
-                </div>
-                <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-                  <h1 className="text-2xl lg:text-4xl text-white font-semibold group-hover:text-yellow-500 transition-colors">
-                    {leadNews.title}
-                  </h1>
-                </div>
-              </div>
-            </Link>
-          </div>
-
           {/* Side News */}
-          <div className="hidden lg:flex flex-col gap-4 border-s border-gray-500 ps-2">
+          <div className="hidden lg:flex flex-col gap-4 border-e border-gray-500 pe-2">
             {normalNews.map((news) => (
               <Link
                 key={news.id}
@@ -133,9 +108,30 @@ const {data, isLoading, isError} = useGetAllNewsQuery({});
               </Link>
             ))}
           </div>
+
+          {/* Lead News */}
+          <div className="lg:col-span-2">
+            <Link href="/view_details" className="block group">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+                  <Image
+                    src={leadNews.image}
+                    alt={leadNews.title}
+                    placeholder="blur"
+                    className="object-cover"
+                    fill
+                  />
+                </div>
+                <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
+                  <h1 className="text-2xl lg:text-4xl text-white font-semibold group-hover:text-yellow-500 transition-colors">
+                    {leadNews.title}
+                  </h1>
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
       )}
-
       <div className="border-t border-gray-500" />
 
       {/* Bottom News Grid */}

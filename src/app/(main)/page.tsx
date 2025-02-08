@@ -15,15 +15,15 @@ const Page = () => {
   return (
     <div className="max-w-7xl mx-auto px-4">
       <LeadSection />
+      <AllCountry />
+      <Bangladesh />
       <Trending />
       <Entertainment />
       <Sports />
       <Advertisement banner={banner} />
-      <AllCountry />
-      <Bangladesh />
       <International />
-      <PhotoGallery />
       <VideoGallery />
+      <PhotoGallery />
       <AllNews />
     </div>
   );
