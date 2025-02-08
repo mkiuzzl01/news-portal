@@ -1,4 +1,4 @@
-import Advertisement from "@/util/Advertisement";
+import Advertisement_2 from "@/util/Advertisement_2";
 import OtherNews from "@/util/OtherNews";
 import SideTabs from "@/util/SideTabs";
 import TopNews from "@/util/TopNews";
@@ -127,7 +127,7 @@ const Page = () => {
         {/* Main Content - Scrollable */}
         <div className="w-full lg:w-3/4 lg:pr-4 lg:order-1 order-2">
           <TopNews data={healthNews} />
-          <Advertisement banner={banner} />
+          <Advertisement_2 banner={banner} />
           <OtherNews relatedNews={othersNews} />
         </div>
         <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start lg:order-2 order-1">

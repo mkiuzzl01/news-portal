@@ -1,5 +1,3 @@
-import React from "react";
-import Advertisement from "@/util/Advertisement";
 import SideTabs from "@/util/SideTabs";
 import vote from "@public/asset/politics/vote.jpg";
 import parliament from "@public/asset/politics/perliment.jpg";
@@ -8,6 +6,7 @@ import banner from "@public/asset/banner.jpg";
 import TopNews from "@/util/TopNews";
 import OtherNews from "@/util/OtherNews";
 import image from "@public/asset/bangladesh/environment.jpg";
+import Advertisement_2 from "@/util/Advertisement_2";
 
 const politics = [
   {
@@ -127,7 +126,7 @@ const Page = () => {
         {/* Main Content - Scrollable */}
         <div className="w-full lg:w-3/4 lg:pr-4 order-2 lg:order-1">
           <TopNews data={politics} />
-          <Advertisement banner={banner} />
+          <Advertisement_2 banner={banner} />
           <OtherNews relatedNews={othersNews} />
         </div>
         <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start order-1 lg:order-2">

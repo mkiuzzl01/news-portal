@@ -1,6 +1,4 @@
 "use client";
-import React from "react";
-import Advertisement from "@/util/Advertisement";
 import image from "@public/asset/bangladesh/environment.jpg";
 import vote from "@public/asset/politics/vote.jpg";
 import parliament from "@public/asset/politics/perliment.jpg";
@@ -9,6 +7,7 @@ import banner from "@public/asset/banner.jpg";
 import TopNews from "@/util/TopNews";
 import OtherNews from "@/util/OtherNews";
 import Search from "@/util/Search";
+import Advertisement_2 from "@/util/Advertisement_2";
 
 const national = [
   {
@@ -128,7 +127,7 @@ const Page = () => {
       <div className="flex lg:flex-row flex-col gap-4">
         <div className="w-full lg:w-3/4 lg:pr-4 order-2 md:order-1">
           <TopNews data={national} />
-          <Advertisement banner={banner} />
+          <Advertisement_2 banner={banner} />
           <OtherNews relatedNews={othersNews} />
         </div>
         <div className="w-full order-1 md:order-2 lg:w-1/4 lg:sticky lg:top-20 lg:self-start">

@@ -1,4 +1,3 @@
-import Advertisement from "@/util/Advertisement";
 import OtherNews from "@/util/OtherNews";
 import TopNews from "@/util/TopNews";
 import cyclone from "@public/asset/international/cyclone.jpg";
@@ -8,6 +7,7 @@ import unity from "@public/asset/international/unity.jpg";
 import image from "@public/asset/bangladesh/environment.jpg";
 import banner from "@public/asset/banner.jpg";
 import SideTabs from "@/util/SideTabs";
+import Advertisement_2 from "@/util/Advertisement_2";
 
 const international = [
   {
@@ -127,7 +127,7 @@ const Page = () => {
       <div className="flex lg:flex-row flex-col gap-4">
         <div className="w-full lg:w-3/4 lg:pr-4 lg:order-1 order-2">
           <TopNews data={international} />
-          <Advertisement banner={banner} />
+          <Advertisement_2 banner={banner} />
           <OtherNews relatedNews={othersNews} />
         </div>
         <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start lg:order-2 order-1">

@@ -101,7 +101,7 @@ const NewsCard = () => {
                   </div>
                 </div>
                 <div className="w-full ps-2 lg:pt-2">
-                  <h2 className="text-xl font-bold hover:text-blue-600 transition-colors">
+                  <h2 className="text-xl font-semibold hover:text-blue-600 transition-colors">
                     {news.title}
                   </h2>
                 </div>

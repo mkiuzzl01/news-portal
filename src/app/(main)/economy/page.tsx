@@ -1,5 +1,4 @@
 import React from "react";
-import Advertisement from "@/util/Advertisement";
 import OtherNews from "@/util/OtherNews";
 import SideTabs from "@/util/SideTabs";
 import TopNews from "@/util/TopNews";
@@ -9,6 +8,7 @@ import image_3 from "@public/asset/Economy/formar.jpg";
 import image_4 from "@public/asset/Economy/growth.jpg";
 import banner from "@public/asset/banner.jpg";
 import image from "@public/asset/bangladesh/environment.jpg";
+import Advertisement_2 from "@/util/Advertisement_2";
 
 const economy = [
   {
@@ -128,7 +128,7 @@ const Page = () => {
       <div className="flex lg:flex-row flex-col gap-4">
         <div className="w-full lg:w-3/4 lg:pr-4 lg:order-1 order-2">
           <TopNews data={economy} />
-          <Advertisement banner={banner} />
+          <Advertisement_2 banner={banner} />
           <OtherNews relatedNews={othersNews} />
         </div>
         <div className="w-full lg:w-1/4 lg:sticky lg:top-20 lg:self-start lg:order-2 order-1">

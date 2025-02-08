@@ -8,7 +8,7 @@ import AllNews from "@/components/AllNews/AllNews";
 import AllCountry from "@/components/AllCountry/AllCountry";
 import PhotoGallery from "@/components/Gallery/PhotoGallery";
 import VideoGallery from "@/components/Gallery/VideoGallery";
-import Advertisement from "@/util/Advertisement";
+import Advertisement_1 from "@/util/Advertisement_1";
 import banner from "@public/asset/banner.jpg";
 
 const Page = () => {
@@ -20,7 +20,7 @@ const Page = () => {
       <Trending />
       <Entertainment />
       <Sports />
-      <Advertisement banner={banner} />
+      <Advertisement_1 banner={banner} />
       <International />
       <VideoGallery />
       <PhotoGallery />
